@@ -7,7 +7,7 @@ modules: username:
     isNormalUser = true;
     extraGroups = [ "wheel" ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
-      ++ lib.optionals config.virtualization.docker.enable [ "docker" ];
+      ++ lib.optionals config.virtualisation.docker.enable [ "docker" ];
     initialPassword = "";
     home = "/home/${username}";
     openssh.authorizedKeys.keyFiles = [

@@ -7,7 +7,7 @@
   services.xserver.videoDrivers = [ "nvidia" ]; # set driver for compositor
 
   hardware = {
-    opengl.enable = true; # enable opengl
+    graphics.enable = true; # enable opengl graphics
     nvidia = {
       modesetting.enable = true; # necessary for wayland
       open = true; # open kernel module

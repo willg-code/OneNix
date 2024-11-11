@@ -4,7 +4,7 @@ modules: name:
 
 {
   imports = [
-    (modules.grub { logo = ./assets/andromeda.png; })
+    (modules.systemd-boot { logo = ./assets/andromeda.png; })
     modules.hyprland
     modules.nvidia
     modules.pipewire

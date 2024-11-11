@@ -1,5 +1,5 @@
 {
-  grub = import ./grub.nix;
+  systemd-boot = import ./systemd-boot.nix;
   hyprland = import ./hyprland.nix;
   nvidia = import ./nvidia.nix;
   pipewire = import ./pipewire.nix;

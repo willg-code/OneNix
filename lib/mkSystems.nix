@@ -3,11 +3,11 @@
 { inputs, overlays, modules }:
 
 let
-  nixos = inputs.nixpkgs.lib.nixosSystem;
+  nixpkgs = inputs.nixpkgs;
+  lib = nixpkgs.lib;
+  nixos = nixpkgs.lib.nixosSystem;
   home-manager = inputs.home-manager.nixosModules.home-manager;
   sops-nix = inputs.sops-nix.nixosModules.sops;
-  nixpkgs = inputs.nixpkgs;
-  lib = inputs.lib;
 in
 builds:
 builtins.mapAttrs
@@ -30,7 +30,7 @@ builtins.mapAttrs
           settings = {
             experimental-features = [ "nix-command" "flakes" ]; # Enable flakes
             flake-registry = ""; # Disable global flake registry.
-            auto-optimize-store = optimize-store; # Enable store optimization on every build.
+            auto-optimise-store = optimize-store; # Enable store optimization on every build.
           };
           gc = {
             automatic = gc; # Enable automatic garbage collection.
@@ -38,9 +38,6 @@ builtins.mapAttrs
             options = "--delete-older-than 10d"; # Delete store paths older than 30 days.
           };
         };
-        environment.systemPackages = [
-          pkgs.ssh-to-age # Required for SOPS-nix using SSH identities
-        ];
         # Global HM Config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
