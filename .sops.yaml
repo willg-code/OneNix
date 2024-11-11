@@ -1,0 +1,7 @@
+keys:
+  - &willg = age1uvjuhs4ke5qlef633u3g8mnpwf4mq2n66xksqu9x9jfyrckvspmq4kaly5
+creation-rules:
+  - path-regex: secrets\/[^/]+\.(yaml|json|env|ini|sops)$
+    key_groups:
+        - age:
+            - *willg
