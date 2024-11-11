@@ -1,4 +1,4 @@
 modules:
 {
-  acolyte = import ./acolyte.nix modules;
+  island = import ./island modules;
 }

@@ -1,4 +1,4 @@
 modules:
 {
-  willg = import ./willg.nix modules;
+  willg = import ./willg modules;
 }

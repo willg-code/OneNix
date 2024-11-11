@@ -8,6 +8,10 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Secret Management
+    inputs.sops-nix.url = "github:Mic92/sops-nix";
+    inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -15,27 +19,27 @@
     let
       lib = import ./lib;
       modules = import ./modules;
-      machines = import ./machines modules;
-      users = import ./users modules;
-      homes = import ./homes modules;
+      machines = import ./machines modules.machines;
+      users = import ./users modules.users;
+      homes = import ./homes modules.homes;
 
       overlays = [ ];
-      mkSystems = import lib.mkSystems {
+      mkSystems = lib.mkSystems {
         inherit inputs overlays modules;
       };
     in
     {
-      nixosConfigurations = mkSystems {
-        andromeda = {
-          system = "x86_64-linux";
-          machineConfig = machines.andromeda;
-          users = {
-            williamg = {
-              userConfig = users.williamg;
-              homeConfig = homes.acolyte;
-            }
+      nixosConfigurations = mkSystems
+        {
+          andromeda = {
+            machineConfig = machines.andromeda;
+            users = {
+              willg = {
+                userConfig = users.willg;
+                homeConfig = homes.island;
+              };
+            };
           };
         };
-      }
     };
 }

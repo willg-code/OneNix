@@ -1,3 +1,4 @@
-modules: {
-  andromeda = import ./andromeda.nix modules;
+modules:
+{
+  andromeda = import ./andromeda modules;
 }

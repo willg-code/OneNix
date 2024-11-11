@@ -4,7 +4,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.kitty # quality of life: terminal which works by default
     pkgs.sddm-chili-theme # grey (neutral) theme for lock screen
   ];
 

@@ -1,5 +1,6 @@
 # GRUB boot loader and plymouth splash screen
 # DOCS: https://nixos.wiki/wiki/Grub
+{ logo ? null }:
 { pkgs, ... }:
 
 {
@@ -18,6 +19,7 @@
     plymouth = {
       enable = true; # flicker-free splash screen
       theme = "breeze"; # replace the default boot screen with a breeze theme
+      logo = mkif !(isNull logo) logo;
     };
   };
 }
