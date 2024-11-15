@@ -1,6 +1,6 @@
 # Nvidia compatability settings
 # DOCS: https://nixos.wiki/wiki/Nvidia
-{ ... }:
+{ config, ... }:
 
 {
   nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
@@ -10,9 +10,9 @@
   hardware = {
     graphics.enable = true; # enable hardeware graphics acceleration
     nvidia = {
+      hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
       modesetting.enable = true; # necessary for wayland
-      powermanagement.enable = true; # save entire vram to /tmp on suspend
-      powermanagement.finegrained = true; # turn off GPU when not in use
+      powerManagement.enable = true; # save entire vram to /tmp on suspend
       open = true; # open kernel module
       nvidiaSettings = true; # settings menu accessible in OS
     };
