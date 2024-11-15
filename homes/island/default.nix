@@ -16,7 +16,6 @@ user:
     modules.hyprpolkitagent
     modules.kitty
     modules.mako
-    modules.neovim
     modules.nordzy-cursors
     modules.rofi
     modules.swww
