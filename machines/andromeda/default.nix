@@ -1,20 +1,23 @@
-modules: name:
+modules:
+name:
 
 { config, ... }:
 
 {
   imports = [
-    (modules.systemd-boot { logo = ./assets/andromeda.png; })
+    modules.systemd-boot
     modules.hyprland
     modules.nvidia
     modules.pipewire
     modules.printing
+    modules.sddm
     modules.steam
-    ./hardware.nix
+    ./hardware-configuration.nix
   ];
 
-  time.timeZone = "America/Louisville";
-  networking.hostName = name;
-  networking.networkmanager.enable = true;
+  time.timeZone = "America/Louisville"; # based on location of the machine
+  networking.hostName = name; # network host name
+  networking.networkmanager.enable = true; # automatically connects to network when possible
+  boot.plymouth.logo = ./assets/andromeda.png; # display boot splash screen
   system.stateVersion = "24.05";
 }

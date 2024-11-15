@@ -1,5 +1,3 @@
-{
-  homes = import ./homes;
-  machines = import ./machines;
-  users = import ./users;
-}
+lib:
+
+lib.importDirWithArgs ./. lib

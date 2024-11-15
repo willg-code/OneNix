@@ -2,13 +2,12 @@
 
 # Check for at least two arguments
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <path-to-switch-script> <path-to-img-1> <path-to-img-2> ..."
+    echo "Usage: $0 <path-to-img-1> <path-to-img-2> ..."
     exit 1
 fi
 
-# Extract the path to the switch script and images
-SWITCH_SCRIPT="$1"
-shift
+# Set the wallpaper to start
+swww img "${1}" --transition-type none
 
 # This controls (in seconds) when to switch to the next image
 INTERVAL=300
@@ -18,24 +17,25 @@ while true; do
     current_hour=$(date +"%H")
 
     # Pick an image based on the time of day
-    if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 12 ]; then
-        # Morning: 6am - 11:59am
+    if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 9 ]; then
+        # Morning: 6am - 8:59am
         img="${1}"
-    elif [ "$current_hour" -ge 12 ] && [ "$current_hour" -lt 18 ]; then
-        # Afternoon: 12pm - 5:59pm
+    elif [ "$current_hour" -ge 9 ] && [ "$current_hour" -lt 17 ]; then
+        # Day: 10am - 4:59pm
         img="${2}"
-    elif [ "$current_hour" -ge 18 ] && [ "$current_hour" -lt 24 ]; then
-        # Evening 6pm - 12am
+    elif [ "$current_hour" -ge 17 ] && [ "$current_hour" -lt 20 ]; then
+        # Evening 5pm - 7:59pm
         img="${3}"
     else
-        # ENight: 6pm - 5:59am
+        # Night: 8pm - 5:59am
         img="${4}"
     fi
 
     # Set the wallpaper using swww
     swww img "${img}" \
+                --transition-type fade \
                 --transition-step 1 \
-                --transition-duration 1 \
+                --transition-duration 30 \
                 --transition-fps 255
     
     # Sleep for the specified interval

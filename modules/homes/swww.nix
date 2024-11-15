@@ -1,4 +1,3 @@
-{ switcher-script }:
 { pkgs, ... }:
 
 {
@@ -9,6 +8,5 @@
   # Hyprland integration
   wayland.windowManager.hyprland.settings.exec-once = [
     "swww-daemon"
-    switcher-script
   ];
 }

@@ -12,21 +12,23 @@
     # Secret Management
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Cool Cutting Edge Browser
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     { ... }@inputs:
     let
-      lib = import ./lib;
-      modules = import ./modules;
-      machines = import ./machines modules.machines;
-      users = import ./users modules.users;
-      homes = import ./homes modules.homes;
+      lib = inputs.nixpkgs.lib // (import ./lib inputs.nixpkgs.lib);
+      modules = import ./modules lib;
+      machines = import ./machines lib modules.machines;
+      users = import ./users lib modules.users;
+      homes = import ./homes lib modules.homes;
 
       overlays = [ ];
-      mkSystems = lib.mkSystems {
-        inherit inputs overlays modules;
-      };
+      mkSystems = lib.mkSystems { inherit inputs overlays; };
     in
     {
       nixosConfigurations = mkSystems
@@ -35,8 +37,8 @@
             machineConfig = machines.andromeda;
             users = {
               willg = {
-                userConfig = users.willg;
-                homeConfig = homes.island;
+                user = users.willg;
+                home = homes.island;
               };
             };
           };

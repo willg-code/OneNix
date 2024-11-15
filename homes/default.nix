@@ -1,4 +1,4 @@
+lib:
 modules:
-{
-  island = import ./island modules;
-}
+
+lib.importDirWithArgs ./. modules

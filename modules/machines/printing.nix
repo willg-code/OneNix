@@ -1,4 +1,4 @@
-# This module enables printing support with CUPS and print-to-pdf
+# Printing support with CUPS and print-to-pdf
 # DOCS: https://nixos.wiki/wiki/Printing
 { ... }:
 

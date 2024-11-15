@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
@@ -15,16 +14,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/94a7b890-b489-4d37-9784-a113c01a3a4d";
+    { device = "/dev/disk/by-uuid/01bd87d0-b1bd-4e24-84d2-6c0994458ddd";
       fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/0531-1AF0";
+    { device = "/dev/disk/by-uuid/D640-CF22";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/8fdc45ad-b91c-4b26-9efa-5746e98ee01f";
+      fsType = "btrfs";
     };
 
   swapDevices = [ ];

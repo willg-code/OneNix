@@ -1,3 +1,3 @@
-{
-  mkSystems = import ./mkSystems.nix;
-}
+lib:
+
+import ./importDirWithArgs.nix lib ./. lib
