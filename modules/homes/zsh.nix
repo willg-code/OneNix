@@ -9,7 +9,7 @@
         plugins = [
           "zsh-users/zsh-autosuggestions"
           "chrissicool/zsh-256color"
-          "dark-kitt/zsh-git-plugin"
+          "davidde/git"
         ];
       };
     autocd = true; # automatically CD a directory if typed directly
