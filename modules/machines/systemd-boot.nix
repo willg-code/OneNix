@@ -14,7 +14,7 @@
     tmp.cleanOnBoot = true; # helps cut down on disk usage, tmp is safe to clean at boot
     plymouth = {
       enable = true; # flicker-free splash screen
-      theme = "breeze"; # replace the default boot screen with a breeze theme
+      theme = "bgrt"; # replace the default boot screen with a breeze theme
     };
   };
 }

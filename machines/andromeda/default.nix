@@ -18,6 +18,5 @@ name:
   time.timeZone = "America/Louisville"; # based on location of the machine
   networking.hostName = name; # network host name
   networking.networkmanager.enable = true; # automatically connects to network when possible
-  boot.plymouth.logo = ./assets/andromeda.png; # display boot splash screen
   system.stateVersion = "24.05";
 }
