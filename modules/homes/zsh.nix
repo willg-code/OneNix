@@ -13,6 +13,6 @@
     };
     syntaxHighlighting.enable = true;
     history.path = "$HOME/.cache/zsh_history"; # so it's cleared with the cache
-    dotDir = "$HOME/.config/zsh";
+    dotDir = ".config/zsh";
   };
 }
