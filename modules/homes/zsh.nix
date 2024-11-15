@@ -13,7 +13,5 @@
         ];
       };
     autocd = true; # automatically CD a directory if typed directly
-    history.path = "$HOME/.cache/zsh_history"; # so it's cleared with the cache
-    dotDir = ".config/zsh"; # move dotfile to config folder
   };
 }
