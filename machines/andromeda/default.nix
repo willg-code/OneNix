@@ -1,7 +1,7 @@
 modules:
 name:
 
-{ config, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -13,6 +13,7 @@ name:
     modules.sddm
     modules.steam
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.gigabyte-b550 # fix suspend issue
   ];
 
   time.timeZone = "America/Louisville"; # based on location of the machine
