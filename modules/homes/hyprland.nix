@@ -11,8 +11,8 @@
         gaps_out = "20"; # size (in pixels) of gap on the edge of the screen
         border_size = "2"; # size (in pixels) of winsow border
         "col.active_border" = "rgb(f9bb66)";
-        "col.inactive_border" = "rgba(2c4055a)";
-        snap.enabled = "true"; # window snap while floating
+        "col.inactive_border" = "rgba(2c4055a5)";
+        #snap.enabled = "true"; # window snap while floating
       };
       decoration = {
         rounding = "10"; # rounded corner size
@@ -85,8 +85,8 @@
         "$mainMod $shiftMod, S, movetoworkspace, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        "$mainMod, mouse_down, workspace, e-1"
+        "$mainMod, mouse_up, workspace, e+1"
       ];
 
 

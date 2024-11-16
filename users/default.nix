@@ -1,4 +1,4 @@
+lib:
 modules:
-{
-  willg = import ./willg modules;
-}
+
+lib.importDirWithArgs ./. modules

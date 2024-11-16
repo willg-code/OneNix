@@ -1,4 +1,4 @@
-# Handles audio/videocap/bluetooth all in one
+# Audio/videocap/bluetooth all in one
 # DOCS: https://nixos.wiki/wiki/PipeWire
 { ... }:
 

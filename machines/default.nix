@@ -1,4 +1,4 @@
+lib:
 modules:
-{
-  andromeda = import ./andromeda modules;
-}
+
+lib.importDirWithArgs ./. modules
