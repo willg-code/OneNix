@@ -6,6 +6,7 @@
     git = {
       enable = true; # version control
       aliases = {
+        # shortened commands
         c = "commit";
         cm = "commit -m";
         co = "checkout";
