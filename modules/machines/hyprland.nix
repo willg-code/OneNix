@@ -5,4 +5,5 @@
 {
   programs.hyprland.enable = true; # takes care of root level config
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # make electron apps use wayland
+  services.displayManager.defaultSession = "Hyprland";
 }
