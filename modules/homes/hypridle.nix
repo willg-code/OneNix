@@ -7,7 +7,7 @@
     settings = {
       general =
         {
-          before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
+          before_sleep_cmd = "loginctl lock-session"; # lock before suspend. loginctl is from systemd which is a nixos dependency
           after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key twice to turn on the display.
         };
 
