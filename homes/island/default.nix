@@ -18,6 +18,7 @@ user:
     modules.mako
     modules.nordzy-cursors
     modules.rofi
+    modules.screenshot
     modules.swww
     modules.vscode
     modules.waybar
