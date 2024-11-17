@@ -1,3 +1,4 @@
+# Common font configuration for all systems
 { pkgs, ... }:
 
 {

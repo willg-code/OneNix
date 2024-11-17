@@ -1,3 +1,4 @@
+# Quick terminal system information tool
 { ... }:
 
 {

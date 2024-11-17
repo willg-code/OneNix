@@ -24,14 +24,14 @@
   outputs =
     { ... }@inputs:
     let
-      lib = inputs.nixpkgs.lib // (import ./lib inputs.nixpkgs.lib);
-      modules = import ./modules lib;
-      machines = import ./machines lib modules.machines;
-      users = import ./users lib modules.users;
-      homes = import ./homes lib modules.homes;
+      lib = inputs.nixpkgs.lib // (import ./lib inputs.nixpkgs.lib); # join local lib with nixpkgs lib
+      modules = import ./modules lib; # construct the modules for the configurations
+      machines = import ./machines lib modules.machines; # import machine specific configs
+      users = import ./users lib modules.users; # import user specific configs
+      homes = import ./homes lib modules.homes; # import home specific configs
 
-      overlays = [ ];
-      mkSystems = lib.mkSystems { inherit inputs overlays; };
+      overlays = [ ]; # override nixpkgs packages
+      mkSystems = lib.mkSystems { inherit inputs overlays; }; # construct our mkSystems function
     in
     {
       nixosConfigurations = mkSystems
