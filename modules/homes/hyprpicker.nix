@@ -7,6 +7,6 @@
 
   # Hyprland integration
   wayland.windowManager.hyprland.settings.bind = [
-    "$mainMod, P, exec, hyprpicker -a"
+    "$mainMod $shiftMod, P, exec, hyprpicker -a"
   ];
 }
