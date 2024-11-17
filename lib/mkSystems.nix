@@ -1,22 +1,48 @@
-lib:
-# This function creates NixOS system 
-# configurations with custom config.
-{ inputs, overlays }:
+### DESC ###
+# Given overlays, output a nixpkgs.lib.nixosSystem
+# with those overlays. Also imports all necessary
+# modules for extra behavior (e.g home-manager, sops, etc).
+#
+# Input looks like this (called "builds"):
+# {
+#   <name> = {
+#     machineConfig = <machine config>;
+#     users = {
+#       <username> = {
+#         user = <user config>;
+#         home = <home config>; (optional [e.g. system users])
+#       };
+#       ... (more users)
+#     };
+#     optimize-store = true; (optional)
+#     gc = true; (optional)
+#   };
+# }
+#
+# Alows four points of flexibility:
+# - Each machine config can be deployed to multiple differently-named computers if they have the same hardware
+# - Each machine config is abstracted from the users provided to it, allowing users to be added and removed at-will.
+# - Each user and home are identified by an arbitrary username, ensuring the accounts can be renamed if necessary
+# - Each user has a home, configured independently of the user itself, so homes can be swapped around at-will.
+
+### ARGS ###
+lib: # Necessary for some behavior
+{ inputs, overlays }: # Flake inputs and nixpkgs overlays
 
 let
-  specialArgs = { inherit inputs; };
-  home-manager = inputs.home-manager.nixosModules.home-manager;
-  sops-nix = inputs.sops-nix.nixosModules.sops;
+  specialArgs = { inherit inputs; }; # special arguments to be passed into the modules
+  home-manager = inputs.home-manager.nixosModules.home-manager; # home manager module
+  sops-nix = inputs.sops-nix.nixosModules.sops; # sops nix module
 in
-builds:
-builtins.mapAttrs
+builds: # input object, see DESC
+builtins.mapAttrs # process each config
   (name: { machineConfig, users, optimize-store ? true, gc ? true }:
   lib.nixosSystem {
-    specialArgs = specialArgs;
+    inherit specialArgs; # pass special args to modules
     modules = [
-      home-manager # Import home manager
-      sops-nix # Import sops-nix
-      (machineConfig name) # Apply the machine configuration.
+      home-manager # import home manager
+      sops-nix # import sops-nix
+      (machineConfig name) # apply the machine configuration.
       # Global Configuration
       {
         nixpkgs.overlays = overlays; # Apply overlays
@@ -42,7 +68,7 @@ builtins.mapAttrs
         # Global HM Config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = specialArgs;
+        home-manager.extraSpecialArgs = specialArgs; # pass special args to home manager modules
       }
     ] ++
     # User configurations.
@@ -51,35 +77,35 @@ builtins.mapAttrs
         (builtins.mapAttrs
           (username: { user, home ? null }:
             let
+              # An object to pass to the home manager modules
+              # to paramaterize who the config is for
               identity = {
                 inherit username;
                 name = user.name;
                 email = user.email;
               };
             in
-            [
-              # Import the user config.
-              (user.config username)
-            ] ++
-            # Check if a home config is provided (it might not be for system users)
-            lib.optionals (!builtins.isNull home) [
-              # Import the home config.
-              {
-                home-manager.users.${username} = {
-                  programs.home-manager.enable = true;
-                  home.username = username;
-                  home.homeDirectory = "/home/${username}";
-                };
-              }
-              # Needs to be separate because it might be a module
-              {
-                home-manager.users.${username} = (home identity);
-              }
-            ]
+            [ (user.config username) ] ++ # import the user config, and...
+              # Check if a home config is provided (it might not be for system users)
+              lib.optionals (!builtins.isNull home) [
+                # User specific global config
+                {
+                  home-manager.users.${username} = {
+                    programs.home-manager.enable = true; # let HM control itself
+                    home.username = username; # set the username at the home level
+                    home.homeDirectory = "/home/${username}"; # indicate which directory contains the home
+                  };
+                }
+                # Needs to be separate because it might be a module 
+                # (thus must be processed before being merged)
+                {
+                  home-manager.users.${username} = (home identity);
+                }
+              ]
           )
-          users
+          users # map inputted user objects
         )
       )
     );
   })
-  builds
+  builds # map inputted build objects
