@@ -1,7 +1,6 @@
 modules:
-name:
 
-{ inputs, ... }:
+{ inputs, name, ... }:
 
 {
   imports = [

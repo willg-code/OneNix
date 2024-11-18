@@ -30,19 +30,21 @@ lib: # Necessary for some behavior
 { inputs, overlays }: # Flake inputs and nixpkgs overlays
 
 let
-  specialArgs = { inherit inputs; }; # special arguments to be passed into the modules
   home-manager = inputs.home-manager.nixosModules.home-manager; # home manager module
   sops-nix = inputs.sops-nix.nixosModules.sops; # sops nix module
 in
 builds: # input object, see DESC
 builtins.mapAttrs # process each config
   (name: { machineConfig, users, optimize-store ? true, gc ? true }:
+  let
+    specialArgs = { inherit inputs name; }; # special arguments to be passed into the modules
+  in
   lib.nixosSystem {
     inherit specialArgs; # pass special args to modules
     modules = [
       home-manager # import home manager
       sops-nix # import sops-nix
-      (machineConfig name) # apply the machine configuration.
+      machineConfig # apply the machine configuration.
       # Global Configuration
       {
         nixpkgs.overlays = overlays; # Apply overlays
