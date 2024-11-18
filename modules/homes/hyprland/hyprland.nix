@@ -5,7 +5,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = [ "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" ]; # fix for apps taking long time to load
       monitor = ",preferred,auto,auto"; # monitor config that generally works
       general = {
         gaps_in = "5"; # size (in pixels) of gap between the windows
