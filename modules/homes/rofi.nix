@@ -5,6 +5,7 @@
 
   # Hyprland integration
   wayland.windowManager.hyprland.settings.bind = [
-    "$mainMod, D, exec, rofi"
+    "$mainMod, D, exec, rofi -show drun"
+    "$mainMod, R, exec, rofi -show run"
   ];
 }
