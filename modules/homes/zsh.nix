@@ -2,6 +2,9 @@
 {
   programs.zsh = {
     enable = true; # shell with plugins
-    package = inputs.nixpkgs-stable.zsh;
+    package = inputs.nixpkgs-stable.pkgs.zsh;
   };
+
+  # Kitty integration
+  programs.kitty.settings.shell = "zsh";
 }
