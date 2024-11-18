@@ -5,6 +5,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" ];
+      theme = "robbyrussell";
     };
   };
 
