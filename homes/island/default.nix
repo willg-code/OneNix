@@ -12,6 +12,7 @@ user:
     modules.hyprland
     modules.kitty
     modules.mako
+    modules.nh
     modules.phinger-cursor-theme
     modules.rofi
     modules.screenshot
