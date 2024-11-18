@@ -1,3 +1,4 @@
+# App launcher, dmenu, and run menu
 { ... }:
 
 {
