@@ -54,7 +54,4 @@
       ];
     };
   };
-
-  wayland.windowManager.hyprland.settings.bind = [ "$mainMod, L, exec, loginctl lock-session" ]; # in case hyprland is the wm, set a key bind to lock
-  services.hypridle.settings.general.lock_cmd = "pidof hyprlock || hyprlock"; # in case hyprlock is enabled, set this as the lock screen
 }

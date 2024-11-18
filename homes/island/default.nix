@@ -9,11 +9,7 @@ user:
     modules.fastfetch
     modules.fonts
     modules.git
-    modules.hypridle
     modules.hyprland
-    modules.hyprlock
-    modules.hyprpicker
-    modules.hyprpolkitagent
     modules.kitty
     modules.mako
     modules.nordzy-cursors

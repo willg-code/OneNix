@@ -45,10 +45,11 @@
       bind = [
         "$mainMod, C, killactive," # exit current window
         "$mainMod, ESC, exit," # exit display manager
-        "$mainMod, V, togglefloating," # make active window float
-        "$mainMod, F, fullscreen, 0" # make active window fullscreen
+        "$mainMod, L, exec, loginctl lock-session" # lock
+        "$mainMod, F, togglefloating," # make active window float
+        "$mainMod $shiftMod, F, fullscreen, 0" # make active window fullscreen
         "$mainMod, G, pseudo," # float one branch of tree
-        "$mainMod, B, togglesplit," # change direction of tree
+        "$mainMod, S, togglesplit," # change direction of tree
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -81,8 +82,8 @@
         "$mainMod $shiftMod, 0, movetoworkspace, 10"
 
         # Example special workspace (scratchpad)
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod $shiftMod, S, movetoworkspace, special:magic"
+        "$mainMod, X, togglespecialworkspace, magic"
+        "$mainMod $shiftMod, X, movetoworkspace, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e-1"
