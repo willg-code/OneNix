@@ -39,6 +39,7 @@ user:
     )
   ];
 
+  # Configure user git identity
   programs.git.userEmail = user.email;
   programs.git.userName = user.name;
 
