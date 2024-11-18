@@ -1,8 +1,7 @@
 { ... }:
 {
   programs.zsh = {
-    # shell with plugins
-    enable = true;
+    enable = true; # shell with plugins
     autocd = true; # automatically CD a directory if typed directly
   };
 }
