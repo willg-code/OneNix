@@ -9,4 +9,6 @@
       extraArgs = "--keep-since 3d"; # keep generations newer than 3 days
     };
   };
+
+  nix.gc.automatic = false;
 }
