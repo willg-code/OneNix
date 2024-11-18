@@ -2,7 +2,7 @@
 {
   programs.zsh = {
     enable = true; # shell with plugins
-    package = inputs.nixpkgs-stable.pkgs.zsh;
+    package = inputs.nixpkgs-stable.legacyPackages.zsh;
   };
 
   # Kitty integration
