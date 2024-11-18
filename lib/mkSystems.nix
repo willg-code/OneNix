@@ -5,7 +5,7 @@
 #
 # Input looks like this (called "builds"):
 # {
-#   <name> = {
+#   <hostname> = {
 #     machineConfig = <machine config>;
 #     users = {
 #       <username> = {
@@ -35,9 +35,9 @@ let
 in
 builds: # input object, see DESC
 builtins.mapAttrs # process each config
-  (name: { machineConfig, users, optimize-store ? true, gc ? true }:
+  (hostname: { machineConfig, users, optimize-store ? true, gc ? true }:
   let
-    specialArgs = { inherit inputs name; }; # special arguments to be passed into the modules
+    specialArgs = { inherit inputs hostname; }; # special arguments to be passed into the modules
   in
   lib.nixosSystem {
     inherit specialArgs; # pass special args to modules
