@@ -44,7 +44,5 @@ user:
   programs.git.userEmail = user.email;
   programs.git.userName = user.name;
 
-  programs.nh.flake = ../..;
-
   home.stateVersion = "24.05"; # Required for backwards compat during updates
 }
