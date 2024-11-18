@@ -1,11 +1,7 @@
-{ inputs, pkgs, ... }:
-let
-  pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.system; };
-in
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true; # shell with plugins
-    package = pkgs-stable.zsh; # stable version
   };
 
   # Kitty integration
