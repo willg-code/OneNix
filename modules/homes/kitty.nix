@@ -1,13 +1,14 @@
+# Pretty terminal emulator, 
+# works beautifully with hyprland
 { ... }:
 
 {
   programs.kitty = {
-    enable = true; # hyprland default terminal emulator
+    enable = true; # terminal emulator
     settings = {
-      shell = "zsh";
-      enable_audio_bell = false;
-      update_check_interval = 0;
-      background_opacity = "0.8";
+      enable_audio_bell = false; # no sound on fail
+      update_check_interval = 0; # don't check for updates
+      background_opacity = "0.9"; # slightly transparent background
     };
   };
 

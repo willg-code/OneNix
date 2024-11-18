@@ -9,14 +9,11 @@ user:
     modules.fastfetch
     modules.fonts
     modules.git
-    modules.hypridle
     modules.hyprland
-    modules.hyprlock
-    modules.hyprpicker
-    modules.hyprpolkitagent
     modules.kitty
     modules.mako
-    modules.nordzy-cursors
+    modules.nh
+    modules.phinger-cursor-theme
     modules.rofi
     modules.screenshot
     modules.swww
@@ -43,6 +40,7 @@ user:
     )
   ];
 
+  # Configure user git identity
   programs.git.userEmail = user.email;
   programs.git.userName = user.name;
 
