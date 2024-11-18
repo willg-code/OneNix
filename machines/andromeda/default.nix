@@ -1,6 +1,6 @@
 modules:
 
-{ inputs, name, ... }:
+{ inputs, hostname, ... }:
 
 {
   imports = [
@@ -15,7 +15,7 @@ modules:
   ];
 
   time.timeZone = "America/Louisville"; # based on location of the machine
-  networking.hostName = name; # network host name
+  networking.hostName = hostname; # network host name
   networking.networkmanager.enable = true; # automatically connects to network when possible
   system.stateVersion = "24.05";
 }
