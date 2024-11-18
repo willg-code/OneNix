@@ -35,7 +35,6 @@ while true; do
     swww img "${img}" \
                 --transition-type fade \
                 --transition-step 1 \
-                --transition-duration 30 \
                 --transition-fps 255
     
     # Sleep for the specified interval
