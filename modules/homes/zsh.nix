@@ -2,10 +2,12 @@
 {
   programs.zsh = {
     enable = true; # shell with plugins
+    autocd = true; # just type the dir name
+    autosuggestion.enable = true; # right arrow to autocomplete
     oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "sudo" ];
-      theme = "robbyrussell";
+      enable = true; # plugin and theme manager
+      plugins = [ "git" "sudo" ]; # enabled plugins
+      theme = "gnzh"; # enabled theme
     };
   };
 
