@@ -35,7 +35,7 @@ let
 in
 builds: # input object, see DESC
 builtins.mapAttrs # process each config
-  (hostname: { machineConfig, users, optimize-store ? true, gc ? true }:
+  (hostname: { machineConfig, users, optimize-store ? true }:
   let
     specialArgs = { inherit inputs hostname; }; # special arguments to be passed into the modules
   in
@@ -56,11 +56,6 @@ builtins.mapAttrs # process each config
             experimental-features = [ "nix-command" "flakes" ]; # Enable flakes
             flake-registry = ""; # Disable global flake registry
             auto-optimise-store = optimize-store; # Enable store optimization on every build
-          };
-          gc = {
-            automatic = gc; # Enable automatic garbage collection.
-            dates = "daily"; # Run garbage collection daily
-            options = "--delete-older-than 10d"; # Delete store paths older than 10 days
           };
           optimise = {
             automatic = optimize-store; # Enable automatic store optimization
