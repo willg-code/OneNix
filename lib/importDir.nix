@@ -19,7 +19,7 @@ let
   concatAllButLast =
     lst:
     if (builtins.length lst) == 1
-    then [ ]
+    then ""
     else (builtins.head lst) + "." + (concatAllButLast (builtins.tail lst));
 
   # function to strip ". nix" from the
