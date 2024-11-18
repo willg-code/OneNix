@@ -2,20 +2,20 @@
 
 {
   home.packages = [
-    pkgs.nordzy-cursor-theme
+    pkgs.phinger-cursors
   ];
 
   # Hyprland integration
   wayland.windowManager.hyprland.settings.exec-once = [
-    "hyprctl setcursor Nordzy-cursors 24"
+    "hyprctl setcursor phinger-cursors-light 24"
   ];
 
   # XCursor/GTK integration (for apps that do not support hyprcursor)
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.nordzy-cursor-theme;
-    name = "Nordzy-cursors";
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-light";
     size = 24;
   };
 }
