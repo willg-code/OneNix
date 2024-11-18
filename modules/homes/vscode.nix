@@ -7,7 +7,7 @@
     extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ]; # nix editor extension
     userSettings = {
       "editor.formatOnSave" = "true"; # use the nixfmt formatter on save
-      "git.autoFetch" = true;
+      "git.autoFetch" = true; # fetch git periodically
     };
   };
 }
