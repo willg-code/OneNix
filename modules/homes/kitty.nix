@@ -6,7 +6,7 @@
     settings = {
       enable_audio_bell = false; # no sound
       update_check_interval = 0; # don't check for updates
-      background_opacity = "0.8"; # slightly transparent background
+      background_opacity = "0.9"; # slightly transparent background
     };
   };
 

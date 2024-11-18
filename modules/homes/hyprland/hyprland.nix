@@ -16,7 +16,7 @@
       };
       decoration = {
         rounding = "10"; # rounded corner size
-        inactive_opacity = "0.8"; # inactive window opacity
+        inactive_opacity = "0.9"; # inactive window opacity
         dim_inactive = "true"; # darken the inactive windows
         dim_strength = "0.2"; # how much to darken inactives
         blur = {
