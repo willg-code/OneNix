@@ -35,8 +35,8 @@ let
     in
     # if the file type is ".nix"
     if (builtins.elemAt nameParts ((builtins.length nameParts) - 1)) == "nix"
-    # then take everything but the type
-    then (concatAllButLast nameParts)
+    # then take everything but the type (substring removes the extra ".")
+    then let stripped = concatAllButLast nameParts; in (builtins.substring 0 ((builtins.length stripped) - 1) stripped)
     # otherwise give the name as-is
     else name;
 in
