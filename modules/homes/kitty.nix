@@ -1,6 +1,6 @@
 # Pretty terminal emulator, 
 # works beautifully with hyprland
-{ inputs, pkgs, ... }:
+{ ... }:
 
 {
   programs.kitty = {
