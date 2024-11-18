@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
   programs.zsh = {
     enable = true; # shell with plugins
