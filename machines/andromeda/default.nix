@@ -10,7 +10,6 @@ modules:
     modules.nvidia
     modules.pipewire
     modules.printing
-    modules.speechd
     modules.sshd
     modules.sddm
     modules.steam
