@@ -14,7 +14,7 @@
 
 ### INTER-LIB DEPS ###
 let
-  importDir = import ./importDir.nix;
+  importDir = import ./impDir.nix;
 in
 
 ### ARGS ###
