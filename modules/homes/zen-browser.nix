@@ -3,6 +3,7 @@
 {
   home.packages = [
     inputs.zen-browser.packages.${pkgs.system}.default
+    pkgs.speechd-minimal # for speech synthesis
   ];
 
   # add as default app
