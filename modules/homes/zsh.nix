@@ -7,7 +7,7 @@
     autosuggestion.enable = true; # right arrow to autocomplete
     oh-my-zsh = {
       enable = true; # plugin and theme manager
-      plugins = [ "colorize" "colorized-man-pages" "ssh" "sudo" ]; # enabled plugins
+      plugins = [ "colorize" "colored-man-pages" "ssh" "sudo" ]; # enabled plugins
       # theme = "gnzh";
     };
   };
