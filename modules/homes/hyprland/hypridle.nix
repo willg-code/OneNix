@@ -22,10 +22,10 @@
           on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
           on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected
         }
-        {
-          timeout = "1800"; # 30min
-          on-timeout = "systemctl suspend"; # suspend pc, provided by systemd which is a nixos dependency
-        }
+        # {
+        #   timeout = "1800"; # 30min
+        #   on-timeout = "systemctl suspend"; # suspend pc, provided by systemd which is a nixos dependency
+        # }
       ];
     };
   };
