@@ -1,26 +1,7 @@
 {
   description = "OneNix dotfiles";
 
-  inputs = {
-    # Nixpkgs (using unstable to approximate rolling releases)
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-
-    # Hardware configurations
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    # Home Manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Secret Management
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Cool Cutting Edge Browser
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-  };
+  ### INPUTS CAN BE FOUND AFTER OUTPUTS ###
 
   outputs =
     { ... }@inputs:
@@ -48,4 +29,25 @@
           };
         };
     };
+
+  inputs = {
+    # Nixpkgs (using unstable to approximate rolling releases)
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    # Hardware configurations
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # Home Manager
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Secret Management
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Cool Cutting Edge Browser
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+  };
 }
