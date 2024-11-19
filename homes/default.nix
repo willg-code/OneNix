@@ -1,4 +1,3 @@
 lib:
-modules:
 
-lib.importDirWithArgs ./. modules
+lib.impDir ./.

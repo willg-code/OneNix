@@ -7,27 +7,28 @@
     { ... }@inputs:
     let
       lib = inputs.nixpkgs.lib // (import ./lib inputs.nixpkgs.lib); # join local lib with nixpkgs lib
-      modules = import ./modules lib; # construct the modules for the configurations
-      machines = import ./machines lib modules.machines; # import machine specific configs
-      users = import ./users lib modules.users; # import user specific configs
-      homes = import ./homes lib modules.homes; # import home specific configs
+      impl = (path: import path lib); # construct a function to import stuff with lib
+
+      modules = impl ./modules; # import the modules for the configurations
+      machines = impl ./machines; # import machine specific configs
+      users = impl ./users; # import user specific configs
+      homes = impl ./homes; # import home specific configs
 
       overlays = [ ]; # override nixpkgs packages
-      mkSystems = lib.mkSystems { inherit inputs overlays; }; # construct our mkSystems function
+      mkSystems = lib.mkSystems { inherit inputs overlays modules; }; # construct our mkSystems function
     in
     {
-      nixosConfigurations = mkSystems
-        {
-          andromeda = {
-            machineConfig = machines.andromeda;
-            users = {
-              willg = {
-                user = users.willg;
-                home = homes.island;
-              };
+      nixosConfigurations = mkSystems {
+        andromeda = {
+          machineConfig = machines.andromeda;
+          users = {
+            willg = {
+              user = users.willg;
+              home = homes.island;
             };
           };
         };
+      };
     };
 
   inputs = {

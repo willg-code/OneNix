@@ -1,6 +1,6 @@
 ### DESC ###
 # Constructs a set containing an import of every file
-# found on the inputted path, of the form
+# found on the given path, of the form
 #
 # {
 #   <filename> = import <filename>;

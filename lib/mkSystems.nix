@@ -10,12 +10,11 @@
 #     users = {
 #       <username> = {
 #         user = <user config>;
-#         home = <home config>; (optional [e.g. system users])
+#         home = <home config>; (optional)
 #       };
 #       ... (more users)
 #     };
 #     optimize-store = true; (optional)
-#     gc = true; (optional)
 #   };
 # }
 #
@@ -27,7 +26,7 @@
 
 ### ARGS ###
 lib: # Necessary for some behavior
-{ inputs, overlays }: # Flake inputs and nixpkgs overlays
+{ inputs, overlays, modules }: # Flake inputs, nixpkgs overlays, and custom modules
 
 let
   home-manager = inputs.home-manager.nixosModules.home-manager; # home manager module
@@ -37,7 +36,7 @@ builds: # input object, see DESC
 builtins.mapAttrs # process each config
   (hostname: { machineConfig, users, optimize-store ? true }:
   let
-    specialArgs = { inherit inputs hostname; }; # special arguments to be passed into the modules
+    specialArgs = { inherit inputs hostname modules; }; # special arguments to be passed into the modules
   in
   lib.nixosSystem {
     inherit specialArgs; # pass special args to modules

@@ -1,19 +1,8 @@
-modules:
-
-{ inputs, hostname, ... }:
+{ inputs, hostname, modules, ... }:
 
 {
   imports = [
-    modules.bluetooth
-    modules.hyprland
-    modules.networkmanager
-    modules.nvidia
-    modules.pipewire
-    modules.printing
-    modules.sshd
-    modules.sddm
-    modules.steam
-    modules.systemd-boot
+    modules.machines
     ./hardware-configuration.nix
   ];
 

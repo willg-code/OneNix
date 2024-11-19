@@ -1,27 +1,10 @@
-modules:
 user:
 
-{ pkgs, ... }:
+{ pkgs, modules, ... }:
 
 {
   imports = [
-    modules.btop
-    modules.fastfetch
-    modules.fonts
-    modules.git
-    modules.hyprland
-    modules.kitty
-    modules.mako
-    modules.nh
-    modules.phinger-cursor-theme
-    modules.rofi
-    modules.screenshot
-    modules.starship
-    modules.swww
-    modules.vscode
-    modules.waybar
-    modules.zen-browser
-    modules.zsh
+    modules.homes
   ];
 
   home.packages = [

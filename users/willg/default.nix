@@ -1,9 +1,8 @@
-modules:
 # recursive so config can access name and email
 rec {
   config =
     username:
-    { config, lib, ... }:
+    { config, lib, modules, ... }:
     {
       users.users.${username} = {
         isNormalUser = true; # set group to users and creates a home at /home/<username>
