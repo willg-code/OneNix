@@ -8,7 +8,6 @@
     oh-my-zsh = {
       enable = true; # plugin and theme manager
       plugins = [ "colorize" "colored-man-pages" "ssh" "sudo" ]; # enabled plugins
-      # theme = "gnzh";
     };
   };
 
