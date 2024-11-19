@@ -4,6 +4,7 @@ modules:
 
 {
   imports = [
+    modules.bluetooth
     modules.hyprland
     modules.nvidia
     modules.pipewire
