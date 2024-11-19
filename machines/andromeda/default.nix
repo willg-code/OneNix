@@ -9,6 +9,7 @@ modules:
     modules.nvidia
     modules.pipewire
     modules.printing
+    modules.sshd
     modules.sddm
     modules.steam
     modules.systemd-boot
