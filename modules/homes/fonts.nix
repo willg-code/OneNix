@@ -2,11 +2,17 @@
 { pkgs, ... }:
 
 {
-  fonts.fontconfig.enable = true; # allow font package discovery from home.packages
+  fonts.fontconfig = {
+    enable = true; # allow font package discovery from home.packages
+    defaultFonts = {
+      monospace = [ "Overpass Mono" ];
+      sansSerif = [ "Overpass" ];
+    };
+  };
 
   home.packages = [
-    pkgs.nerdfonts # all kinds of fonts
-    pkgs.proggyfonts # another code font
-    pkgs.overpass # sans serif font
+    pkgs.nerdfonts # code fonts
+    pkgs.overpass # pretty sans-serif/mono font
+    pkgs.noto-fonts # everything else
   ];
 }
