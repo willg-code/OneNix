@@ -8,6 +8,8 @@
     pkgs.hyprpolkitagent # polkit agent
   ];
 
+  home.sessionVariables.NIXOS_OZONE_WL = "1"; # make electron apps use wayland
+
   # Hyprland config
   wayland.windowManager.hyprland = {
     enable = true;
