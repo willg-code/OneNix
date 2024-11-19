@@ -1,7 +1,7 @@
 {
   description = "OneNix dotfiles";
 
-  ### INPUTS CAN BE FOUND AFTER OUTPUTS ###
+  ##! INPUTS CAN BE FOUND AFTER OUTPUTS !##
 
   outputs =
     { ... }@inputs:
