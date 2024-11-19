@@ -16,6 +16,7 @@ user:
     modules.phinger-cursor-theme
     modules.rofi
     modules.screenshot
+    modules.starship
     modules.swww
     modules.vscode
     modules.waybar
