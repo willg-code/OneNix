@@ -1,10 +1,21 @@
 { ... }:
 
 {
+  # Required dependencies for this module
+  home.packages = [
+    pkgs.hyprpicker # color picker for hyprland
+    pkgs.wl-clipboard-rs # wl-clipboard implementation, required for hyprpicker -a
+    pkgs.hyprpolkitagent # polkit agent
+  ];
+
   # Hyprland config
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      exec-once = [
+        "hypridle" # start idle daemon
+        "systemctl --user start hyprpolkitagent" # start polkit daemon
+      ];
       monitor = ",preferred,auto,auto"; # monitor config that generally works
       general = {
         gaps_in = "5"; # size (in pixels) of gap between the windows
@@ -12,7 +23,6 @@
         border_size = "2"; # size (in pixels) of winsow border
         "col.active_border" = "rgb(f9bb66)";
         "col.inactive_border" = "rgba(2c4055a5)";
-        #snap.enabled = "true"; # window snap while floating
       };
       decoration = {
         rounding = "10"; # rounded corner size
@@ -50,6 +60,7 @@
         "$mainMod $shiftMod, F, fullscreen, 0" # make active window fullscreen
         "$mainMod, G, pseudo," # float one branch of tree
         "$mainMod, S, togglesplit," # change direction of tree
+        "$mainMod $shiftMod, P, exec, hyprpicker -ar" # color picker
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
