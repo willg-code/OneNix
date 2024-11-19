@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.hyprpolkitagent
-  ];
+  home.packages = [ pkgs.hyprpolkitagent ];
 
   # Hyprland integration
   wayland.windowManager.hyprland.settings.exec-once = [
