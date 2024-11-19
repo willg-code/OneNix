@@ -12,7 +12,7 @@
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
       modesetting.enable = true; # necessary for wayland
-      # powerManagement.enable = true; # save entire vram to /tmp on suspend
+      powerManagement.enable = true; # save entire vram to /tmp on suspend
       open = true; # open kernel module
     };
   };
