@@ -11,3 +11,4 @@
     pkgs.noto-fonts # everything else
   ];
 }
+
