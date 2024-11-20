@@ -22,6 +22,18 @@ user:
   modules.homes.zen-browser.enable = true;
   modules.homes.zsh.enable = true;
 
+  # Colors
+  modules.homes.colors = {
+    primary = "09849B";
+    primaryHighlight = "5CC1A1";
+    primaryLowlight = "023354";
+    secondary = "429346";
+    secondaryHighlight = "55B16B";
+    secondaryLowlight = "123C2F";
+    neutralLight = "D6E1DF";
+    neutralDark = "020F1B";
+  };
+
   # Other
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
@@ -43,8 +55,6 @@ user:
   # Configure user git identity
   programs.git.userEmail = user.email;
   programs.git.userName = user.name;
-
-  # Colors
 
   home.stateVersion = "24.05"; # Required for backwards compat during updates
 }

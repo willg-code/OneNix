@@ -2,7 +2,7 @@
 
 let
   moduleName = "colors";
-  cfg = config.modules.${moduleName};
+  cfg = config.modules.homes.${moduleName};
 in
 {
   options.modules.${moduleName} =
@@ -16,6 +16,8 @@ in
       secondary = lib.mkOption { default = null; inherit type; };
       secondaryHighlight = lib.mkOption { default = null; inherit type; };
       secondaryLowlight = lib.mkOption { default = null; inherit type; };
+      neutralLight = lib.mkOption { default = null; inherit type; };
+      neutralDark = lib.mkOption { default = null; inherit type; };
     };
 
   config = {

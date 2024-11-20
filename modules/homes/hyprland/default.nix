@@ -3,6 +3,7 @@
 let
   moduleName = "hyprland";
   cfg = config.modules.homes.${moduleName};
+  colors = config.modules.homes.colors;
 in
 {
   options.modules.homes.${moduleName} = {
@@ -35,10 +36,10 @@ in
         monitor = ",preferred,auto,auto"; # monitor config that generally works
         general = {
           gaps_in = "5"; # size (in pixels) of gap between the windows
-          gaps_out = "20"; # size (in pixels) of gap on the edge of the screen
+          gaps_out = "5"; # size (in pixels) of gap on the edge of the screen
           border_size = "2"; # size (in pixels) of winsow border
-          "col.active_border" = "rgb(f9bb66)";
-          "col.inactive_border" = "rgba(2c4055a5)";
+          "col.active_border" = "rgba(${colors.primary}ff) rgba(${colors.primary}88)";
+          "col.inactive_border" = "rgba(${colors.neutralDark}a5)";
         };
         decoration = {
           rounding = "10"; # rounded corner size
