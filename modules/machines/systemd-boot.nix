@@ -3,11 +3,11 @@
 { config, lib, ... }:
 
 let
-  name = "systemd-boot";
-  cfg = config.modules.machines.name;
+  moduleName = "systemd-boot";
+  cfg = config.modules.machines.${moduleName};
 in
 {
-  options.modules.machines.${name} = {
+  options.modules.machines.${moduleName} = {
     enable = lib.mkEnableOption name;
   };
 
