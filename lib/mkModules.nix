@@ -17,7 +17,7 @@ let
     (lib.attrNames
       (lib.filterAttrs
         (name: type: name != "default.nix")
-        (lib.readDir path)));
+        (builtins.readDir path)));
 
   # append the path to the name of everything in the directory
   # so that imports can read it properly
