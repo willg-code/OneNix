@@ -67,7 +67,7 @@ in
           disable_splash_rendering = "true"; # disable splash text
           disable_autoreload = "true"; # disable script reload, not needed bc nixos
           focus_on_activate = "true"; # apps can request focus
-          vrr = "2"; # use variable refresh rate when fullscreen
+          vrr = "2"; # use variable refresh rate (if available) when fullscreen
         };
         binds.scroll_event_delay = "200"; # scroll delay for keybinds 300->200
 
