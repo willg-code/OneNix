@@ -118,8 +118,8 @@ in
           "$mainMod, mouse_up, workspace, e+1"
 
           # Move a window through workspaces with mainmod + shiftMod + scroll
-          "$mainMod $shiftMod, mouse_down, movetoworkspace, e-1"
-          "$mainMod $shiftMod, mouse_up, movetoworkspace, e+1"
+          "$mainMod $shiftMod, mouse_down, movetoworkspace, -1"
+          "$mainMod $shiftMod, mouse_up, movetoworkspace, +1"
         ];
 
 
