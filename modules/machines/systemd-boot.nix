@@ -1,6 +1,6 @@
 # Systemd boot loader and plymouth splash screen
 # DOCS: https://nixos.wiki/wiki/Grub
-{ ... }:
+{ config, lib, ... }:
 
 let
   name = "systemd-boot";
