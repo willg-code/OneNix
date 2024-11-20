@@ -38,8 +38,8 @@ in
           gaps_in = "5"; # size (in pixels) of gap between the windows
           gaps_out = "5"; # size (in pixels) of gap on the edge of the screen
           border_size = "2"; # size (in pixels) of winsow border
-          "col.active_border" = "rgba(${colors.primary}ff) rgba(${colors.primary}88)";
-          "col.inactive_border" = "rgba(${colors.neutralDark}a5)";
+          "col.active_border" = "rgba(${colors.primaryHighlight}FF) rgba(${colors.primaryHighlight}88)";
+          "col.inactive_border" = "rgba(${colors.neutralDark}A5)";
         };
         decoration = {
           rounding = "10"; # rounded corner size
