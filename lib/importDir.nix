@@ -50,14 +50,14 @@ let
   # files/directories in the directory 
   # (except for default.nix)
   contents =
-    (builtins.attrNames
+    (lib.attrNames
       (lib.filterAttrs
         (name: type: name != "default.nix")
-        (builtins.readDir path)));
+        (lib.readDir path)));
   # set each name equal to 
   # its imported path
   attributes =
-    (builtins.map
+    (lib.map
       (content:
         {
           name = formatName content;
@@ -66,4 +66,4 @@ let
       contents);
 in
 # Finally, turn all of the attribute pieces into a set
-builtins.listToAttrs attributes
+lib.listToAttrs attributes

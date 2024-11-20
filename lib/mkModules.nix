@@ -14,14 +14,14 @@ let
   # get the names of all of the files/directories in the directory 
   # (except for default.nix)
   contents =
-    (builtins.attrNames
+    (lib.attrNames
       (lib.filterAttrs
         (name: type: name != "default.nix")
-        (builtins.readDir path)));
+        (lib.readDir path)));
 
   # append the path to the name of everything in the directory
   # so that imports can read it properly
-  files = (builtins.map (lib.path.append path) contents);
+  files = (lib.map (lib.path.append path) contents);
 in
 {
   imports = files;

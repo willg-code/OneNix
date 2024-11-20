@@ -34,7 +34,7 @@ let
 in
 
 builds:
-builtins.mapAttrs
+lib.mapAttrs
   (hostname: { machineConfig, users, optimize-store ? true }:
   let
     specialArgs = { inherit inputs hostname; };
@@ -51,7 +51,7 @@ builtins.mapAttrs
       {
         nixpkgs.overlays = overlays;
         nix = {
-          registry = builtins.mapAttrs (_: flake: { inherit flake; }) inputs; # Use the system flake registry, map all inputs
+          registry = lib.mapAttrs (_: flake: { inherit flake; }) inputs; # Use the system flake registry, map all inputs
           nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs; # Update nix path to refer to the system registry for legacy compatability
           channel.enable = false;
           settings = {
@@ -71,9 +71,9 @@ builtins.mapAttrs
       }
     ] ++
     # User configurations.
-    (builtins.concatLists
-      (builtins.attrValues
-        (builtins.mapAttrs
+    (lib.concatLists
+      (lib.attrValues
+        (lib.mapAttrs
           (username: { user, home ? null }:
             let
               # An object to pass to the home manager modules
@@ -85,7 +85,7 @@ builtins.mapAttrs
             in
             [ (user.config username) ] ++ # import the user config, and...
               # Check if a home config is provided (it might not be for system users)
-              lib.optionals (!builtins.isNull home) [
+              lib.optionals (!lib.isNull home) [
                 # User specific global config
                 {
                   home-manager.users.${username} = {

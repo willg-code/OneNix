@@ -29,7 +29,7 @@ user:
 
   wayland.windowManager.hyprland.settings.exec-once = [
     # invoke wallpaper switcher script
-    (builtins.concatStringsSep " "
+    (lib.concatStringsSep " "
       [
         ./scripts/swww.sh
         ./assets/morning.jpg
