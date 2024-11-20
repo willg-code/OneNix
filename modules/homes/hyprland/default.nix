@@ -50,7 +50,7 @@ in
           dim_special = "0.1"; # how much to darken screen during special workspace
           blur = {
             passes = "3"; # smoother blur
-            popups_ignorealphha = "0.5"; # don't blur any window below this alpha
+            popups_ignorealpha = "0.5"; # don't blur any window below this alpha
           };
           shadow = {
             range = "5";
