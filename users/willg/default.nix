@@ -2,7 +2,7 @@
 rec {
   config =
     username:
-    { config, lib, modules, ... }:
+    { config, lib, ... }:
     {
       users.users.${username} = {
         isNormalUser = true; # set group to users and creates a home at /home/<username>

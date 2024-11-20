@@ -1,4 +1,4 @@
-{ inputs, hostname, modules, ... }:
+{ hostname, ... }:
 
 {
   imports = [
