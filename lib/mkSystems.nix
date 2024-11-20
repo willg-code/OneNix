@@ -42,8 +42,7 @@ lib.mapAttrs
   lib.nixosSystem {
     inherit lib specialArgs;
     modules = [
-      modules.machines # local machine modules
-      modules.users # local user modules
+      modules # local modules
       home-manager
       sops-nix
       machineConfig
@@ -94,12 +93,12 @@ lib.mapAttrs
                     home.homeDirectory = "/home/${username}"; # indicate which directory contains the home
                   };
                 }
-                # Needs to be separate because it might be a module
+                # Need to be separate because they are modules
                 {
-                  home-manager.users.${username} = (home identity);
+                  home-manager.users.${username} = modules; # local modules for HM
                 }
                 {
-                  home-manager.users.${username} = modules.homes; # local home modules
+                  home-manager.users.${username} = (home identity); # user config
                 }
               ]
           )
