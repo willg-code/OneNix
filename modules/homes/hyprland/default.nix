@@ -42,7 +42,7 @@ in
           "col.inactive_border" = "rgba(${colors.neutralDark}A5)";
         };
         decoration = {
-          rounding = "10"; # rounded corner size
+          rounding = "8"; # rounded corner size
           inactive_opacity = "0.9"; # inactive window opacity
           dim_inactive = "true"; # darken the inactive windows
           dim_strength = "0.2"; # how much to darken inactives
