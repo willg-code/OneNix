@@ -7,15 +7,15 @@ in
 {
   options.modules.${moduleName} =
     let
-      type = (lib.types.nullOr lib.types.uniq lib.types.str);
+      type = (lib.types.nullOr (lib.types.uniq lib.types.str));
     in
     {
-      primary = lib.mkOption { inherit type; };
-      primaryHighlight = lib.mkOption { inherit type; };
-      primaryLowlight = lib.mkOption { inherit type; };
-      secondary = lib.mkOption { inherit type; };
-      secondaryHighlight = lib.mkOption { inherit type; };
-      secondaryLowlight = lib.mkOption { inherit type; };
+      primary = lib.mkOption { default = null; inherit type; };
+      primaryHighlight = lib.mkOption { default = null; inherit type; };
+      primaryLowlight = lib.mkOption { default = null; inherit type; };
+      secondary = lib.mkOption { default = null; inherit type; };
+      secondaryHighlight = lib.mkOption { default = null; inherit type; };
+      secondaryLowlight = lib.mkOption { default = null; inherit type; };
     };
 
   config = {
