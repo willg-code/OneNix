@@ -1,5 +1,8 @@
-{ ... }:
+{ config, ... }:
 
+let
+  colors = config.modules.homes.colors;
+in
 {
   wayland.windowManager.hyprland.settings.general = {
     gaps_in = "5"; # size (in pixels) of gap between the windows
