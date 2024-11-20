@@ -58,6 +58,12 @@ in
           };
         };
         input.tablet.output = "current"; # keep tablet on current monitor
+        group = {
+          "col.border_active" = "rgba(${colors.secondaryHighlight}FF)";
+          "col.border_inactive" = "rgba(${colors.secondaryLowlight}A5)";
+          "col.border_locked_active" = "rgba(${colors.neutralLight}FF)";
+          "col.border_locked_inactive" = "rgba(${colors.neutralDark}A5)";
+        };
         dwindle = {
           pseudotile = "true"; # enable mid-tree window floating (pseudo)
           preserve_split = "true"; # 
