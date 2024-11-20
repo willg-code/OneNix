@@ -25,32 +25,35 @@
 # - Each user has a home, configured independently of the user itself, so homes can be swapped around at-will.
 
 ### ARGS ###
-lib: # Necessary for some behavior
-{ inputs, overlays, modules }: # Flake inputs, nixpkgs overlays, and custom modules
+lib:
+{ inputs, overlays, modules }:
 
 let
-  home-manager = inputs.home-manager.nixosModules.home-manager; # home manager module
-  sops-nix = inputs.sops-nix.nixosModules.sops; # sops nix module
+  home-manager = inputs.home-manager.nixosModules.home-manager;
+  sops-nix = inputs.sops-nix.nixosModules.sops;
 in
-builds: # input object, see DESC
-builtins.mapAttrs # process each config
+
+builds:
+builtins.mapAttrs
   (hostname: { machineConfig, users, optimize-store ? true }:
   let
-    specialArgs = { inherit inputs hostname modules; }; # special arguments to be passed into the modules
+    specialArgs = { inherit inputs hostname; };
   in
   lib.nixosSystem {
-    inherit specialArgs; # pass special args to modules
+    inherit lib specialArgs;
     modules = [
-      home-manager # import home manager
-      sops-nix # import sops-nix
-      machineConfig # apply the machine configuration.
+      modules.machines # local machine modules
+      modules.users # local user modules
+      home-manager
+      sops-nix
+      machineConfig
       # Global Configuration
       {
-        nixpkgs.overlays = overlays; # Apply overlays
+        nixpkgs.overlays = overlays;
         nix = {
           registry = builtins.mapAttrs (_: flake: { inherit flake; }) inputs; # Use the system flake registry, map all inputs
           nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs; # Update nix path to refer to the system registry for legacy compatability
-          channel.enable = false; # Disable channels
+          channel.enable = false;
           settings = {
             experimental-features = [ "nix-command" "flakes" ]; # Enable flakes
             flake-registry = ""; # Disable global flake registry
@@ -64,7 +67,7 @@ builtins.mapAttrs # process each config
         # Global HM Config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = specialArgs; # pass special args to home manager modules
+        home-manager.extraSpecialArgs = specialArgs;
       }
     ] ++
     # User configurations.
@@ -74,7 +77,6 @@ builtins.mapAttrs # process each config
           (username: { user, home ? null }:
             let
               # An object to pass to the home manager modules
-              # to paramaterize who the config is for
               identity = {
                 inherit username;
                 name = user.name;
@@ -92,16 +94,18 @@ builtins.mapAttrs # process each config
                     home.homeDirectory = "/home/${username}"; # indicate which directory contains the home
                   };
                 }
-                # Needs to be separate because it might be a module 
-                # (thus must be processed before being merged)
+                # Needs to be separate because it might be a module
                 {
                   home-manager.users.${username} = (home identity);
                 }
+                {
+                  home-manager.users.${username} = modules.homes; # local home modules
+                }
               ]
           )
-          users # map inputted user objects
+          users
         )
       )
     );
   })
-  builds # map inputted build objects
+  builds

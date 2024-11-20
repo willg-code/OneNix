@@ -1,12 +1,22 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  moduleName = "swww";
+  cfg = config.modules.homes.${moduleName};
+in
 {
-  home.packages = [
-    pkgs.swww # wallpaper manager
-  ];
+  options.modules.homes.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
+  };
 
-  # Hyprland integration
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "swww-daemon"
-  ];
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.swww # wallpaper manager
+    ];
+
+    # Hyprland integration
+    wayland.windowManager.hyprland.settings.exec-once = [
+      "swww-daemon"
+    ];
+  };
 }

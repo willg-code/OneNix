@@ -1,13 +1,23 @@
 # Uses wayshot and satty to capture/annotate a wayland screen grab
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  moduleName = "screenshot";
+  cfg = config.modules.homes.${moduleName};
+in
 {
-  home.packages = [
-    pkgs.satty # screenshot annotator
-    pkgs.wayshot # screenshot tool
-  ];
+  options.modules.homes.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
+  };
 
-  wayland.windowManager.hyprland.settings.bind = [
-    "$mainMod, P, exec, wayshot --stdout | satty -f -"
-  ];
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.satty # screenshot annotator
+      pkgs.wayshot # screenshot tool
+    ];
+
+    wayland.windowManager.hyprland.settings.bind = [
+      "$mainMod, P, exec, wayshot --stdout | satty -f -"
+    ];
+  };
 }

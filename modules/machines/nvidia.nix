@@ -1,19 +1,27 @@
 # Nvidia compatability settings
 # DOCS: https://nixos.wiki/wiki/Nvidia
-{ config, ... }:
+{ config, lib, ... }:
 
+let
+  moduleName = "nvidia";
+  cfg = config.modules.machines.${moduleName};
+in
 {
-  nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
+  options.modules.machines.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
+  };
 
-  services.xserver.videoDrivers = [ "nvidia" ]; # set driver for compositor
-
-  hardware = {
-    graphics.enable = true; # enable hardeware graphics acceleration
-    nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
-      modesetting.enable = true; # necessary for wayland
-      powerManagement.enable = true; # save entire vram to /tmp on suspend
-      open = true; # open kernel module
+  config = lib.mkIf cfg.enable {
+    nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
+    services.xserver.videoDrivers = [ "nvidia" ]; # set driver for compositor
+    hardware = {
+      graphics.enable = true; # enable hardeware graphics acceleration
+      nvidia = {
+        package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
+        modesetting.enable = true; # necessary for wayland
+        powerManagement.enable = true; # save entire vram to /tmp on suspend
+        open = true; # open kernel module
+      };
     };
   };
 }

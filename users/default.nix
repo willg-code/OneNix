@@ -1,3 +1,3 @@
 lib:
 
-lib.impDir ./.
+lib.importDir ./.

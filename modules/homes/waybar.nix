@@ -1,10 +1,20 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  moduleName = "waybar";
+  cfg = config.modules.homes.${moduleName};
+in
 {
-  programs.waybar.enable = true; # system taskbar
+  options.modules.homes.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
+  };
 
-  # Hyprland integration
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "waybar"
-  ];
+  config = lib.mkIf cfg.enable {
+    programs.waybar.enable = true; # system taskbar
+
+    # Hyprland integration
+    wayland.windowManager.hyprland.settings.exec-once = [
+      "waybar"
+    ];
+  };
 }

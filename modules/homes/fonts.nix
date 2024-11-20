@@ -1,14 +1,24 @@
 # Common font configuration for all systems
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  moduleName = "fonts";
+  cfg = config.modules.homes.${moduleName};
+in
 {
-  fonts.fontconfig = {
-    enable = true; # allow font package discovery from home.packages
+  options.modules.homes.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
   };
 
-  home.packages = [
-    pkgs.nerdfonts # code fonts
-    pkgs.noto-fonts # everything else
-  ];
+  config = lib.mkIf cfg.enable {
+    fonts.fontconfig = {
+      enable = true; # allow font package discovery from home.packages
+    };
+
+    home.packages = [
+      pkgs.nerdfonts # code fonts
+      pkgs.noto-fonts # everything else
+    ];
+  };
 }
 

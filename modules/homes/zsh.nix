@@ -1,16 +1,26 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  moduleName = "zsh";
+  cfg = config.modules.homes.${moduleName};
+in
 {
-  programs.zsh = {
-    enable = true; # shell with plugins
-    autocd = true; # just type the dir name
-    autosuggestion.enable = true; # right arrow to autocomplete
-    oh-my-zsh = {
-      enable = true; # plugin and theme manager
-      plugins = [ "colorize" "colored-man-pages" "ssh" "sudo" ]; # enabled plugins
-    };
+  options.modules.homes.${moduleName} = {
+    enable = lib.mkEnableOption moduleName;
   };
 
-  # Kitty integration
-  programs.kitty.settings.shell = "zsh";
+  config = lib.mkIf cfg.enable {
+    programs.zsh = {
+      enable = true; # shell with plugins
+      autocd = true; # just type the dir name
+      autosuggestion.enable = true; # right arrow to autocomplete
+      oh-my-zsh = {
+        enable = true; # plugin and theme manager
+        plugins = [ "colorize" "colored-man-pages" "ssh" "sudo" ]; # enabled plugins
+      };
+    };
+
+    # Kitty integration
+    programs.kitty.settings.shell = "zsh";
+  };
 }

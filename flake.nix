@@ -6,7 +6,7 @@
   outputs =
     { ... }@inputs:
     let
-      lib = inputs.nixpkgs.lib // (import ./lib inputs.nixpkgs.lib); # join local lib with nixpkgs lib
+      lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # join local lib with nixpkgs lib
       impl = (path: import path lib); # construct a function to import stuff with lib
 
       modules = impl ./modules; # import the modules for the configurations

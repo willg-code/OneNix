@@ -1,12 +1,28 @@
 user:
 
-{ pkgs, modules, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    modules.homes
-  ];
+  # Modules
+  modules.homes.btop.enable = true;
+  modules.homes.fastfetch.enable = true;
+  modules.homes.fonts.enable = true;
+  modules.homes.git.enable = true;
+  modules.homes.hyprland.enable = true;
+  modules.homes.kitty.enable = true;
+  modules.homes.mako.enable = true;
+  modules.homes.nh.enable = true;
+  modules.homes.phinger-cursor-theme.enable = true;
+  modules.homes.rofi.enable = true;
+  modules.homes.screenshot.enable = true;
+  modules.homes.starship.enable = true;
+  modules.homes.swww.enable = true;
+  modules.homes.vscode.enable = true;
+  modules.homes.waybar.enable = true;
+  modules.homes.zen-browser.enable = true;
+  modules.homes.zsh.enable = true;
 
+  # Other
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
   ];
