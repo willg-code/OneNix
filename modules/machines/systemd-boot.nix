@@ -8,7 +8,7 @@ let
 in
 {
   options.modules.machines.${moduleName} = {
-    enable = lib.mkEnableOption name;
+    enable = lib.mkEnableOption moduleName;
   };
 
   config = lib.mkIf cfg.enable {
