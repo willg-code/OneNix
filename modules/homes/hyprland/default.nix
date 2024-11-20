@@ -73,8 +73,8 @@ in
           "$mainMod, C, killactive," # exit current window
           "$mainMod, ESC, exit," # exit display manager
           "$mainMod, L, exec, loginctl lock-session" # lock
-          "$mainMod, F, togglefloating," # make active window float
-          "$mainMod $shiftMod, F, fullscreen, 0" # make active window fullscreen
+          "$mainMod, F, fullscreen, 0" # make active window float
+          "$mainMod $shiftMod, F, togglefloating," # make active window fullscreen
           "$mainMod, G, pseudo," # float one branch of tree
           "$mainMod, S, togglesplit," # change direction of tree
           "$mainMod $shiftMod, P, exec, hyprpicker -ar" # color picker
