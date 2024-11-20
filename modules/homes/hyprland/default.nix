@@ -39,7 +39,7 @@ in
           gaps_out = "5"; # size (in pixels) of gap on the edge of the screen
           border_size = "2"; # size (in pixels) of winsow border
           "col.active_border" = "rgba(${colors.primaryHighlight}FF)";
-          "col.inactive_border" = "rgba(${colors.neutralDark}A5)";
+          "col.inactive_border" = "rgba(${colors.secondaryLowlight}A5)";
           snap.enabled = true;
         };
         decoration = {
@@ -54,7 +54,7 @@ in
           };
           shadow = {
             range = "5";
-            render_power = "2";
+            color = "rgba(${colors.neutralDark}FF)";
           };
         };
         dwindle = {
