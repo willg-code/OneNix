@@ -47,17 +47,20 @@ in
           inactive_opacity = "0.9"; # inactive window opacity
           dim_inactive = "true"; # darken the inactive windows
           dim_strength = "0.1"; # how much to darken inactives
+          dim_special = "0.1"; # how much to darken screen during special workspace
           blur = {
-            xray = "false"; # floating windows ignore what's underneath
-            size = "12"; # how large the blur is
+            passes = "3"; # smoother blur
+            popups_ignorealphha = "0.5"; # don't blur any window below this alpha
+          };
+          shadow = {
+            range = "5";
+            render_power = "2";
           };
         };
-
         dwindle = {
           pseudotile = "true"; # enable mid-tree window floating (pseudo)
           preserve_split = "true";
         };
-
         misc = {
           disable_hyprland_logo = "true"; # disable default hyprland backgrounds
           disable_splash_rendering = "true"; # disable splash text
