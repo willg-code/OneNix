@@ -39,8 +39,8 @@ in
           gaps_out = "5"; # size (in pixels) of gap on the edge of the screen
           border_size = "2"; # size (in pixels) of winsow border
           "col.active_border" = "rgba(${colors.primaryHighlight}FF)";
-          "col.inactive_border" = "rgba(${colors.secondaryLowlight}A5)";
-          snap.enabled = true;
+          "col.inactive_border" = "rgba(${colors.primaryLowlight}A5)";
+          snap.enabled = true; # snap floating windows to edges
         };
         decoration = {
           rounding = "8"; # rounded corner size
@@ -53,21 +53,21 @@ in
             popups_ignorealpha = "0.5"; # don't blur any window below this alpha
           };
           shadow = {
-            range = "5";
-            color = "rgba(${colors.neutralDark}FF)";
+            range = "5"; # 5px shadow
+            color = "rgba(${colors.neutralDark}FF)"; # set to same color as
           };
         };
         input.tablet.output = "current"; # keep tablet on current monitor
         dwindle = {
           pseudotile = "true"; # enable mid-tree window floating (pseudo)
-          preserve_split = "true";
+          preserve_split = "true"; # 
         };
         misc = {
           disable_hyprland_logo = "true"; # disable default hyprland backgrounds
           disable_splash_rendering = "true"; # disable splash text
           disable_autoreload = "true"; # disable script reload, not needed bc nixos
           focus_on_activate = "true"; # apps can request focus
-          vrr = "2";
+          vrr = "2"; # use variable refresh rate when fullscreen
         };
         binds.scroll_event_delay = "200"; # scroll delay for keybinds 300->200
 
