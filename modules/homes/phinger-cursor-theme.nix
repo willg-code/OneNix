@@ -16,7 +16,7 @@ in
     ];
 
     # Hyprland integration
-    wayland.windowManager.hyprland.settings.exec-once = [
+    wayland.windowManager.hyprland.settings.exec = [
       "hyprctl setcursor phinger-cursors-light 24"
     ];
 
