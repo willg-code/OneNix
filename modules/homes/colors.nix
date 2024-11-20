@@ -5,7 +5,7 @@ let
   cfg = config.modules.homes.${moduleName};
 in
 {
-  options.modules.${moduleName} =
+  options.modules.homes.${moduleName} =
     let
       type = (lib.types.nullOr (lib.types.uniq lib.types.str));
     in
