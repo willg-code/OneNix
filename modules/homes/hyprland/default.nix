@@ -40,10 +40,7 @@ in
           border_size = "2"; # size (in pixels) of winsow border
           "col.active_border" = "rgba(${colors.primaryHighlight}FF)";
           "col.inactive_border" = "rgba(${colors.neutralDark}A5)";
-          snap = {
-            enabled = true;
-            border_overlap = true;
-          };
+          snap.enabled = true;
         };
         decoration = {
           rounding = "8"; # rounded corner size
