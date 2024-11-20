@@ -85,7 +85,7 @@ lib.mapAttrs
             in
             [ (user.config username) ] ++ # import the user config, and...
               # Check if a home config is provided (it might not be for system users)
-              lib.optionals (!lib.isNull home) [
+              lib.optionals (home != null) [
                 # User specific global config
                 {
                   home-manager.users.${username} = {
