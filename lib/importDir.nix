@@ -53,7 +53,7 @@ let
     (lib.attrNames
       (lib.filterAttrs
         (name: type: name != "default.nix")
-        (lib.readDir path)));
+        (builtins.readDir path)));
   # set each name equal to 
   # its imported path
   attributes =
