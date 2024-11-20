@@ -64,10 +64,7 @@ in
           "col.border_locked_active" = "rgba(${colors.neutralLight}FF)";
           "col.border_locked_inactive" = "rgba(${colors.neutralDark}A5)";
         };
-        dwindle = {
-          pseudotile = "true"; # enable mid-tree window floating (pseudo)
-          preserve_split = "true"; # 
-        };
+        dwindle.pseudotile = "true"; # enable mid-tree window floating (pseudo)
         misc = {
           disable_hyprland_logo = "true"; # disable default hyprland backgrounds
           disable_splash_rendering = "true"; # disable splash text
