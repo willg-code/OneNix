@@ -45,9 +45,9 @@ in
           rounding = "8"; # rounded corner size
           inactive_opacity = "0.9"; # inactive window opacity
           dim_inactive = "true"; # darken the inactive windows
-          dim_strength = "0.2"; # how much to darken inactives
+          dim_strength = "0.1"; # how much to darken inactives
           blur = {
-            xray = "true"; # floating windows ignore what's underneath
+            xray = "false"; # floating windows ignore what's underneath
             size = "12"; # how large the blur is
           };
         };
@@ -109,13 +109,17 @@ in
           "$mainMod $shiftMod, 9, movetoworkspace, 9"
           "$mainMod $shiftMod, 0, movetoworkspace, 10"
 
-          # Example special workspace (scratchpad)
+          # Special workspace (overlays current)
           "$mainMod, X, togglespecialworkspace, magic"
           "$mainMod $shiftMod, X, movetoworkspace, special:magic"
 
           # Scroll through existing workspaces with mainMod + scroll
           "$mainMod, mouse_down, workspace, e-1"
           "$mainMod, mouse_up, workspace, e+1"
+
+          # Move a window through workspaces with mainmod + shiftMod + scroll
+          "$mainMod $shiftMod, mouse_down, movetoworkspace, e-1"
+          "$mainMod $shiftMod, mouse_up, movetoworkspace, e+1"
         ];
 
 
