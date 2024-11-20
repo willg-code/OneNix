@@ -1,6 +1,6 @@
 user:
 
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Modules
