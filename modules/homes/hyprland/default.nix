@@ -57,6 +57,7 @@ in
             color = "rgba(${colors.neutralDark}FF)";
           };
         };
+        input.tablet.output = "current"; # keep tablet on current monitor
         dwindle = {
           pseudotile = "true"; # enable mid-tree window floating (pseudo)
           preserve_split = "true";
@@ -66,7 +67,9 @@ in
           disable_splash_rendering = "true"; # disable splash text
           disable_autoreload = "true"; # disable script reload, not needed bc nixos
           focus_on_activate = "true"; # apps can request focus
+          vrr = "2";
         };
+        binds.scroll_event_delay = "200"; # scroll delay for keybinds 300->200
 
         # KEYBINDS #
         "$mainMod" = "SUPER";
