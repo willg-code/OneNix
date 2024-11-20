@@ -13,6 +13,7 @@ in
   imports = [
     ./hypridle.nix
     ./hyprlock.nix
+    ./monitors.nix
   ];
 
   config = lib.mkIf cfg.enable {
@@ -33,7 +34,6 @@ in
           "hypridle" # start idle daemon
           "systemctl --user start hyprpolkitagent" # start polkit daemon
         ];
-        monitor = ",preferred,auto,auto"; # monitor config that generally works
         general = {
           gaps_in = "5"; # size (in pixels) of gap between the windows
           gaps_out = "5"; # size (in pixels) of gap on the edge of the screen
