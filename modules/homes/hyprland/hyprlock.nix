@@ -10,7 +10,7 @@ in
     settings = {
       general =
         {
-          grace = "3";
+          grace = "3"; # seconds before lock actually engages
         };
       background = [
         {
@@ -24,15 +24,13 @@ in
         # Input Box
         {
           monitor = ""; # all monitors
-          size = "250, 60";
+          size = "300, 60";
           outline_thickness = "2";
-          dots_size = "0.2"; # Scale of input-field height, 0.2 - 0.8
-          dots_spacing = "0.35"; # Scale of dots' absolute size, 0.0 - 1.0
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(0, 0, 0, 0.2)";
-          font_color = "rgb(242, 243, 244)";
-          fade_on_empty = "false"; # don't hide the field when it's empty
-          check_color = "rgb(204, 136, 34)"; # color while validating password
+          dots_size = "0.1"; # Scale of input-field height, 0.2 - 0.8
+          dots_spacing = "0.25"; # Scale of dots' absolute size, 0.0 - 1.0
+          outer_color = "rgba(${colors.neutralDark}00)";
+          inner_color = "rgba(${colors.neutralDark}A5)";
+          font_color = "rgb(${colors.neutralLight})";
           position = "0, -200"; # offset from center of screen;
         }
       ];
