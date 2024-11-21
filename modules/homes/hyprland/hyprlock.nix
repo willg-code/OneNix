@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
