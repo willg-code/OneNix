@@ -7,6 +7,7 @@ in
 {
   options.modules.homes.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
+    lockBGPath = lib.mkOption { default = null; type = (lib.types.nullOr (lib.types.uniq lib.types.path)); };
   };
 
   imports = [

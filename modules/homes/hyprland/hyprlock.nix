@@ -1,5 +1,9 @@
 { ... }:
 
+let
+  bgPath = config.modules.homes.hyprland.lockBGPath;
+  color = config.modules.homes.colors.primary;
+in
 {
   programs.hyprlock = {
     enable = true; # hyprland lock screen
@@ -10,8 +14,9 @@
         };
       background = [
         {
+          inherit color;
           monitor = ""; # active monitor
-          path = "screenshot"; # use screenshot of desktop
+          path = if bgPath != null then bgPath else ""; # use screenshot of desktop
           blur_passes = "3"; # smooth blur
         }
       ];
