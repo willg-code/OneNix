@@ -11,9 +11,8 @@
       background = [
         {
           monitor = ""; # active monitor
-          blur_passes = "3"; # smooth blur
-          brightness = "0.9"; # dim the background
           path = "screenshot"; # use screenshot of desktop
+          blur_passes = "3"; # smooth blur
         }
       ];
       label = [
