@@ -31,6 +31,7 @@ in
           outer_color = "rgba(${colors.neutralDark}00)";
           inner_color = "rgba(${colors.neutralDark}A5)";
           font_color = "rgb(${colors.neutralLight})";
+          font_family = "Noto Sans";
           position = "0, -200"; # offset from center of screen;
           halign = "center";
           valign = "center";
@@ -43,6 +44,7 @@ in
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"''; # get the date
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
+          font_family = "Noto Sans";
           position = "0, 300"; # offset from center of screen
           halign = "center";
           valign = "center";
@@ -52,6 +54,7 @@ in
           text = "$TIME"; # time provided by hyprlock
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "95";
+          font_family = "Noto Sans";
           position = "0, 200"; # offset from center of screen
           halign = "center";
           valign = "center";
@@ -62,6 +65,7 @@ in
           text = "Hello $DESC"; # description provided by user
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
+          font_family = "Noto Sans";
           position = "0, -150"; # offset from center of screen
           halign = "center";
           valign = "center";
