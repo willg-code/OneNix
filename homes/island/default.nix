@@ -8,7 +8,10 @@ user:
   modules.homes.fastfetch.enable = true;
   modules.homes.fonts.enable = true;
   modules.homes.git.enable = true;
-  modules.homes.hyprland.enable = true;
+  modules.homes.hyprland = {
+    enable = true;
+    logoBGPath = ./assets/night.jpg;
+  };
   modules.homes.kitty.enable = true;
   modules.homes.mako.enable = true;
   modules.homes.nh.enable = true;
