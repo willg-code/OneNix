@@ -11,8 +11,8 @@
       background = [
         {
           monitor = "";
-          blur_passes = "2";
-          brightness = "0.5";
+          blur_passes = "3";
+          brightness = "0.9";
         }
       ];
       label = [
