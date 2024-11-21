@@ -2,7 +2,7 @@
 
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
-  color = config.modules.homes.colors.primary;
+  color = config.modules.homes.colors.neutralDark;
 in
 {
   programs.hyprlock = {
@@ -16,7 +16,7 @@ in
         {
           monitor = ""; # active monitor
           path = if bgPath != null then bgPath else ""; # use screenshot of desktop
-          color = "rgba(${color}A5)"; # fallback color for no background
+          color = "rgba(${color}FF)"; # fallback color for no background
           blur_passes = "3"; # smooth blur
         }
       ];
