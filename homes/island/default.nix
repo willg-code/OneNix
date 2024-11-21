@@ -46,7 +46,7 @@ user:
     # invoke wallpaper switcher script
     (lib.concatStringsSep " "
       [
-        (import ./scripts/swww.sh pkgs)
+        (import ./scripts/swww.nix pkgs)
         ./assets/morning.jpg
         ./assets/day.jpg
         ./assets/evening.jpg
