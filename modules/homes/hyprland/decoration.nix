@@ -9,10 +9,7 @@ in
     dim_inactive = "true"; # darken the inactive windows
     dim_strength = "0.1"; # how much to darken inactives
     dim_special = "0.1"; # how much to darken screen during special workspace
-    blur = {
-      passes = "3"; # smoother blur
-      popups_ignorealpha = "0.5"; # don't blur any window below this alpha
-    };
+    blur.passes = "3"; # smoother blur
     shadow = {
       range = "5"; # 5px shadow
       color = "rgba(${colors.neutralDark}FF)"; # set to same color as
