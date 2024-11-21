@@ -6,7 +6,6 @@ in
 {
   wayland.windowManager.hyprland.settings.decoration = {
     rounding = "8"; # rounded corner size
-    inactive_opacity = "0.9"; # inactive window opacity
     dim_inactive = "true"; # darken the inactive windows
     dim_strength = "0.1"; # how much to darken inactives
     dim_special = "0.1"; # how much to darken screen during special workspace
