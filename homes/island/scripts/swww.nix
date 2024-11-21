@@ -33,7 +33,7 @@ pkgs.writeShellScript "swww.sh" ''
       fi
 
       # Set the wallpaper using swww
-      swww img "${img}" \
+      swww img "''${img}" \
                   --transition-type fade \
                   --transition-step 1 \
                   --transition-fps 255
