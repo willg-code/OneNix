@@ -14,9 +14,9 @@ in
         };
       background = [
         {
-          inherit color;
           monitor = ""; # active monitor
           path = if bgPath != null then bgPath else ""; # use screenshot of desktop
+          color = "rgba(${color}A5)"; # fallback color for no background
           blur_passes = "3"; # smooth blur
         }
       ];
