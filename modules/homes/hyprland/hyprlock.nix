@@ -2,7 +2,7 @@
 
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
-  color = config.modules.homes.colors.neutralDark;
+  colors = config.modules.homes.colors;
 in
 {
   programs.hyprlock = {
@@ -15,9 +15,25 @@ in
       background = [
         {
           monitor = ""; # active monitor
-          path = if bgPath != null then (lib.toString bgPath) else ""; # use screenshot of desktop
-          color = "rgba(${color}FF)"; # fallback color for no background
+          path = if bgPath != null then (toString bgPath) else ""; # use screenshot of desktop
+          color = "rgba(${colors.neutralDark}FF)"; # fallback color for no background
           blur_passes = "3"; # smooth blur
+        }
+      ];
+      input-field = [
+        # Input Box
+        {
+          monitor = ""; # all monitors
+          size = "250, 60";
+          outline_thickness = "2";
+          dots_size = "0.2"; # Scale of input-field height, 0.2 - 0.8
+          dots_spacing = "0.35"; # Scale of dots' absolute size, 0.0 - 1.0
+          outer_color = "rgba(0, 0, 0, 0)";
+          inner_color = "rgba(0, 0, 0, 0.2)";
+          font_color = "rgb(242, 243, 244)";
+          fade_on_empty = "false"; # don't hide the field when it's empty
+          check_color = "rgb(204, 136, 34)"; # color while validating password
+          position = "0, -200"; # offset from center of screen;
         }
       ];
       label = [
@@ -43,22 +59,6 @@ in
           color = "rgba(242, 243, 244, 0.8)";
           font_size = "22";
           position = "0, -150"; # offset from center of screen
-        }
-      ];
-      input-field = [
-        # Input Box
-        {
-          monitor = ""; # all monitors
-          size = "250, 60";
-          outline_thickness = "2";
-          dots_size = "0.2"; # Scale of input-field height, 0.2 - 0.8
-          dots_spacing = "0.35"; # Scale of dots' absolute size, 0.0 - 1.0
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(0, 0, 0, 0.2)";
-          font_color = "rgb(242, 243, 244)";
-          fade_on_empty = "false"; # don't hide the field when it's empty
-          check_color = "rgb(204, 136, 34)"; # color while validating password
-          position = "0, -200"; # offset from center of screen;
         }
       ];
     };
