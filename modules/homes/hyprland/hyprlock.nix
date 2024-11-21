@@ -11,6 +11,7 @@ in
       general =
         {
           grace = "3"; # seconds before lock actually engages
+          hide_cursor = true;
         };
       background = [
         {
