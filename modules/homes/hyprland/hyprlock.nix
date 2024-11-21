@@ -31,6 +31,7 @@ in
           outer_color = "rgba(${colors.neutralDark}00)";
           inner_color = "rgba(${colors.neutralDark}A5)";
           font_color = "rgb(${colors.neutralLight})";
+          check_color = "rgba(${colors.neutralLight}40)";
           font_family = "Noto Sans";
           position = "0, -200"; # offset from center of screen;
           halign = "center";
