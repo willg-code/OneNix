@@ -6,7 +6,7 @@
     settings = {
       general =
         {
-          grace = 5;
+          grace = "3";
         };
       background = [
         {
