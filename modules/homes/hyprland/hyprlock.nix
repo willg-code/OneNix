@@ -15,7 +15,7 @@ in
       background = [
         {
           monitor = ""; # active monitor
-          path = if bgPath != null then bgPath else ""; # use screenshot of desktop
+          path = if bgPath != null then (lib.toString bgPath) else ""; # use screenshot of desktop
           color = "rgba(${color}FF)"; # fallback color for no background
           blur_passes = "3"; # smooth blur
         }
