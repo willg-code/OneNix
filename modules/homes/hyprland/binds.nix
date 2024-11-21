@@ -17,6 +17,7 @@
       "$mainMod $shiftMod, F, togglefloating," # make active window fullscreen
       "$mainMod, G, pseudo," # float one branch of tree
       "$mainMod, S, togglesplit," # change direction of tree
+      "$mainMod $shiftMod, S, swapsplit," # swap two branches of tree
       "$mainMod $shiftMod, P, exec, hyprpicker -ar" # color picker
 
       # Move focus with mainMod + arrow keys
