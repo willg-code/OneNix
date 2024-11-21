@@ -10,7 +10,7 @@ user:
   modules.homes.git.enable = true;
   modules.homes.hyprland = {
     enable = true;
-    logoBGPath = ./assets/night.jpg;
+    lockBGPath = ./assets/night.jpg;
   };
   modules.homes.kitty.enable = true;
   modules.homes.mako.enable = true;
