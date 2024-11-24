@@ -54,7 +54,7 @@ in
           rounding = "5"; # negative values mean circle
           reload_time = "1";
           reload_cmd = "${whatsong} --arturl";
-          position = "-150, 45"; # offset from center bottom
+          position = "-160, 45"; # offset from center bottom
           halign = "center";
           valign = "bottom";
         }
