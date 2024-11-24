@@ -39,6 +39,7 @@ user:
 
   # Colors
   modules.home-manager.colors = {
+    enable = true;
     primary = "09849B";
     primaryHighlight = "5CC1A1";
     primaryLowlight = "023354";
