@@ -3,7 +3,8 @@
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
   colors = config.modules.homes.colors;
-  font = "JetBrains Mono Nerd Font Mono ExtraBold";
+  font = "JetBrains Mono Nerd Font Mono";
+  font_bold = "JetBrains Mono Nerd Font Mono ExtraBold";
   whatsong = (import ./scripts/whatsong.nix pkgs);
 in
 {
@@ -79,7 +80,7 @@ in
           text = ''cmd[update:1000] echo "$TIME"''; # time provided by hyprlock
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "95";
-          font_family = font;
+          font_family = font_bold;
           position = "0, 200"; # offset from center of screen
           halign = "center";
           valign = "center";
