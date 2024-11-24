@@ -37,9 +37,11 @@ in
           dots_spacing = "0.25"; # Scale of dots' absolute size, 0.0 - 1.0
           outer_color = "rgba(${colors.neutralDark}00)";
           inner_color = "rgba(${colors.neutralDark}A5)";
-          font_color = "rgb(${colors.neutralLight})";
+          font_color = "rgba(${colors.neutralLight}FF)";
           check_color = "rgba(${colors.neutralLight}40)";
           font_family = font;
+          fade_on_empty = "false";
+          placeholder_text = ''cmd[update:1000] echo $USER'';
           position = "0, -30"; # offset from center of screen;
           halign = "center";
           valign = "center";
