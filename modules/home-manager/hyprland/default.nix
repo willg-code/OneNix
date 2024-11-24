@@ -25,6 +25,13 @@ in
   ];
 
   config = lib.mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = config.modules.home-manager.colors.enable;
+        message = "hyprland is dependent on colors";
+      }
+    ];
+
     # Required dependencies for this module
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland
