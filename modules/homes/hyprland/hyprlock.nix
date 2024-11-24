@@ -40,7 +40,7 @@ in
           font_color = "rgb(${colors.neutralLight})";
           check_color = "rgba(${colors.neutralLight}40)";
           font_family = font;
-          position = "0, -100"; # offset from center of screen;
+          position = "0, -30"; # offset from center of screen;
           halign = "center";
           valign = "center";
         }
@@ -70,7 +70,7 @@ in
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
           font_family = font;
-          position = "0, 300"; # offset from center of screen
+          position = "0, 280"; # offset from center of screen
           halign = "center";
           valign = "center";
         }
@@ -92,7 +92,7 @@ in
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
           font_family = font;
-          position = "0, 0"; # offset from center of screen
+          position = "0, 30"; # offset from center of screen
           halign = "center";
           valign = "center";
         }
