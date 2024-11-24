@@ -52,14 +52,11 @@ in
           path = "";
           size = "60"; # lesser side if not 1:1 ratio
           rounding = "5"; # negative values mean circle
-          border_size = "0";
-          rotate = "0"; # degrees, counter-clockwise
-          reload_time = "2";
+          reload_time = "1";
           reload_cmd = "${whatsong} --arturl";
-          position = "-150, 80";
+          position = "-150, 80"; # offset from center bottom
           halign = "center";
           valign = "bottom";
-          opacity = "0.5";
         }
       ];
       label = [
@@ -67,7 +64,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"''; # get the date
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "22";
           font_family = font;
           position = "0, 280"; # offset from center of screen
@@ -78,7 +75,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$TIME"''; # time provided by hyprlock
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "95";
           font_family = font_bold;
           position = "0, 200"; # offset from center of screen
@@ -89,7 +86,7 @@ in
         {
           monitor = "";
           text = "Hello, $DESC"; # description provided by user
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "22";
           font_family = font;
           position = "0, 30"; # offset from center of screen
@@ -100,7 +97,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --title)"'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "12";
           font_family = font;
           position = "880, 90";
@@ -111,7 +108,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --length) "'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "11";
           font_family = font;
           position = "-730, 70";
@@ -122,7 +119,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --status)"'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "14";
           font_family = font;
           position = "-740, 70";
@@ -133,7 +130,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --source)"'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "10";
           font_family = font;
           position = "-740, 50";
@@ -144,7 +141,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --album)"'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "10";
           font_family = font;
           position = "880, 50";
@@ -155,7 +152,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --artist)"'';
-          color = "rgba(${colors.neutralLight}D5)";
+          color = "rgba(${colors.neutralLight}F0)";
           font_size = "10";
           font_family = font;
           position = "880, 70";
