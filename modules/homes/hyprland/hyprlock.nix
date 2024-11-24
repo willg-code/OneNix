@@ -3,6 +3,8 @@
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
   colors = config.modules.homes.colors;
+  font = "Noto Sans";
+  whatsong = (import ./scripts/whatsong.nix pkgs);
 in
 {
   home.packages = [
@@ -36,7 +38,7 @@ in
           inner_color = "rgba(${colors.neutralDark}A5)";
           font_color = "rgb(${colors.neutralLight})";
           check_color = "rgba(${colors.neutralLight}40)";
-          font_family = "Noto Sans";
+          font_family = font;
           position = "0, -100"; # offset from center of screen;
           halign = "center";
           valign = "center";
@@ -52,7 +54,7 @@ in
           border_size = "0";
           rotate = "0"; # degrees, counter-clockwise
           reload_time = "2";
-          reload_cmd = "~/.config/hypr/bin/playerctlock.sh --arturl";
+          reload_cmd = "${whatsong} --arturl";
           position = "-150, -300";
           halign = "center";
           valign = "center";
@@ -66,7 +68,7 @@ in
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"''; # get the date
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
-          font_family = "Noto Sans";
+          font_family = font;
           position = "0, 300"; # offset from center of screen
           halign = "center";
           valign = "center";
@@ -77,7 +79,7 @@ in
           text = ''cmd[update:1000] echo "$TIME"''; # time provided by hyprlock
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "95";
-          font_family = "Noto Sans";
+          font_family = font;
           position = "0, 200"; # offset from center of screen
           halign = "center";
           valign = "center";
@@ -88,7 +90,7 @@ in
           text = "Hello, $DESC"; # description provided by user
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
-          font_family = "Noto Sans";
+          font_family = font;
           position = "0, 0"; # offset from center of screen
           halign = "center";
           valign = "center";
@@ -96,10 +98,10 @@ in
         # PLAYER TITTLE
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --title)"'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --title)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "12";
-          font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+          font_family = font;
           position = "880, -290";
           halign = "left";
           valign = "center";
@@ -108,10 +110,10 @@ in
         # PLAYER Length
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --length) "'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --length) "'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "11";
-          font_family = "JetBrains Mono Nerd Font Mono";
+          font_family = font;
           position = "-730, -310";
           halign = "right";
           valign = "center";
@@ -120,10 +122,10 @@ in
         # PLAYER STATUS
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --status)"'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --status)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "14";
-          font_family = "JetBrains Mono Nerd Font Mono";
+          font_family = font;
           position = "-740, -290";
           halign = "right";
           valign = "center";
@@ -131,10 +133,10 @@ in
         # PLAYER SOURCE
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --source)"'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --source)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
-          font_family = "JetBrains Mono Nerd Font Mono";
+          font_family = font;
           position = "-740, -330";
           halign = "right";
           valign = "center";
@@ -143,10 +145,10 @@ in
         # PLAYER ALBUM
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --album)"'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --album)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
-          font_family = "JetBrains Mono Nerd Font Mono";
+          font_family = font;
           position = "880, -330";
           halign = "left";
           valign = "center";
@@ -154,10 +156,10 @@ in
         # PLAYER Artist
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --artist)"'';
+          text = ''cmd[update:1000] echo "$(${whatsong} --artist)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
-          font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+          font_family = font;
           position = "880, -310";
           halign = "left";
           valign = "center";
