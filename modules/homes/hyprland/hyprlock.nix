@@ -56,7 +56,7 @@ in
           rounding = "5"; # negative values mean circle
           reload_time = "1";
           reload_cmd = "${whatsong} --arturl";
-          position = "760, 45"; # offset from center bottom
+          position = "750, 45"; # offset from center bottom
           halign = "left";
           valign = "bottom";
         }
@@ -113,7 +113,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "11";
           font_family = font;
-          position = "-770, 70";
+          position = "-750, 70";
           halign = "right";
           valign = "bottom";
         }
@@ -124,7 +124,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "14";
           font_family = font;
-          position = "-770, 70";
+          position = "-750, 70";
           halign = "right";
           valign = "bottom";
         }
@@ -135,7 +135,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "10";
           font_family = font;
-          position = "-770, 50";
+          position = "-750, 50";
           halign = "right";
           valign = "bottom";
         }

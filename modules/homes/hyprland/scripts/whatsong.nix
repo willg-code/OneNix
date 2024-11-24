@@ -35,8 +35,8 @@ pkgs.writeShellScript "whatsong.sh" ''
   	if [ -z "$title" ]; then
   		echo ""
   	else
-  		if [[ ''${#title} -gt 18 ]]; then
-        echo "''${title:0:18}..."
+  		if [[ ''${#title} -gt 21 ]]; then
+        echo "''${title:0:21}..."
     	else
         echo "$title"
     	fi
@@ -58,8 +58,8 @@ pkgs.writeShellScript "whatsong.sh" ''
   	if [ -z "$artist" ]; then
   		echo ""
   	else
-  		if [[ ''${#artist} -gt 18 ]]; then
-        echo "''${artist:0:18}..."
+  		if [[ ''${#artist} -gt 21 ]]; then
+        echo "''${artist:0:21}..."
     	else
         echo "$artist"
     	fi
@@ -87,8 +87,8 @@ pkgs.writeShellScript "whatsong.sh" ''
   --album)
   	album=$(playerctl metadata --format "{{ xesam:album }}" 2>/dev/null)
   	if [[ -n $album ]]; then
-  		if [[ ''${#album} -gt 18 ]]; then
-        echo "''${album:0:18}..."
+  		if [[ ''${#album} -gt 21 ]]; then
+        echo "''${album:0:21}..."
     	else
         echo "$album"
     	fi
