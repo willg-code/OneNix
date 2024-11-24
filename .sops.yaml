@@ -1,7 +1,15 @@
 keys:
-  - &willg = age1uvjuhs4ke5qlef633u3g8mnpwf4mq2n66xksqu9x9jfyrckvspmq4kaly5
-creation-rules:
-  - path-regex: secrets\/[^/]+\.(yaml|json|env|ini|sops)$
+  - &users:
+    - &willg age10c02spktse006k0jgucc7refhe6jl4s8n9ukjqazv7mw6mdc6yas93cjjg
+  - &hosts
+    - &andromeda age19h7rnvk8fdznlz66wcv6lpka4tjramsmsuwhsfs0a4fj3u2epd5q76gurj
+creation_rules:
+  - path_regex: secrets\/.+$
     key_groups:
-        - age:
-            - *willg
+      - age:
+        - *willg
+        - *andromeda
+  - path_regex: secrets\/willg\.yaml$
+    key_groups:
+      - age:
+        - *willg
