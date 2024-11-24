@@ -7,9 +7,15 @@ in
 {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
+    switcher = lib.mkOption { default = null; type = (lib.types.nullOr (lib.types.uniq lib.types.path)); };
   };
 
   config = lib.mkIf cfg.enable {
+    warnings =
+      if (switcher == null)
+      then [ "no wallpaper switcher script has been provided to swww" ]
+      else [ ];
+
     home.packages = [
       pkgs.swww # wallpaper manager
     ];
@@ -17,6 +23,6 @@ in
     # Hyprland integration
     wayland.windowManager.hyprland.settings.exec-once = [
       "swww-daemon"
-    ];
+    ] ++ lib.optionals (switcher != null) [ switcher ];
   };
 }

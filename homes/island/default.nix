@@ -19,7 +19,19 @@ user:
   modules.home-manager.rofi.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.starship.enable = true;
-  modules.home-manager.swww.enable = true;
+  modules.home-manager.swww = {
+    enable = true;
+    switcher =
+      (lib.concatStringsSep " "
+        [
+          (import ./scripts/swww.nix pkgs)
+          ./assets/morning.jpg
+          ./assets/day.jpg
+          ./assets/evening.jpg
+          ./assets/night.jpg
+        ]
+      );
+  };
   modules.home-manager.vscode.enable = true;
   modules.home-manager.waybar.enable = true;
   modules.home-manager.zen-browser.enable = true;
@@ -40,19 +52,6 @@ user:
   # Other
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
-  ];
-
-  wayland.windowManager.hyprland.settings.exec-once = [
-    # invoke wallpaper switcher script
-    (lib.concatStringsSep " "
-      [
-        (import ./scripts/swww.nix pkgs)
-        ./assets/morning.jpg
-        ./assets/day.jpg
-        ./assets/evening.jpg
-        ./assets/night.jpg
-      ]
-    )
   ];
 
   # Configure user git identity
