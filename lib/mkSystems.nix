@@ -42,8 +42,7 @@ lib.mapAttrs
   lib.nixosSystem {
     inherit lib specialArgs;
     modules = [
-      modules.machines # local machine modules
-      modules.users # local user modules
+      modules.nixos # local nixos modules
       home-manager
       sops-nix
       machineConfig
@@ -96,7 +95,7 @@ lib.mapAttrs
                 }
                 # Need to be separate because they are modules
                 {
-                  home-manager.users.${username} = modules.homes; # local modules for HM
+                  home-manager.users.${username} = modules.home-manager; # local modules for HM
                 }
                 {
                   home-manager.users.${username} = (home identity); # user config
