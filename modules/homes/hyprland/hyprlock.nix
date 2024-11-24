@@ -41,7 +41,7 @@ in
           check_color = "rgba(${colors.neutralLight}40)";
           font_family = font;
           fade_on_empty = "false";
-          placeholder_text = ''cmd[update:1000] echo $USER'';
+          placeholder_text = "$USER";
           position = "0, -30"; # offset from center of screen;
           halign = "center";
           valign = "center";
