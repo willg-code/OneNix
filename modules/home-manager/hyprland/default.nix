@@ -28,7 +28,7 @@ in
     assertions = [
       {
         assertion = config.modules.home-manager.colors.enable;
-        message = "hyprland is dependent on colors";
+        message = "hyprland is dependent on colors (colors.enable is not true)";
       }
     ];
 
