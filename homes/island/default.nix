@@ -4,29 +4,29 @@ user:
 
 {
   # Modules
-  modules.homes.btop.enable = true;
-  modules.homes.fastfetch.enable = true;
-  modules.homes.fonts.enable = true;
-  modules.homes.git.enable = true;
-  modules.homes.hyprland = {
+  modules.home-manager.btop.enable = true;
+  modules.home-manager.fastfetch.enable = true;
+  modules.home-manager.fonts.enable = true;
+  modules.home-manager.git.enable = true;
+  modules.home-manager.hyprland = {
     enable = true;
     lockBGPath = ./assets/night.jpg;
   };
-  modules.homes.kitty.enable = true;
-  modules.homes.mako.enable = true;
-  modules.homes.nh.enable = true;
-  modules.homes.phinger-cursor-theme.enable = true;
-  modules.homes.rofi.enable = true;
-  modules.homes.screenshot.enable = true;
-  modules.homes.starship.enable = true;
-  modules.homes.swww.enable = true;
-  modules.homes.vscode.enable = true;
-  modules.homes.waybar.enable = true;
-  modules.homes.zen-browser.enable = true;
-  modules.homes.zsh.enable = true;
+  modules.home-manager.kitty.enable = true;
+  modules.home-manager.mako.enable = true;
+  modules.home-manager.nh.enable = true;
+  modules.home-manager.phinger-cursor-theme.enable = true;
+  modules.home-manager.rofi.enable = true;
+  modules.home-manager.screenshot.enable = true;
+  modules.home-manager.starship.enable = true;
+  modules.home-manager.swww.enable = true;
+  modules.home-manager.vscode.enable = true;
+  modules.home-manager.waybar.enable = true;
+  modules.home-manager.zen-browser.enable = true;
+  modules.home-manager.zsh.enable = true;
 
   # Colors
-  modules.homes.colors = {
+  modules.home-manager.colors = {
     primary = "09849B";
     primaryHighlight = "5CC1A1";
     primaryLowlight = "023354";

@@ -6,16 +6,16 @@
   ];
 
   # Modules
-  modules.machines.bluetooth.enable = true;
-  modules.machines.hyprland.enable = true;
-  modules.machines.networkmanager.enable = true;
-  modules.machines.nvidia.enable = true;
-  modules.machines.pipewire.enable = true;
-  modules.machines.printing.enable = true;
-  modules.machines.sddm.enable = true;
-  modules.machines.sshd.enable = true;
-  modules.machines.steam.enable = true;
-  modules.machines.systemd-boot.enable = true;
+  modules.nixos.bluetooth.enable = true;
+  modules.nixos.hyprland.enable = true;
+  modules.nixos.networkmanager.enable = true;
+  modules.nixos.nvidia.enable = true;
+  modules.nixos.pipewire.enable = true;
+  modules.nixos.printing.enable = true;
+  modules.nixos.sddm.enable = true;
+  modules.nixos.sshd.enable = true;
+  modules.nixos.steam.enable = true;
+  modules.nixos.systemd-boot.enable = true;
 
   # Other
   time.timeZone = "America/Louisville"; # based on location of the machine
