@@ -56,9 +56,9 @@ in
           rotate = "0"; # degrees, counter-clockwise
           reload_time = "2";
           reload_cmd = "${whatsong} --arturl";
-          position = "-150, -300";
+          position = "-150, 80";
           halign = "center";
-          valign = "center";
+          valign = "bottom";
           opacity = "0.5";
         }
       ];
@@ -96,71 +96,71 @@ in
           halign = "center";
           valign = "center";
         }
-        # PLAYER TITTLE
+        # Player Title
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --title)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "12";
           font_family = font;
-          position = "880, -290";
+          position = "880, 90";
           halign = "left";
-          valign = "center";
+          valign = "bottom";
         }
-        # PLAYER Length
+        # Player Length
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --length) "'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "11";
           font_family = font;
-          position = "-730, -310";
+          position = "-730, 70";
           halign = "right";
-          valign = "center";
+          valign = "bottom";
         }
-        # PLAYER STATUS
+        # Player Status
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --status)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "14";
           font_family = font;
-          position = "-740, -290";
+          position = "-740, 70";
           halign = "right";
-          valign = "center";
+          valign = "bottom";
         }
-        # PLAYER SOURCE
+        # Player Source
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --source)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
           font_family = font;
-          position = "-740, -330";
+          position = "-740, 50";
           halign = "right";
-          valign = "center";
+          valign = "bottom";
         }
-        # PLAYER ALBUM
+        # Player Album
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --album)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
           font_family = font;
-          position = "880, -330";
+          position = "880, 50";
           halign = "left";
-          valign = "center";
+          valign = "bottom";
         }
-        # PLAYER Artist
+        # Player Artist
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(${whatsong} --artist)"'';
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "10";
           font_family = font;
-          position = "880, -310";
+          position = "880, 70";
           halign = "left";
-          valign = "center";
+          valign = "bottom";
         }
       ];
     };
