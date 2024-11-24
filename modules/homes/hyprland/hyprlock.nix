@@ -3,7 +3,7 @@
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
   colors = config.modules.homes.colors;
-  font = "Noto Sans";
+  font = "JetBrains Mono Nerd Font Mono ExtraBold";
   whatsong = (import ./scripts/whatsong.nix pkgs);
 in
 {
