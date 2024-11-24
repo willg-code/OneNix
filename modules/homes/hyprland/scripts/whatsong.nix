@@ -41,7 +41,7 @@ pkgs.writeShellScript "whatsong.sh" ''
   --arturl)
   	url=$(get_metadata "mpris:artUrl")
   	if [ -z "$url" ]; then
-  		echo ""
+  		echo "${toString ./nothing.png}"
   	else
   		if [[ "$url" == file://* ]]; then
   			url=''${url#file://}
