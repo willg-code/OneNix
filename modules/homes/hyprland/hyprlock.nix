@@ -1,10 +1,13 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   bgPath = config.modules.homes.hyprland.lockBGPath;
   colors = config.modules.homes.colors;
 in
 {
+  home.packages = [
+    pkgs.playerctl # required for scripts
+  ];
   programs.hyprlock = {
     enable = true; # hyprland lock screen
     settings = {
@@ -39,8 +42,25 @@ in
           valign = "center";
         }
       ];
+      image = [
+        # Music
+        {
+          monitor = "";
+          path = "";
+          size = "60"; # lesser side if not 1:1 ratio
+          rounding = "5"; # negative values mean circle
+          border_size = "0";
+          rotate = "0"; # degrees, counter-clockwise
+          reload_time = "2";
+          reload_cmd = "~/.config/hypr/bin/playerctlock.sh --arturl";
+          position = "-150, -300";
+          halign = "center";
+          valign = "center";
+          opacity = "0.5";
+        }
+      ];
       label = [
-        # Time
+        # Date
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"''; # get the date
@@ -51,9 +71,10 @@ in
           halign = "center";
           valign = "center";
         }
+        # Time
         {
           monitor = "";
-          text = "$TIME"; # time provided by hyprlock
+          text = ''cmd[update:1000] echo "$TIME"''; # time provided by hyprlock
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "95";
           font_family = "Noto Sans";
@@ -64,12 +85,81 @@ in
         # User Greeting
         {
           monitor = "";
-          text = "Hello $DESC"; # description provided by user
+          text = "Hello, $DESC"; # description provided by user
           color = "rgba(${colors.neutralLight}D5)";
           font_size = "22";
           font_family = "Noto Sans";
           position = "0, 0"; # offset from center of screen
           halign = "center";
+          valign = "center";
+        }
+        # PLAYER TITTLE
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --title)"'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "12";
+          font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+          position = "880, -290";
+          halign = "left";
+          valign = "center";
+        }
+
+        # PLAYER Length
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --length) "'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "11";
+          font_family = "JetBrains Mono Nerd Font Mono";
+          position = "-730, -310";
+          halign = "right";
+          valign = "center";
+        }
+
+        # PLAYER STATUS
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --status)"'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "14";
+          font_family = "JetBrains Mono Nerd Font Mono";
+          position = "-740, -290";
+          halign = "right";
+          valign = "center";
+        }
+        # PLAYER SOURCE
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --source)"'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "10";
+          font_family = "JetBrains Mono Nerd Font Mono";
+          position = "-740, -330";
+          halign = "right";
+          valign = "center";
+        }
+
+        # PLAYER ALBUM
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --album)"'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "10";
+          font_family = "JetBrains Mono Nerd Font Mono";
+          position = "880, -330";
+          halign = "left";
+          valign = "center";
+        }
+        # PLAYER Artist
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/bin/playerctlock.sh --artist)"'';
+          color = "rgba(${colors.neutralLight}D5)";
+          font_size = "10";
+          font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+          position = "880, -310";
+          halign = "left";
           valign = "center";
         }
       ];
