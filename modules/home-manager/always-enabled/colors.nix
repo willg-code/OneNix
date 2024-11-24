@@ -21,9 +21,11 @@ in
     };
 
   config = {
-    warnings =
-      if (lib.any (e: e == null) (lib.attrValues cfg))
-      then [ "one or more colors are not initialized" ]
-      else [ ];
+    assertions = [
+      {
+        assertion = !(lib.any (e: e == null) (lib.attrValues cfg));
+        message = "one or more colors has not been initialized";
+      }
+    ];
   };
 }
