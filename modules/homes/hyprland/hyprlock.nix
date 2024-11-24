@@ -106,7 +106,6 @@ in
           halign = "left";
           valign = "center";
         }
-
         # PLAYER Length
         {
           monitor = "";
@@ -118,7 +117,6 @@ in
           halign = "right";
           valign = "center";
         }
-
         # PLAYER STATUS
         {
           monitor = "";
@@ -141,7 +139,6 @@ in
           halign = "right";
           valign = "center";
         }
-
         # PLAYER ALBUM
         {
           monitor = "";
