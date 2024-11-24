@@ -12,7 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     warnings =
-      if (switcher == null)
+      if (cfg.switcher == null)
       then [ "no wallpaper switcher script has been provided to swww" ]
       else [ ];
 
