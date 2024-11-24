@@ -10,6 +10,7 @@ in
       type = (lib.types.nullOr (lib.types.uniq lib.types.str));
     in
     {
+      enable = lib.mkEnableOption moduleName;
       primary = lib.mkOption { default = null; inherit type; };
       primaryHighlight = lib.mkOption { default = null; inherit type; };
       primaryLowlight = lib.mkOption { default = null; inherit type; };
@@ -20,7 +21,7 @@ in
       neutralDark = lib.mkOption { default = null; inherit type; };
     };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     assertions = [
       {
         assertion = !(lib.any (e: e == null) (lib.attrValues cfg));
