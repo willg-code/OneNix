@@ -1,3 +1,3 @@
 { lib, ... }:
 
-lib.mkModules ./.
+lib.importModules ./.
