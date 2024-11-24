@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  colors = config.modules.homes.colors;
+  colors = config.modules.home-manager.colors;
 in
 {
   wayland.windowManager.hyprland.settings.general = {

@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  bgPath = config.modules.homes.hyprland.lockBGPath;
-  colors = config.modules.homes.colors;
+  bgPath = config.modules.home-manager.hyprland.lockBGPath;
+  colors = config.modules.home-manager.colors;
   font = "JetBrains Mono Nerd Font Mono";
   font_bold = "JetBrains Mono Nerd Font Mono ExtraBold";
   whatsong = (import ./scripts/whatsong.nix pkgs);
