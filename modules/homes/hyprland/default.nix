@@ -44,5 +44,7 @@ in
         ];
       };
     };
+    services.hypridle.enable = true; # hyprland idle daemon
+    programs.hyprlock.enable = true; # hyprland lock screen
   };
 }
