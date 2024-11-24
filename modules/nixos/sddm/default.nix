@@ -3,10 +3,10 @@
 
 let
   moduleName = "sddm";
-  cfg = config.modules.machines.${moduleName};
+  cfg = config.modules.nixos.${moduleName};
 in
 {
-  options.modules.machines.${moduleName} = {
+  options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
 

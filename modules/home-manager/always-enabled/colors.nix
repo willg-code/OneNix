@@ -2,10 +2,10 @@
 
 let
   moduleName = "colors";
-  cfg = config.modules.homes.${moduleName};
+  cfg = config.modules.home-manager.${moduleName};
 in
 {
-  options.modules.homes.${moduleName} =
+  options.modules.home-manager.${moduleName} =
     let
       type = (lib.types.nullOr (lib.types.uniq lib.types.str));
     in

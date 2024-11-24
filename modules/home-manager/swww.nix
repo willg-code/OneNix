@@ -2,10 +2,10 @@
 
 let
   moduleName = "swww";
-  cfg = config.modules.homes.${moduleName};
+  cfg = config.modules.home-manager.${moduleName};
 in
 {
-  options.modules.homes.${moduleName} = {
+  options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
 
