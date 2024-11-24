@@ -23,6 +23,6 @@ in
     # Hyprland integration
     wayland.windowManager.hyprland.settings.exec-once = [
       "swww-daemon"
-    ] ++ lib.optionals (switcher != null) [ switcher ];
+    ] ++ lib.optionals (cfg.switcher != null) [ cfg.switcher ];
   };
 }
