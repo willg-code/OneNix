@@ -87,7 +87,7 @@ in
         # User Greeting
         {
           monitor = "";
-          text = "Hello, $DESC"; # description provided by user
+          text = "Welcome, $DESC"; # description provided by user
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "22";
           font_family = font;
