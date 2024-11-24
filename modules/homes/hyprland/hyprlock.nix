@@ -111,7 +111,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "11";
           font_family = font;
-          position = "-730, 70";
+          position = "-740, 70";
           halign = "right";
           valign = "bottom";
         }
@@ -122,7 +122,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "14";
           font_family = font;
-          position = "-740, 70";
+          position = "-750, 70";
           halign = "right";
           valign = "bottom";
         }
@@ -133,7 +133,7 @@ in
           color = "rgba(${colors.neutralLight}F0)";
           font_size = "10";
           font_family = font;
-          position = "-740, 50";
+          position = "-750, 50";
           halign = "right";
           valign = "bottom";
         }
