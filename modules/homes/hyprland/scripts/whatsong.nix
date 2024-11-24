@@ -35,7 +35,11 @@ pkgs.writeShellScript "whatsong.sh" ''
   	if [ -z "$title" ]; then
   		echo ""
   	else
-  		echo "''${title:0:18}" # Limit the output length
+  		if [[ ''${#title} -gt 18 ]]; then
+        echo "''${title:0:18}..."
+    	else
+        echo "$title"
+    	fi
   	fi
   	;;
   --arturl)
@@ -54,7 +58,11 @@ pkgs.writeShellScript "whatsong.sh" ''
   	if [ -z "$artist" ]; then
   		echo ""
   	else
-  		echo "''${artist:0:18}" # Limit the output length
+  		if [[ ''${#artist} -gt 18 ]]; then
+        echo "''${artist:0:18}..."
+    	else
+        echo "$artist"
+    	fi
   	fi
   	;;
   --length)
@@ -79,7 +87,11 @@ pkgs.writeShellScript "whatsong.sh" ''
   --album)
   	album=$(playerctl metadata --format "{{ xesam:album }}" 2>/dev/null)
   	if [[ -n $album ]]; then
-  		echo "''${album:0:18}"
+  		if [[ ''${#album} -gt 18 ]]; then
+        echo "''${album:0:18}..."
+    	else
+        echo "$album"
+    	fi
   	else
   		status=$(playerctl status 2>/dev/null)
   		if [[ -n $status ]]; then
