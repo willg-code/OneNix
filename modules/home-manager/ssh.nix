@@ -1,5 +1,5 @@
 # Home level SSH config: client and agent.
-{ config, inputs, username, ... }:
+{ config, lib, inputs, username, ... }:
 
 
 let

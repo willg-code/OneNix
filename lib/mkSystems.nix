@@ -30,7 +30,7 @@ lib.mapAttrs
   (hostname: { machineConfig, users, optimize-store ? true }:
   lib.nixosSystem {
     inherit lib;
-    specialArgs = { inherit inputs; };
+    specialArgs = { inherit inputs; }; # inputs needs to be a specialArg
     modules = [
       {
         _module.args = { inherit hostname secrets; };
@@ -38,22 +38,13 @@ lib.mapAttrs
         nix.settings.auto-optimise-store = optimize-store; # Enable store optimization on every build
       }
       machineConfig
-    ]
-    ++ modules.nixos # nixos modules
-    ++
+      modules.nixos # nixos modules
+    ] ++
     # User configurations.
-    (
-      let
-        home-modules = modules.home-manager; # home-manager modules
-      in
-      (lib.concatLists
-        (lib.map
-          ({ user, home ? null }:
-
-            [ (user { inherit home home-modules; }) ]
-          )
-          users
-        )
+    (lib.concatLists
+      (lib.map
+        ({ user, home ? null }: [ (import user [ home modules.home-manager ]) ])
+        users
       )
     );
   })

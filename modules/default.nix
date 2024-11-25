@@ -1,3 +1,3 @@
 lib:
 
-lib.importDirWithArgs ./. lib
+lib.listDir ./.

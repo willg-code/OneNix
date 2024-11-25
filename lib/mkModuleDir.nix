@@ -8,5 +8,5 @@ lib:
 path:
 
 {
-  imports = (lib.map (lib.path.append path) lib.getContents);
+  imports = (lib.map (lib.path.append path) (lib.getContents path));
 }

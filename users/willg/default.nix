@@ -1,4 +1,4 @@
-{ home, home-modules }:
+home:
 { inputs, hostname, config, lib, secrets, ... }:
 
 {
@@ -20,12 +20,11 @@
   };
 
   # HM modules
-  home-manager.users.${username} = {
-    imports = [ home ] ++ home-modules;
+  home-manager.users.willg = {
+    imports = home;
     _module.args = {
-      inherit inputs hostname;
+      inherit hostname;
       username = "willg";
-      desc = config.users.users.willg.description;
     };
   };
 }
