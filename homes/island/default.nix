@@ -30,6 +30,7 @@
         ]
       );
   };
+  modules.home-manager.ssh.enable = true;
   modules.home-manager.vscode.enable = true;
   modules.home-manager.waybar.enable = true;
   modules.home-manager.zen-browser.enable = true;
