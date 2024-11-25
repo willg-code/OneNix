@@ -1,5 +1,5 @@
 # Version control tool
-{ config, lib, username, ... }:
+{ config, lib, username, email, ... }:
 
 let
   moduleName = "git";
@@ -26,7 +26,7 @@ in
           a = "add";
           aa = "add *";
         };
-        userEmail = lib.readFile config.sops.secrets."email".path; # user email secret
+        userEmail = email;
         userName = username; # username
       };
     };

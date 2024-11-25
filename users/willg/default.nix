@@ -5,7 +5,6 @@ home:
   # Secrets
   sops.secrets = {
     "willg_password".neededForUsers = true;
-    "willg_name".neededForUsers = true;
   };
   users.users.willg = {
     isNormalUser = true; # set group to users and creates a home at /home/willg
@@ -16,15 +15,16 @@ home:
     openssh.authorizedKeys.keyFiles = [
       ./pubkeys/willg.pub # allow ssh from any other machine with this user account
     ];
-    description = lib.readFile config.sops.secrets."willg_name".path;
+    description = "Will G.";
   };
 
   # HM modules
   home-manager.users.willg = {
     imports = home;
     _module.args = {
-      inherit hostname;
+      inherit hostname secrets;
       username = "willg";
+      email = "greenlee04@gmail.com";
     };
   };
 }

@@ -1,5 +1,5 @@
 # Home level SSH config: client and agent.
-{ config, lib, inputs, username, ... }:
+{ config, lib, secrets, inputs, username, ... }:
 
 
 let
@@ -13,7 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     sops.secrets."ssh_key".path = "${config.home.homeDirectory}/.ssh/${username}";
-    services.ssh-agent = true; # optionally remembers keys used for authentication
+    services.ssh-agent.enable = true; # optionally remembers keys used for authentication
     programs.ssh = {
       enable = true; # ssh client
       addKeysToAgent = "1h"; # remember keys for 1 hour in memory with ssh-agent
