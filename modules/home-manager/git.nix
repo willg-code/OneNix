@@ -11,7 +11,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    sops.secrets."email" = { };
     programs = {
       git = {
         enable = true; # version control
