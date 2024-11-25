@@ -9,13 +9,13 @@
       lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # join local lib with nixpkgs lib
       impl = (path: import path lib); # construct a function to import stuff with lib
 
+      overlays = [ ]; # override nixpkgs packages
       modules = impl ./modules; # import the modules for the configurations
       machines = impl ./machines; # import machine specific configs
       users = impl ./users; # import user specific configs
       homes = impl ./homes; # import home specific configs
       secrets = import ./secrets; # sops secrets
 
-      overlays = [ ]; # override nixpkgs packages
       mkSystems = lib.mkSystems { inherit inputs overlays modules secrets; }; # construct our mkSystems function
     in
     {
