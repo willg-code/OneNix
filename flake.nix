@@ -25,6 +25,8 @@
             willg = {
               user = users.willg;
               home = homes.island;
+              desc = "Will G.";
+              email = "greenlee04@gmail.com";
             };
           };
         };

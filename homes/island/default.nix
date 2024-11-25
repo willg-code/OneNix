@@ -1,6 +1,4 @@
-user:
-
-{ pkgs, lib, ... }:
+{ pkgs, lib, username, ... }:
 
 {
   # Modules
@@ -55,9 +53,8 @@ user:
     pkgs.unzip # software for unzipping zip archives
   ];
 
-  # Configure user git identity
-  programs.git.userEmail = user.email;
-  programs.git.userName = user.name;
-
+  programs.home-manager.enable = true; # let HM control itself
+  home.username = username; # set the username at the home level
+  home.homeDirectory = "/home/${username}"; # indicate which directory contains the home
   home.stateVersion = "24.05"; # Required for backwards compat during updates
 }
