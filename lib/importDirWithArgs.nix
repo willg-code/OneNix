@@ -10,4 +10,4 @@ lib:
 path:
 args:
 
-lib.mapAttrs (_: func: (func args)) (import ./importDir lib path)
+(lib.mapAttrs (_: func: (func args)) (lib.importDir lib path))
