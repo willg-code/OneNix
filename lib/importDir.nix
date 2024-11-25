@@ -46,14 +46,6 @@ lib: # required for some behaviors
 path: # path to import
 
 let
-  # get the names of all of the
-  # files/directories in the directory 
-  # (except for default.nix)
-  contents =
-    (lib.attrNames
-      (lib.filterAttrs
-        (name: type: name != "default.nix")
-        (builtins.readDir path)));
   # set each name equal to 
   # its imported path
   attributes =
@@ -63,7 +55,7 @@ let
           name = formatName content;
           value = import (lib.path.append path content);
         })
-      contents);
+      (lib.getContents path));
 in
 # Finally, turn all of the attribute pieces into a set
 lib.listToAttrs attributes

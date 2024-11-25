@@ -6,8 +6,8 @@
   outputs =
     { ... }@inputs:
     let
-      lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # join local lib with nixpkgs lib
-      impl = (path: import path lib); # construct a function to import stuff with lib
+      lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # extend nixpkgs.lib with local lib
+      impl = (path: import path lib); # construct a function to import with lib
 
       overlays = [ ]; # override nixpkgs packages
       modules = impl ./modules; # import the modules for the configurations
@@ -22,14 +22,12 @@
       nixosConfigurations = mkSystems {
         andromeda = {
           machineConfig = machines.andromeda;
-          users = {
-            willg = {
+          users = [
+            {
               user = users.willg;
               home = homes.island;
-              desc = "Will G.";
-              email = "greenlee04@gmail.com";
-            };
-          };
+            }
+          ];
         };
       };
     };

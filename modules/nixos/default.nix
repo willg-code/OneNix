@@ -1,3 +1,3 @@
 { lib, ... }:
 
-lib.importModules ./.
+lib.listDir ./.

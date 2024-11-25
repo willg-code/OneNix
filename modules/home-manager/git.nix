@@ -1,5 +1,5 @@
 # Version control tool
-{ config, lib, email, desc, ... }:
+{ config, lib, desc, ... }:
 
 let
   moduleName = "git";
@@ -11,6 +11,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    sops.secrets."email" = { };
     programs = {
       git = {
         enable = true; # version control
@@ -25,9 +26,8 @@ in
           a = "add";
           aa = "add *";
         };
-        # Configure user git identity
-        userEmail = email;
-        userName = desc;
+        userEmail = lib.readFile config.sops.secrets."email".path; # user email secret
+        userName = desc; # user description
       };
     };
   };

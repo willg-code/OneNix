@@ -1,7 +1,8 @@
 lib:
 
 {
+  getContents = import ./getContents.nix lib;
   importDir = import ./importDir.nix lib;
-  importModules = import ./importModules.nix lib;
+  listDir = import ./listDir.nix lib;
   mkSystems = import ./mkSystems.nix lib;
 }
