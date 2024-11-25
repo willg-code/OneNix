@@ -22,7 +22,6 @@
 # - Each machine config is abstracted from the users provided to it, allowing users to be added and removed at-will.
 # - Each user has an optional home, configured independently of the user itself, so homes can be swapped around at-will.
 
-### ARGS ###
 lib:
 { inputs, overlays, modules, secrets }:
 
@@ -40,13 +39,12 @@ lib.mapAttrs
       }
       machineConfig
     ]
-    ++ modules.core.nixos # core nixos modules
-    ++ modules.nixos # enablable nixos modules
+    ++ modules.nixos # nixos modules
     ++
     # User configurations.
     (
       let
-        home-modules = modules.core.home-manager ++ modules.home-manager;
+        home-modules = modules.home-manager; # home-manager modules
       in
       (lib.concatLists
         (lib.map

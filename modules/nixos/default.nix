@@ -1,3 +1,3 @@
-{ lib, ... }:
+lib:
 
-lib.listDir ./.
+lib.mkModulesDir ./.
