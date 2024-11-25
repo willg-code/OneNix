@@ -1,4 +1,5 @@
 # Enable and configure SSH daemon
+# Required because SOPS uses the key
 # DOCS: https://nixos.wiki/wiki/SSH
 { ... }:
 
