@@ -15,7 +15,7 @@ let
       (content:
         {
           name = content;
-          value = lib.path.append path content;
+          value = (lib.path.append path content);
         })
       (lib.getContents path));
 in
