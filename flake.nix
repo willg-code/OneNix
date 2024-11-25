@@ -13,9 +13,10 @@
       machines = impl ./machines; # import machine specific configs
       users = impl ./users; # import user specific configs
       homes = impl ./homes; # import home specific configs
+      secrets = import ./secrets; # sops secrets
 
       overlays = [ ]; # override nixpkgs packages
-      mkSystems = lib.mkSystems { inherit inputs overlays modules; }; # construct our mkSystems function
+      mkSystems = lib.mkSystems { inherit inputs overlays modules secrets; }; # construct our mkSystems function
     in
     {
       nixosConfigurations = mkSystems {

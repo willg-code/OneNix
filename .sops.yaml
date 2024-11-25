@@ -4,7 +4,7 @@ keys:
   - &hosts
     - &andromeda age19h7rnvk8fdznlz66wcv6lpka4tjramsmsuwhsfs0a4fj3u2epd5q76gurj
 creation_rules:
-  - path_regex: secrets\/.+$
+  - path_regex: secrets\/secrets\.yaml$
     key_groups:
       - age:
         - *willg

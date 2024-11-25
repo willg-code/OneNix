@@ -27,7 +27,7 @@
 
 ### ARGS ###
 lib:
-{ inputs, overlays, modules }:
+{ inputs, overlays, modules, secrets }:
 
 builds:
 lib.mapAttrs
@@ -37,7 +37,7 @@ lib.mapAttrs
     specialArgs = { inherit inputs; };
     modules = [
       {
-        _module.args = { inherit hostname; };
+        _module.args = { inherit hostname secrets; };
         nixpkgs.overlays = overlays;
         nix.settings.auto-optimise-store = optimize-store; # Enable store optimization on every build
       }
@@ -54,7 +54,7 @@ lib.mapAttrs
               # Check if a home config is provided (it might not be for system users)
               lib.optionals (home != null) [
                 {
-                  home-manager.users.${username}._module.args = { inherit hostname username desc email; };
+                  home-manager.users.${username}._module.args = { inherit inputs hostname secrets username desc email; };
                 }
                 {
                   home-manager.users.${username} = modules.home-manager; # local modules for HM
