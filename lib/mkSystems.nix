@@ -41,11 +41,9 @@ lib.mapAttrs
       modules.nixos # nixos modules
     ] ++
     # User configurations.
-    (lib.concatLists
-      (lib.map
-        ({ user, home ? null }: [ (import user [ home modules.home-manager ]) ])
-        users
-      )
+    (lib.map
+      ({ user, home ? null }: (import user [ home modules.home-manager ]))
+      users
     );
   })
   builds
