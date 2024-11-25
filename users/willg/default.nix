@@ -3,9 +3,9 @@ home:
 
 {
   # Secrets
-  sops.secrets = {
-    "willg_password".neededForUsers = true;
-  };
+  sops.secrets."willg_password".neededForUsers = true;
+
+  # User config
   users.users.willg = {
     isNormalUser = true; # set group to users and creates a home at /home/willg
     extraGroups = [ "wheel" ] # sudo user group
