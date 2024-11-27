@@ -1,5 +1,5 @@
 # Version control tool
-{ config, lib, username, email, ... }:
+{ config, lib, email, ... }:
 
 let
   moduleName = "git";
@@ -26,7 +26,7 @@ in
           aa = "add *";
         };
         userEmail = email;
-        userName = username;
+        userName = config.home.username;
       };
     };
   };

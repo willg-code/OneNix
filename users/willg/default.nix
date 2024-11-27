@@ -7,7 +7,7 @@ home:
 
   # User config
   users.users.willg = {
-    isNormalUser = true; # set group to users and creates a home at /home/willg
+    isNormalUser = true; # set group to users and creates a home dir
     extraGroups = [ "wheel" ] # sudo user group
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ] # non-sudo network manager permissions
       ++ lib.optionals config.virtualisation.docker.enable [ "docker" ]; # non-sudo docker permissions
@@ -23,8 +23,9 @@ home:
     imports = home;
     _module.args = {
       inherit hostname secrets;
-      username = "willg";
       email = "greenlee04@gmail.com";
     };
+    home.username = "willg";
+    home.homeDirectory = "/home/willg";
   };
 }

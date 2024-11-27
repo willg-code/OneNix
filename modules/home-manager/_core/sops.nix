@@ -1,4 +1,4 @@
-{ config, inputs, secrets, username, ... }:
+{ config, inputs, secrets, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
   ];
 
   sops = {
-    defaultSopsFile = secrets.${username};
+    defaultSopsFile = secrets.${config.home.username};
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt"; # expect age key here
   };
 }
