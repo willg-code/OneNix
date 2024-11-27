@@ -12,7 +12,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.hyprland.enable = true; # takes care of root level config
-    services.displayManager.defaultSession = "hyprland"; # set hyprland as default login session
+    programs.hyprland = {
+      enable = true; # takes care of root level config
+      withUWSM = true; # use Universal Wayland Session Manager
+    };
   };
 }

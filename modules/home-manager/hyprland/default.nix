@@ -36,10 +36,11 @@ in
     # Hyprland config
     wayland.windowManager.hyprland = {
       enable = true;
+      systemd.enable = false; # disable systemd integration to use UWSM
       settings = {
         exec-once = [
-          "hypridle" # start idle daemon
-          "systemctl --user start hyprpolkitagent" # start polkit daemon
+          "uwsm app -- hypridle" # start idle daemon
+          "systemctl --user enable --now hyprpolkitagent.service" # start polkit daemon
         ];
       };
     };

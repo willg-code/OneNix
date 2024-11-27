@@ -21,7 +21,7 @@ in
 
     # Hyprland integration
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, Q, exec, kitty"
+      "$mainMod, Q, exec, uwsm app -- kitty"
     ];
   };
 }

@@ -17,7 +17,7 @@ in
     ];
 
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, P, exec, wayshot --stdout | satty -f -"
+      "$mainMod, P, exec, uwsm app -- wayshot --stdout | satty -f -"
     ];
   };
 }

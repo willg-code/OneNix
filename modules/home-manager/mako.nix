@@ -15,7 +15,7 @@ in
 
     # Hyprland integration
     wayland.windowManager.hyprland.settings.exec-once = [
-      "mako"
+      "uwsm app -- mako"
     ];
   };
 }

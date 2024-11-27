@@ -15,7 +15,7 @@ in
 
     # Hyprland integration
     wayland.windowManager.hyprland.settings.exec-once = [
-      "waybar"
+      "systemctl --user enable --now waybar.service"
     ];
   };
 }

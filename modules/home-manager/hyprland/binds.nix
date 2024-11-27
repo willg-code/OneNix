@@ -18,7 +18,7 @@
       "$mainMod, G, pseudo," # float one branch of tree
       "$mainMod, S, swapsplit," # change direction of tree
       "$mainMod $shiftMod, S, togglesplit," # swap two branches of tree
-      "$mainMod $shiftMod, P, exec, hyprpicker -ar" # color picker
+      "$mainMod $shiftMod, P, exec, uwsm app -- hyprpicker -ar" # color picker
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
