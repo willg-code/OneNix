@@ -36,7 +36,7 @@
   # Other
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
-    pkgs.vesktop # discord client with improve privacy
+    pkgs.webcord # discord client with wl support
   ];
 
   programs.home-manager.enable = true; # let HM control itself
