@@ -4,7 +4,6 @@
   # Modules
   modules.home-manager.btop.enable = true;
   modules.home-manager.fastfetch.enable = true;
-  modules.home-manager.fonts.enable = true;
   modules.home-manager.git.enable = true;
   modules.home-manager.hyprland = {
     enable = true;
@@ -13,10 +12,12 @@
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.nh.enable = true;
+  modules.home-manager.notonerd-fonts.enable = true;
   modules.home-manager.phinger-cursor.enable = true;
   modules.home-manager.rofi.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.starship.enable = true;
+  modules.home-manager.stylix.enable = true;
   modules.home-manager.swww = {
     enable = true;
     switcher =
