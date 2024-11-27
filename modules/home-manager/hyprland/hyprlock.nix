@@ -2,7 +2,6 @@
 { inputs, config, pkgs, lib, ... }:
 
 let
-  bgPath = config.stylix.image;
   font = config.stylix.fonts.monospace.name;
   font_bold = "${config.stylix.fonts.monospace.name} ExtraBold";
   whatsong = (import ./scripts/whatsong.nix pkgs);
@@ -16,11 +15,9 @@ in
       grace = "3"; # seconds before lock actually engages
       hide_cursor = true;
     };
-    background = [
+    background = lib.mkForce [
       {
-        monitor = ""; # all monitors
-        path = if bgPath != null then (toString bgPath) else ""; # use stylix image
-        color = "rgba(${config.lib.stylix.colors.base00}FF)"; # fallback color for no background
+        path = toString config.stylix.image; # use stylix image
         blur_passes = "3"; # smooth blur
       }
     ];
