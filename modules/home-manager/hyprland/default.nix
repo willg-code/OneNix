@@ -39,7 +39,7 @@ in
       systemd.enable = false; # disable systemd integration to use UWSM
       settings = {
         exec-once = [
-          "uwsm app -- hypridle" # start idle daemon
+          "systemctl --user enable --now hypridle.service" # start idle daemon
           "systemctl --user enable --now hyprpolkitagent.service" # start polkit daemon
         ];
       };
