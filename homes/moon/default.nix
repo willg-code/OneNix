@@ -30,7 +30,7 @@
     image = ./assets/moon.jpg;
     opacity.terminal = 0.85;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/synth-midnight-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
   };
 
   # Other
