@@ -16,7 +16,7 @@
   modules.home-manager.starship.enable = true;
   modules.home-manager.swww = {
     enable = true;
-    switcher = ''swww img "${./assets/moon.jpg}" --transition-type none'';
+    switcher = pkgs.writeShellScript "moon.sh" ''swww img "${./assets/moon.jpg}" --transition-type none'';
   };
   modules.home-manager.ssh.enable = true;
   modules.home-manager.vscode.enable = true;
