@@ -65,7 +65,7 @@ in
         color = "rgba(${config.lib.stylix.colors.base05}F0)";
         font_size = "22";
         font_family = font;
-        position = "0, 30"; # offset from center of screen
+        position = "0, 60"; # offset from center of screen
         halign = "center";
         valign = "center";
       }
