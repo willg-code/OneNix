@@ -35,10 +35,10 @@ lib.mapAttrs
       {
         _module.args = { inherit hostname secrets; };
         nixpkgs.overlays = overlays;
-        nix.settings.auto-optimise-store = optimize-store; # Enable store optimization on every build
+        nix.settings.auto-optimise-store = optimize-store;
       }
       machineConfig
-      modules.nixos # nixos modules
+      modules.nixos
     ] ++
     # User configurations.
     (lib.map
