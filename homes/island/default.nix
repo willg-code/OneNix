@@ -32,9 +32,12 @@
   modules.home-manager.waybar.enable = true;
   modules.home-manager.zen-browser.enable = true;
   modules.home-manager.zsh.enable = true;
+
+  # Stylix
   stylix.enable = true;
-  stylix.image = ./assets/night.jpg;
+  stylix.image = ./assets/moon.jpg;
   stylix.opacity.terminal = 0.85;
+  stylix.polarity = "dark";
 
   # Other
   home.packages = [
