@@ -1,3 +1,4 @@
+# Lock screen for hyprland
 { inputs, config, pkgs, lib, ... }:
 
 let
@@ -7,9 +8,6 @@ let
   whatsong = (import ./scripts/whatsong.nix pkgs);
 in
 {
-  imports = [
-    inputs.stylix.nixosModules.stylix
-  ];
   home.packages = [
     pkgs.playerctl # required for scripts
   ];

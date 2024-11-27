@@ -6,10 +6,6 @@ let
   cfg = config.modules.home-manager.${moduleName};
 in
 {
-  imports = [
-    inputs.stylix.nixosModules.stylix
-  ];
-
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
