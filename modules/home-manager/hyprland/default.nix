@@ -15,7 +15,6 @@ in
     ./decoration.nix
     ./dwindle.nix
     ./general.nix
-    ./group.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./input.nix

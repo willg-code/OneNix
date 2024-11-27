@@ -17,7 +17,7 @@ in
         flavor = "mocha";
         font = "Noto Sans";
         fontSize = "9";
-        background = "${../stylix/theme-image.jpg}";
+        background = "${config.stylix.image}";
         loginBackground = true;
       })
     ];

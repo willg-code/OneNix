@@ -19,7 +19,7 @@ in
     background = [
       {
         monitor = ""; # all monitors
-        path = if bgPath != null then (toString bgPath) else ""; # use screenshot of desktop
+        path = if bgPath != null then (toString bgPath) else ""; # use stylix image
         color = "rgba(${config.lib.stylix.colors.base00}FF)"; # fallback color for no background
         blur_passes = "3"; # smooth blur
       }

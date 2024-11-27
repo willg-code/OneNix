@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  users.mutableUsers = false; # achievable because sops manages passwords
+  users.mutableUsers = false; # required because sops manages passwords
 }

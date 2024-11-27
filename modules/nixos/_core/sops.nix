@@ -1,3 +1,4 @@
+# Secret management
 { inputs, secrets, ... }:
 
 {
