@@ -25,7 +25,7 @@
           users = [
             {
               user = users.willg;
-              home = homes.island;
+              home = homes.moon;
             }
           ];
         };
