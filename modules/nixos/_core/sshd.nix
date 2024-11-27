@@ -13,4 +13,5 @@
       KbdInteractiveAuthentication = false; # disable other non-key authentication
     };
   };
+  services.fail2ban.enable = true; # basic SSH security
 }
