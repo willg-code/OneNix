@@ -7,7 +7,6 @@ in
 {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
-    lockBGPath = lib.mkOption { default = null; type = (lib.types.nullOr (lib.types.uniq lib.types.path)); };
   };
 
   imports = [
@@ -24,12 +23,6 @@ in
   ];
 
   config = lib.mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = config.modules.home-manager.colors.enable;
-        message = "hyprland is dependent on colors (colors.enable is not true)";
-      }
-    ];
 
     # Required dependencies for this module
     home.packages = [

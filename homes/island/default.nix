@@ -5,10 +5,7 @@
   modules.home-manager.btop.enable = true;
   modules.home-manager.fastfetch.enable = true;
   modules.home-manager.git.enable = true;
-  modules.home-manager.hyprland = {
-    enable = true;
-    lockBGPath = ./assets/night.jpg;
-  };
+  modules.home-manager.hyprland.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.nh.enable = true;
@@ -17,7 +14,6 @@
   modules.home-manager.rofi.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.starship.enable = true;
-  modules.home-manager.stylix.enable = true;
   modules.home-manager.swww = {
     enable = true;
     switcher =
@@ -36,6 +32,8 @@
   modules.home-manager.waybar.enable = true;
   modules.home-manager.zen-browser.enable = true;
   modules.home-manager.zsh.enable = true;
+  stylix.enable = true;
+  stylix.image = ./assets/day.jpg;
 
   # Other
   home.packages = [
