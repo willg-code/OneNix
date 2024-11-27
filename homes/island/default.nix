@@ -33,7 +33,7 @@
   modules.home-manager.zen-browser.enable = true;
   modules.home-manager.zsh.enable = true;
   stylix.enable = true;
-  stylix.image = ./assets/day.jpg;
+  stylix.image = ./assets/night.jpg;
   stylix.opacity.terminal = 0.85;
 
   # Other
