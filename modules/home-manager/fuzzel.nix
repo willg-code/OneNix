@@ -2,7 +2,7 @@
 { config, lib, ... }:
 
 let
-  moduleName = "rofi";
+  moduleName = "fuzzel";
   cfg = config.modules.home-manager.${moduleName};
 in
 {
@@ -11,12 +11,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.rofi.enable = true; # window switcher, app launcher, and dmenu
+    programs.fuzzel.enable = true; # window switcher, app launcher, and dmenu
 
     # Hyprland integration
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, D, exec, uwsm app -- rofi -show drun"
-      "$mainMod, R, exec, uwsm app -- rofi -show run"
+      "$mainMod, D, exec, uwsm app -- fuzzel"
     ];
   };
 }
