@@ -36,19 +36,6 @@
   modules.home-manager.zen-browser.enable = true;
   modules.home-manager.zsh.enable = true;
 
-  # Colors
-  modules.home-manager.colors = {
-    enable = true;
-    primary = "09849B";
-    primaryHighlight = "5CC1A1";
-    primaryLowlight = "023354";
-    secondary = "429346";
-    secondaryHighlight = "55B16B";
-    secondaryLowlight = "123C2F";
-    neutralLight = "D6E1DF";
-    neutralDark = "020F1B";
-  };
-
   # Other
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
