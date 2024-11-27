@@ -1,3 +1,4 @@
+# Wayland status bar
 { config, lib, ... }:
 
 let

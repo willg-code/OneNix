@@ -1,5 +1,4 @@
-# Pretty terminal emulator, 
-# works beautifully with hyprland
+# Pretty terminal emulator
 { config, lib, ... }:
 
 let

@@ -1,8 +1,8 @@
-# Cursor theme that works for any window manager
+# Phinger cursor theme integration with stylix
 { config, lib, pkgs, ... }:
 
 let
-  moduleName = "phinger-cursor-theme";
+  moduleName = "phinger-cursor";
   cfg = config.modules.home-manager.${moduleName};
 in
 {

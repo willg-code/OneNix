@@ -1,3 +1,4 @@
+# Wayland wallpaper tool
 { config, lib, pkgs, ... }:
 
 let

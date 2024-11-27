@@ -1,3 +1,4 @@
+# Zen browser module, fork of firefox
 { config, lib, inputs, pkgs, ... }:
 
 let

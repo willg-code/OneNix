@@ -1,3 +1,4 @@
+# Code editor
 { config, lib, pkgs, ... }:
 
 let

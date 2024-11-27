@@ -1,3 +1,4 @@
+# ZSHell
 { config, lib, pkgs, ... }:
 
 let

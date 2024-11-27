@@ -13,7 +13,7 @@
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.nh.enable = true;
-  modules.home-manager.phinger-cursor-theme.enable = true;
+  modules.home-manager.phinger-cursor.enable = true;
   modules.home-manager.rofi.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.starship.enable = true;

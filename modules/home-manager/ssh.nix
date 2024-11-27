@@ -1,4 +1,4 @@
-# Home level SSH config: client and agent.
+# Home level SSH: client and agent.
 { config, lib, secrets, inputs, ... }:
 
 
