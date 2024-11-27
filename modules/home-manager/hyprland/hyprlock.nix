@@ -40,7 +40,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"''; # get the date
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "22";
         font_family = font;
         position = "0, 280"; # offset from center of screen
@@ -51,7 +51,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$TIME"''; # time provided by hyprlock
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "95";
         font_family = font_bold;
         position = "0, 200"; # offset from center of screen
@@ -62,7 +62,7 @@ in
       {
         monitor = "";
         text = "Welcome $DESC"; # description provided by user
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "22";
         font_family = font;
         position = "0, 60"; # offset from center of screen
@@ -73,7 +73,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --title)"'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "12";
         font_family = font;
         position = "860, 90";
@@ -84,7 +84,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --length) "'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "11";
         font_family = font;
         position = "-740, 70";
@@ -95,7 +95,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --status)"'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "14";
         font_family = font;
         position = "-740, 70";
@@ -106,7 +106,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --source)"'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "10";
         font_family = font;
         position = "-740, 50";
@@ -117,7 +117,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --album)"'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "10";
         font_family = font;
         position = "860, 50";
@@ -128,7 +128,7 @@ in
       {
         monitor = "";
         text = ''cmd[update:1000] echo "$(${whatsong} --artist)"'';
-        color = "rgba(${config.lib.stylix.colors.base05}F0)";
+        color = "rgba(${config.lib.stylix.colors.base08}F0)";
         font_size = "10";
         font_family = font;
         position = "860, 70";
