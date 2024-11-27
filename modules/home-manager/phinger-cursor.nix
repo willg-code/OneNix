@@ -1,5 +1,5 @@
 # Phinger cursor theme integration with stylix
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 let
   moduleName = "phinger-cursor";
