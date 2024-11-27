@@ -34,6 +34,7 @@
   modules.home-manager.zsh.enable = true;
   stylix.enable = true;
   stylix.image = ./assets/day.jpg;
+  stylix.opacity.terminal = 0.85;
 
   # Other
   home.packages = [

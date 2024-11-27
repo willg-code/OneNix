@@ -16,7 +16,6 @@ in
       settings = {
         enable_audio_bell = false; # no sound on fail
         update_check_interval = 0; # don't check for updates
-        background_opacity = "0.85"; # slightly transparent background
       };
     };
 
