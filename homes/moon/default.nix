@@ -25,10 +25,12 @@
   modules.home-manager.zsh.enable = true;
 
   # Stylix
-  stylix.enable = true;
-  stylix.image = ./assets/moon.jpg;
-  stylix.opacity.terminal = 0.85;
-  stylix.polarity = "dark";
+  stylix = {
+    enable = true;
+    image = ./assets/moon.jpg;
+    opacity.terminal = 0.85;
+    polarity = "dark";
+  };
 
   # Other
   home.packages = [
