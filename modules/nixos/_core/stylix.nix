@@ -1,5 +1,5 @@
 # System style unifier
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
