@@ -21,26 +21,6 @@ in
         blur_passes = "3"; # smooth blur
       }
     ];
-    input-field = [
-      # Input Box
-      {
-        monitor = "";
-        size = "300, 60";
-        outline_thickness = "2";
-        dots_size = "0.1"; # Scale of input-field height, 0.2 - 0.8
-        dots_spacing = "0.25"; # Scale of dots' absolute size, 0.0 - 1.0
-        outer_color = "rgba(${config.lib.stylix.colors.base00}00)";
-        inner_color = "rgba(${config.lib.stylix.colors.base00}A5)";
-        font_color = "rgba(${config.lib.stylix.colors.base05}FF)";
-        check_color = "rgba(${config.lib.stylix.colors.base05}40)";
-        font_family = font;
-        fade_on_empty = "false";
-        placeholder_text = "<i>$USER</i>";
-        position = "0, -30"; # offset from center of screen;
-        halign = "center";
-        valign = "center";
-      }
-    ];
     image = [
       # Music
       {
