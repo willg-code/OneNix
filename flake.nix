@@ -10,13 +10,13 @@
       impl = (path: import path lib); # construct a function to import with lib
 
       overlays = [ ]; # override nixpkgs packages
+      secrets = import ./secrets; # sops secrets
       modules = impl ./modules; # import the modules for the configurations
       machines = impl ./machines; # import machine specific configs
       users = impl ./users; # import user specific configs
       homes = impl ./homes; # import home specific configs
-      secrets = import ./secrets; # sops secrets
 
-      mkSystems = lib.mkSystems { inherit inputs overlays modules secrets; }; # construct our mkSystems function
+      mkSystems = lib.mkSystems { inherit inputs overlays secrets modules; }; # construct our mkSystems function
     in
     {
       nixosConfigurations = mkSystems {
