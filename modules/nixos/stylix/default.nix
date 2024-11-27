@@ -6,15 +6,15 @@ let
   cfg = config.modules.nixos.${moduleName};
 in
 {
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
+
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
 
   config = lib.mkIf cfg.enable {
-    imports = [
-      inputs.stylix.nixosModules.stylix
-    ];
-
     stylix = {
       enable = true;
       image = ./wallpaper.png;
