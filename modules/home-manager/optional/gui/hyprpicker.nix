@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  moduleName = "hyprpickers";
+  moduleName = "hyprpicker";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
