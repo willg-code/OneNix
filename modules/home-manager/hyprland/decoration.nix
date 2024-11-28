@@ -7,9 +7,6 @@
     dim_strength = "0.1"; # how much to darken inactives
     dim_special = "0.1"; # how much to darken screen during special workspace
     blur.passes = "3"; # smoother blur
-    blur.popups = "false";
-    blur.special = "false";
-    blur.input_methods = "false";
     shadow.range = "5"; # 5px shadow
   };
 }
