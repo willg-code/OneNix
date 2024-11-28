@@ -1,6 +1,7 @@
 {hostname, ...}: {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
+    ./filesystems.nix
   ];
 
   # Modules
