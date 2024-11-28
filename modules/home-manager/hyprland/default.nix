@@ -20,6 +20,7 @@ in
     ./misc.nix
     ./monitors.nix
     ./windowrules.nix
+    ./xwayland.nix
   ];
 
   config = lib.mkIf cfg.enable {
