@@ -1,4 +1,4 @@
-# Idle daemon to power control system while not in use
+# Idle daemon and lock dbus handler
 { ... }:
 
 {

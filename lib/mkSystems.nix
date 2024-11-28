@@ -1,8 +1,8 @@
 ### DESC ###
-# Given inputs, overlays, and modules, output nixos systems
-# with those inputs, overlays, and modules.
+# Given flake inputs/outputs, output nixos systems
+# with the flake inputs, overlays, modules, and secrets.
 #
-# Input looks like this (called "builds"):
+# Function input looks like this (called "builds"):
 # {
 #   <hostname> = {
 #     machineConfig = <machine config>;
@@ -23,26 +23,25 @@
 # - Each user has an optional home, configured independently of the user itself, so homes can be swapped around at-will.
 
 lib:
-{ inputs, overlays, modules, secrets }:
+{ inputs }:
 
 builds:
 lib.mapAttrs
   (hostname: { machineConfig, users, optimize-store ? true }:
   lib.nixosSystem {
-    inherit lib;
+    inherit lib; # lib contains flake lib as well as nixpkgs lib
     specialArgs = { inherit inputs; }; # inputs needs to be a specialArg
     modules = [
       {
-        _module.args = { inherit hostname secrets; };
-        nixpkgs.overlays = overlays;
+        _module.args = { inherit hostname; };
         nix.settings.auto-optimise-store = optimize-store;
       }
+      inputs.self.outputs.nixosModules.default
       machineConfig
-      modules.nixos
     ] ++
     # User configurations.
     (lib.map
-      ({ user, home ? null }: (import user [ home modules.home-manager ]))
+      ({ user, home ? "" }: (import user home))
       users
     );
   })

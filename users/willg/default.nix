@@ -1,5 +1,5 @@
 home:
-{ inputs, hostname, config, lib, secrets, ... }:
+{ inputs, hostname, config, lib, ... }:
 
 {
   # Secrets
@@ -20,11 +20,8 @@ home:
 
   # HM modules
   home-manager.users.willg = {
-    imports = home;
-    _module.args = {
-      inherit hostname secrets;
-      email = "greenlee04@gmail.com";
-    };
+    imports = [ home ];
+    _module.args.email = "greenlee04@gmail.com";
     home.username = "willg";
     home.homeDirectory = "/home/willg";
   };

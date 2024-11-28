@@ -1,4 +1,3 @@
-{
-  willg = ./willg.yaml;
-  secrets = ./secrets.yaml;
-}
+lib:
+
+lib.listDir ./.

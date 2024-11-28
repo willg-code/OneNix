@@ -1,8 +1,8 @@
-# Pretty terminal emulator
+# Wayland app launcher
 { config, lib, ... }:
 
 let
-  moduleName = "kitty";
+  moduleName = "fuzzel";
   cfg = config.modules.home-manager.${moduleName};
 in
 {
@@ -11,17 +11,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.kitty = {
-      enable = true; # terminal emulator
-      settings = {
-        enable_audio_bell = false; # no sound on fail
-        update_check_interval = 0; # don't check for updates
-      };
-    };
+    programs.fuzzel.enable = true; # window switcher, app launcher, and dmenu
 
     # Hyprland integration
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, Q, exec, uwsm app -- kitty"
+      "$mainMod, D, exec, uwsm app -- fuzzel"
     ];
   };
 }

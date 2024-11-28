@@ -1,4 +1,4 @@
-# ZSHell
+# Zshell
 { config, lib, pkgs, ... }:
 
 let

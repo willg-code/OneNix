@@ -17,6 +17,7 @@ in
     programs.ssh = {
       enable = true; # ssh client
       addKeysToAgent = "1h"; # remember keys for 1 hour
+      hashKnownHosts = true; # hash host IPs/names
     };
   };
 }

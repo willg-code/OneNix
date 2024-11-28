@@ -1,4 +1,4 @@
-# Simple notification manager
+# Wayland notification manager
 { config, lib, ... }:
 
 let
