@@ -11,7 +11,6 @@
 
       overlays = [ ]; # override nixpkgs packages
       secrets = import ./secrets; # sops secrets
-      modules = impl ./modules; # import the modules for the configurations
       machines = impl ./machines; # import machine specific configs
       users = impl ./users; # import user specific configs
       homes = impl ./homes; # import home specific configs
