@@ -13,13 +13,15 @@ in
 
   config = lib.mkIf cfg.enable {
     boot = {
-      loader.systemd-boot = {
-        enable = true; # enable bootloader
-        editor = false; # no command line boot entry; security risk
-        memtest86.enable = true; # mem test available in bootloader
-        configurationLimit = 10; # max number of configuration boot entries
+      loader = {
+        systemd-boot = {
+          enable = true; # enable bootloader
+          editor = false; # no command line boot entry; security risk
+          memtest86.enable = true; # mem test available in bootloader
+          configurationLimit = 10; # max number of configuration boot entries
+        };
+        efi.canTouchEfiVariables = true; # allows installer to change efi variables (to enable boot option)
       };
-      loader.efi.canTouchEfiVariables = true; # allows installer to change efi variables (to enable boot option)
       tmp.cleanOnBoot = true; # helps cut down on disk usage, tmp is safe to clean at boot
     };
   };
