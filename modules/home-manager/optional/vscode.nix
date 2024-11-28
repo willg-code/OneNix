@@ -17,7 +17,10 @@ in
       extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ]; # nix editor extension
       userSettings = {
         "editor.formatOnSave" = "true"; # use the nixfmt formatter on save
-        "git.autoFetch" = true; # fetch git periodically
+        "git.autoFetch" = "true"; # fetch git periodically
+        "nix.serverPath" = "nixd"; # nix lang server
+        "nix.enableLanguageServer" = "true"; # enable nix lang server
+        "formatting"."command" = [ "alejandra" ]; # format code
       };
     };
   };
