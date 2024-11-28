@@ -7,12 +7,12 @@
   modules.home-manager.btop.enable = true;
   modules.home-manager.fastfetch.enable = true;
   modules.home-manager.fuzzel.enable = true;
+  modules.home-manager.git.enable = true;
+  modules.home-manager.hyprland.enable = true;
   modules.home-manager.hypridle.enable = true;
   modules.home-manager.hyprlock.enable = true;
   modules.home-manager.hyprpicker.enable = true;
   modules.home-manager.hyprpolkitagent.enable = true;
-  modules.home-manager.git.enable = true;
-  modules.home-manager.hyprland.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.nh.enable = true;
