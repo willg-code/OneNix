@@ -11,6 +11,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.starship.enable = true;
+    programs.starship = {
+      enable = true;
+      enableBashIntegration = false; # was giving me issues
+    };
   };
 }
