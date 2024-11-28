@@ -13,7 +13,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.zsh = {
       enable = true; # shell with plugins
-      autocd = true; # just type the dir name
       autosuggestion.enable = true; # right arrow to autocomplete
       oh-my-zsh = {
         enable = true; # plugin and theme manager
