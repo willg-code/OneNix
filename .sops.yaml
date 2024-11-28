@@ -13,7 +13,3 @@ creation_rules:
     key_groups:
       - age:
         - *willg
-  - path_regex: secrets\/andromeda-protonvpn\.conf$
-    key_groups:
-      - age:
-        - *andromeda
