@@ -11,7 +11,10 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.nixpkgs-fmt ];
+    home.packages = [ 
+      pkgs.alejandra
+      pkgs.nixd
+    ];
     programs.vscode = {
       enable = true; # code editor
       extensions = [ pkgs.vscode-extensions.jnoortheen.nix-ide ]; # nix editor extension
