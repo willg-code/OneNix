@@ -21,9 +21,9 @@ in
       userSettings = {
         "editor.formatOnSave" = "true"; # use the nixfmt formatter on save
         "git.autoFetch" = "true"; # fetch git periodically
-        "nix.serverPath" = "nixd"; # nix lang server
-        "nix.enableLanguageServer" = "true"; # enable nix lang server
-        "formatting"."command" = [ "alejandra" ]; # format code
+        "nix.serverPath" = "nixd"; # nix ide lang server
+        "nix.enableLanguageServer" = "true"; # enable nix ide lang server
+        "nix.formatterPath" = "alejandra"; # format with nix ide
       };
     };
   };
