@@ -1,5 +1,5 @@
 # Secret management
-{ inputs, secrets, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -7,7 +7,7 @@
   ];
 
   sops = {
-    defaultSopsFile = secrets."secrets.yaml";
+    defaultSopsFile = inputs.self.outputs.secrets."secrets.yaml";
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ]; # import ssh key as age key
       keyFile = "/var/lib/sops-nix/key.txt"; # output age key here
