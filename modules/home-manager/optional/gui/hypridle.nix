@@ -30,10 +30,9 @@ in {
         ];
       };
     };
+    # Hyprland integration
+    wayland.windowManager.hyprland.settings.exec-once = [
+      "systemctl --user enable --now hypridle.service" # start idle daemon
+    ];
   };
-
-  # Hyprland integration
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "systemctl --user enable --now hypridle.service" # start idle daemon
-  ];
 }
