@@ -1,3 +1,4 @@
+# Global home manager config
 { inputs, ... }:
 
 {

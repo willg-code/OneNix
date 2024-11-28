@@ -1,3 +1,4 @@
+# Global nix config
 { inputs, lib, ... }:
 
 {
