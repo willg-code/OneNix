@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   wayland.windowManager.hyprland.settings.decoration = {
     rounding = "8"; # rounded corner size
     dim_inactive = "true"; # darken the inactive windows

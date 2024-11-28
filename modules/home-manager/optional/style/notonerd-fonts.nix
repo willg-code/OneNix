@@ -1,6 +1,5 @@
 # Common font configuration for all systems
 {
-  inputs,
   config,
   lib,
   pkgs,

@@ -1,6 +1,5 @@
 # Phinger cursor theme integration with stylix
 {
-  inputs,
   config,
   lib,
   pkgs,

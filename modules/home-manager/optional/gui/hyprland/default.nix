@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   moduleName = "hyprland";
@@ -26,27 +25,24 @@ in {
   ];
 
   config = lib.mkIf cfg.enable {
-    # Required dependencies for this module
-    home.packages = [
-      pkgs.hyprpicker # color picker for hyprland
-      pkgs.wl-clipboard-rs # wl-clipboard implementation, required for hyprpicker -a
-      pkgs.hyprpolkitagent # polkit agent
-    ];
-
     home.sessionVariables.NIXOS_OZONE_WL = "1"; # make electron apps use wayland
 
     # Hyprland config
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false; # disable systemd integration to use UWSM
-      settings = {
-        exec-once = [
-          "systemctl --user enable --now hypridle.service" # start idle daemon
-          "systemctl --user enable --now hyprpolkitagent.service" # start polkit daemon
-        ];
-      };
     };
-    services.hypridle.enable = true; # hyprland idle daemon
-    programs.hyprlock.enable = true; # hyprland lock screen
+
+    # Hypridle integration
+    services.hypridle.settings = {
+      general.after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key a second time after wake
+      listener = [
+        {
+          timeout = "330"; # 5.5min
+          on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
+          on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected
+        }
+      ];
+    };
   };
 }
