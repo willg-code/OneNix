@@ -12,6 +12,5 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.starship.enable = true;
-    programs.bash.enable = true; # allow starship to manage bash at home level
   };
 }
