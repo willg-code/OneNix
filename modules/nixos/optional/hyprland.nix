@@ -1,12 +1,13 @@
 # Root level configuration for the Hyprland desktop
 # DOCS: https://nixos.wiki/wiki/Hyprland
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "hyprland";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

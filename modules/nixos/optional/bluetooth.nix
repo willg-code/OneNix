@@ -1,12 +1,13 @@
 # Bluetooth support
 # DOCS: https://nixos.wiki/wiki/Bluetooth
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "bluetooth";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

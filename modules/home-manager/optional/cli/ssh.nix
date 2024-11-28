@@ -1,12 +1,14 @@
 # Home level SSH: client and agent.
-{ config, lib, secrets, inputs, ... }:
-
-
-let
+{
+  config,
+  lib,
+  secrets,
+  inputs,
+  ...
+}: let
   moduleName = "ssh";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

@@ -1,11 +1,13 @@
 # Graphical login manager
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "sddm";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

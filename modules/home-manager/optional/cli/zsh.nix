@@ -1,11 +1,13 @@
 # Zshell
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "zsh";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
@@ -16,7 +18,7 @@ in
       autosuggestion.enable = true; # right arrow to autocomplete
       oh-my-zsh = {
         enable = true; # plugin and theme manager
-        plugins = [ "colorize" "colored-man-pages" "ssh" "sudo" ]; # enabled plugins
+        plugins = ["colorize" "colored-man-pages" "ssh" "sudo"]; # enabled plugins
       };
     };
 

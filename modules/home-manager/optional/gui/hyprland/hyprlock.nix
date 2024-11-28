@@ -1,12 +1,15 @@
 # Lock screen for hyprland
-{ inputs, config, pkgs, lib, ... }:
-
-let
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   font = config.stylix.fonts.monospace.name;
   font_bold = "${config.stylix.fonts.monospace.name} ExtraBold";
-  whatsong = (import ./scripts/whatsong.nix pkgs);
-in
-{
+  whatsong = import ./scripts/whatsong.nix pkgs;
+in {
   home.packages = [
     pkgs.playerctl # required for scripts
   ];

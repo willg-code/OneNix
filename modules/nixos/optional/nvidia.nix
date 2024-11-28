@@ -1,19 +1,20 @@
 # Nvidia compatability settings
 # DOCS: https://nixos.wiki/wiki/Nvidia
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "nvidia";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
 
   config = lib.mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true; # nvidia drivers are unfree
-    services.xserver.videoDrivers = [ "nvidia" ]; # set driver for compositor
+    services.xserver.videoDrivers = ["nvidia"]; # set driver for compositor
     hardware = {
       graphics.enable = true; # enable hardeware graphics acceleration
       nvidia = {

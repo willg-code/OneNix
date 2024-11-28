@@ -1,7 +1,5 @@
 # System style unifier
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.stylix.nixosModules.stylix
   ];

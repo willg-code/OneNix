@@ -1,5 +1,4 @@
 pkgs:
-
 pkgs.writeShellScript "whatsong.sh" ''
   if [ $# -eq 0 ]; then
   	echo "Usage: $0 --title | --arturl | --artist | --length | --album | --source | --status"

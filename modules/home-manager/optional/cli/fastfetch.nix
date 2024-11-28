@@ -1,11 +1,12 @@
 # Quick terminal system information tool
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "fastfetch";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

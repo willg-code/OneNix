@@ -5,18 +5,13 @@
 # {
 #   <filename> = /path/to/<filename>;
 # }
-
-lib:
-path:
-
-let
+lib: path: let
   attributes =
-    (lib.map
-      (content:
-        {
-          name = content;
-          value = (lib.path.append path content);
-        })
-      (lib.getContents path));
+    lib.map
+    (content: {
+      name = content;
+      value = lib.path.append path content;
+    })
+    (lib.getContents path);
 in
-lib.listToAttrs attributes
+  lib.listToAttrs attributes

@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   # Modules
   modules.home-manager.btop.enable = true;
   modules.home-manager.fastfetch.enable = true;

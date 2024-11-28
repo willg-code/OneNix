@@ -1,12 +1,13 @@
 # Printing support with CUPS and print-to-pdf
 # DOCS: https://nixos.wiki/wiki/Printing
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "printing";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

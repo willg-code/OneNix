@@ -1,11 +1,14 @@
 # Phinger cursor theme integration with stylix
-{ inputs, config, lib, pkgs, ... }:
-
-let
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "phinger-cursor";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

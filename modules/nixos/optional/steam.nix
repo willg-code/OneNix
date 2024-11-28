@@ -1,12 +1,13 @@
 # Steam install and configuration
 # DOCS: https://nixos.wiki/wiki/Steam
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "steam";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

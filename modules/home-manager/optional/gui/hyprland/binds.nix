@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   wayland.windowManager.hyprland.settings = {
     # KEYBINDS #
     "$mainMod" = "SUPER";
@@ -62,7 +60,6 @@
       "$mainMod $shiftMod, mouse_down, movetoworkspace, -1"
       "$mainMod $shiftMod, mouse_up, movetoworkspace, +1"
     ];
-
 
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging

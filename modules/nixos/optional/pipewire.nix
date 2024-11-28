@@ -1,12 +1,13 @@
 # Audio/videocap/bluetooth all in one
 # DOCS: https://nixos.wiki/wiki/PipeWire
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "pipewire";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

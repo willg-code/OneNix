@@ -1,11 +1,12 @@
 # Wayland notification manager
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "mako";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

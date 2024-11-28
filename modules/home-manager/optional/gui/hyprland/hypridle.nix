@@ -1,14 +1,11 @@
 # Idle daemon and lock dbus handler
-{ ... }:
-
-{
+{...}: {
   services.hypridle.settings = {
-    general =
-      {
-        lock_cmd = "pidof hyprlock || hyprlock"; # what to do when the dbus lock signal is recieved
-        before_sleep_cmd = "loginctl lock-session"; # lock before suspend
-        after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key a second time after wake
-      };
+    general = {
+      lock_cmd = "pidof hyprlock || hyprlock"; # what to do when the dbus lock signal is recieved
+      before_sleep_cmd = "loginctl lock-session"; # lock before suspend
+      after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key a second time after wake
+    };
 
     listener = [
       {

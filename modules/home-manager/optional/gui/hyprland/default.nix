@@ -1,10 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "hyprland";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
@@ -24,7 +26,6 @@ in
   ];
 
   config = lib.mkIf cfg.enable {
-
     # Required dependencies for this module
     home.packages = [
       pkgs.hyprpicker # color picker for hyprland

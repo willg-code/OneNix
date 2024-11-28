@@ -1,11 +1,13 @@
 # Code editor
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "vscode";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
@@ -16,10 +18,10 @@ in
     ];
     programs.vscode = {
       enable = true; # code editor
-      extensions = [ 
-        pkgs.vscode-extensions.jnoortheen.nix-ide  # nix editor extension
+      extensions = [
+        pkgs.vscode-extensions.jnoortheen.nix-ide # nix editor extension
         pkgs.vscode-extensions.kamadorueda.alejandra # nix formatter extension
-        ]; 
+      ];
       userSettings = {
         "editor.formatOnSave" = "true"; # use the nixfmt formatter on save
         "git.autoFetch" = "true"; # fetch git periodically

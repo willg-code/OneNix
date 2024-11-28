@@ -3,36 +3,33 @@
 
   ##! INPUTS CAN BE FOUND AFTER OUTPUTS !##
 
-  outputs =
-    { ... }@inputs:
-    let
-      lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # extend nixpkgs.lib with local lib
-      impl = (path: import path lib); # construct a function to import with lib
-      mkSystems = lib.mkSystems { inherit inputs; }; # construct mkSystems function
+  outputs = {...} @ inputs: let
+    lib = inputs.nixpkgs.lib.extend (final: prev: (import ./lib final)); # extend nixpkgs.lib with local lib
+    impl = path: import path lib; # construct a function to import with lib
+    mkSystems = lib.mkSystems {inherit inputs;}; # construct mkSystems function
 
-      overlays = [ ];
-      homes = impl ./homes; # import home specific configs
-      machines = impl ./machines; # import machine specific configs
-      modules = impl ./modules; # import modules
-      users = impl ./users; # import user specific configs
-    in
-    {
-      overlays = import ./overlays { inherit inputs; };
-      secrets = impl ./secrets;
-      nixosModules.default = modules.nixos;
-      homeManagerModules.default = modules.home-manager;
-      nixosConfigurations = mkSystems {
-        andromeda = {
-          machineConfig = machines.andromeda;
-          users = [
-            {
-              user = users.willg;
-              home = homes.moon;
-            }
-          ];
-        };
+    overlays = [];
+    homes = impl ./homes; # import home specific configs
+    machines = impl ./machines; # import machine specific configs
+    modules = impl ./modules; # import modules
+    users = impl ./users; # import user specific configs
+  in {
+    overlays = import ./overlays {inherit inputs;};
+    secrets = impl ./secrets;
+    nixosModules.default = modules.nixos;
+    homeManagerModules.default = modules.home-manager;
+    nixosConfigurations = mkSystems {
+      andromeda = {
+        machineConfig = machines.andromeda;
+        users = [
+          {
+            user = users.willg;
+            home = homes.moon;
+          }
+        ];
       };
     };
+  };
 
   inputs = {
     # Nixpkgs (using unstable to approximate rolling releases)

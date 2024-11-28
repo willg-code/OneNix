@@ -1,12 +1,13 @@
 # Systemd boot loader and plymouth splash screen
 # DOCS: https://nixos.wiki/wiki/Grub
-{ config, lib, ... }:
-
-let
+{
+  config,
+  lib,
+  ...
+}: let
   moduleName = "systemd-boot";
   cfg = config.modules.nixos.${moduleName};
-in
-{
+in {
   options.modules.nixos.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };

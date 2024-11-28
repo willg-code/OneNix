@@ -1,11 +1,14 @@
 # Common font configuration for all systems
-{ inputs, config, lib, pkgs, ... }:
-
-let
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   moduleName = "notonerd-fonts";
   cfg = config.modules.home-manager.${moduleName};
-in
-{
+in {
   options.modules.home-manager.${moduleName} = {
     enable = lib.mkEnableOption moduleName;
   };
@@ -23,7 +26,7 @@ in
           name = "Noto Serif";
         };
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = [ "Noto" ]; };
+          package = pkgs.nerdfonts.override {fonts = ["Noto"];};
           name = "NotoMono Nerd Font";
         };
         emoji = {
@@ -34,4 +37,3 @@ in
     };
   };
 }
-
