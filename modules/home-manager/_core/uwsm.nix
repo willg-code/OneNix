@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   home.file.".config/uwsm/env" = lib.mkIf config.wayland.windowManager.hyprland.enable {
