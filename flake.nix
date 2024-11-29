@@ -18,8 +18,8 @@
     secrets = impl ./secrets;
     nixosModules.default = modules.nixos;
     homeManagerModules.default = modules.home-manager;
-    nixosConfigurations = mkSystems {
-      andromeda = {
+    nixosConfigurations = mkSystems [
+      {
         machineConfig = machines.andromeda;
         users = [
           {
@@ -27,8 +27,8 @@
             home = homes.moon;
           }
         ];
-      };
-    };
+      }
+    ];
   };
 
   inputs = {

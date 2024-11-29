@@ -1,7 +1,7 @@
-{hostname, ...}: {
+{...}: {
   imports = [
     ./hardware.nix
-    ./filesystems.nix
+    ./disko.nix
   ];
 
   # Modules
@@ -22,6 +22,6 @@
 
   # Other
   time.timeZone = "America/Louisville"; # based on location of the machine
-  networking.hostName = hostname; # network host name
+  networking.hostName = "andromeda"; # network host name
   system.stateVersion = "24.05";
 }

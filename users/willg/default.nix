@@ -1,6 +1,4 @@
 home: {
-  inputs,
-  hostname,
   config,
   lib,
   ...

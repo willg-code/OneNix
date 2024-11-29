@@ -1,7 +1,7 @@
 # Global home manager config
 {
   inputs,
-  hostname,
+  config,
   ...
 }: {
   imports = [
@@ -13,6 +13,6 @@
   home-manager.extraSpecialArgs = {inherit inputs;}; # inputs need to be a special arg
   home-manager.sharedModules = [
     inputs.self.outputs.homeManagerModules.default # import modules
-    {_module.args.hostname = hostname;} # pass along hostname
+    {_module.args.hostname = config.networking.hostname;} # pass along hostname
   ];
 }
