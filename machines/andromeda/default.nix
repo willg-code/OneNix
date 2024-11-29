@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hardware.nix
-    ./disko.nix
+    ./filesystems.nix
   ];
 
   # Modules
