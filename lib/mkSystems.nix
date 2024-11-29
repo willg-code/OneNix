@@ -21,8 +21,8 @@
 # - Each machine config is abstracted from the users provided to it, allowing users to be added and removed at-will.
 # - Each user has an optional home, configured independently of the user itself, so homes can be swapped around at-will.
 lib: {inputs}: builds:
-lib.map
-({
+lib.mapAttrs
+(_: {
     machine,
     users,
     optimize-store ? true,
