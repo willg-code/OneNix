@@ -20,7 +20,7 @@
     homeManagerModules.default = modules.home-manager;
     nixosConfigurations = mkSystems [
       {
-        machineConfig = machines.andromeda;
+        machine = machines.andromeda;
         users = [
           {
             user = users.willg;

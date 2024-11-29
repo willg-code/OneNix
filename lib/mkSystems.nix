@@ -23,7 +23,7 @@
 lib: {inputs}: builds:
 lib.map
 ({
-    machineConfig,
+    machine,
     users,
     optimize-store ? true,
   }:
@@ -34,7 +34,7 @@ lib.map
         [
           {nix.settings.auto-optimise-store = optimize-store;}
           inputs.self.outputs.nixosModules.default
-          machineConfig
+          machine
         ]
         ++
         # User configurations.
