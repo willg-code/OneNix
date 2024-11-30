@@ -39,6 +39,7 @@
   home.packages = [
     pkgs.unzip # software for unzipping zip archives
     pkgs.webcord # discord client with wl support
+    pkgs.nixos-generators # iso generators
   ];
 
   programs.home-manager.enable = true; # let HM control itself
