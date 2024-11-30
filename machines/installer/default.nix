@@ -5,5 +5,6 @@
 
   # Modules
   modules.nixos.optimize-store.enable = true;
+  boot.supportedFilesystems = ["bcachefs"]; # enable bcachefs install support
   nixpkgs.hostPlatform = "x86_64-linux";
 }
