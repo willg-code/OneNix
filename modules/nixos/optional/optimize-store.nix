@@ -14,7 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     nix.optimise = {
       automatic = true;
-      dates = "daily";
+      dates = ["daily"];
     };
   };
 }
