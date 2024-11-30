@@ -31,7 +31,7 @@
       installer = {
         machine = machines.installer;
         users = [];
-      }
+      };
     };
   };
 
