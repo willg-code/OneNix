@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./hardware.nix
-    ./filesystems.nix
   ];
 
   # Modules
