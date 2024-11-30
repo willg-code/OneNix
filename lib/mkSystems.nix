@@ -25,14 +25,12 @@ lib.mapAttrs
 (_: {
     machine,
     users,
-    optimize-store ? true,
   }:
     lib.nixosSystem {
       inherit lib; # lib contains flake lib as well as nixpkgs lib
       specialArgs = {inherit inputs;}; # inputs needs to be a specialArg
       modules =
         [
-          {nix.settings.auto-optimise-store = optimize-store;}
           inputs.self.outputs.nixosModules.default
           machine
         ]
