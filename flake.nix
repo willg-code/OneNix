@@ -47,6 +47,9 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Impermanence
+    impermanence.url = "github:nix-community/impermanence";
+
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
