@@ -12,7 +12,7 @@
         content = {
           type = "gpt";
           partitions = {
-            ESP = {
+            "ESP" = {
               size = "256M";
               type = "EF00";
               content = {
@@ -22,7 +22,7 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            persistent = {
+            "persistent" = {
               size = "100%";
               content = {
                 type = "filesystem";
@@ -38,7 +38,7 @@
         content = {
           type = "gpt";
           partitions = {
-            persistent = {
+            "persistent/home" = {
               size = "100%";
               content = {
                 type = "filesystem";
@@ -51,4 +51,6 @@
       };
     };
   };
+
+  filesystems."/persistent".neededForBoot = true; # mark persistent volume as needed for boot
 }
