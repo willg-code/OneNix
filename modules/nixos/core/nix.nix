@@ -13,4 +13,8 @@
       flake-registry = ""; # Disable global flake registry
     };
   };
+
+  environment.persistence."/persistent".directories = [
+      "/nix" # need to keep nix for the system to work. store will clean itself
+  ];
 }

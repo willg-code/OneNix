@@ -1,4 +1,4 @@
-# Tell nix to optimize the store on each build
+# Tell nix to optimize the store every day
 {
   config,
   lib,
@@ -13,7 +13,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     nix.optimise = {
-      automatic = true;
+      automatic = true; # sets up a systemd timer with nix store optimise
       dates = ["daily"];
     };
   };

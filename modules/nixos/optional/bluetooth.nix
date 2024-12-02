@@ -15,5 +15,8 @@ in {
   config = lib.mkIf cfg.enable {
     hardware.bluetooth.enable = true; # bluetooth support/bluetooth cli
     services.blueman.enable = true; # bluetooth gui
+    environment.persistence."/persistent".directories = [ 
+      "/var/lib/bluetooth" # bluetooth data
+    ];
   };
 }

@@ -2,7 +2,6 @@
   imports = [
     ./hardware.nix
     ./disko.nix
-    ./impermanence.nix
   ];
 
   # Modules

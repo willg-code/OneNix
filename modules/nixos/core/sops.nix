@@ -12,4 +12,8 @@
       generateKey = true; # generate it if not found
     };
   };
+
+  environment.persistence."/persistent".files = [
+    "/var/lib/sops-nix/key.txt" # keep the key after it's generated
+  ];
 }

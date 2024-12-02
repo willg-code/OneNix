@@ -20,4 +20,6 @@ in {
       configurationLimit = 10; # max number of configuration boot entries
     };
   };
+
+  # No persistence mounting needed because boot must be a separate vfat partition
 }

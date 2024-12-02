@@ -5,6 +5,6 @@
   ];
 
   environment.persistence."/persistent" = {
-    hideMounts = true;
+    hideMounts = true; # don't make the bind mounts visible in the mount table
   };
 }
