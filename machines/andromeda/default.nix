@@ -2,6 +2,7 @@
   imports = [
     ./hardware.nix
     ./disko.nix
+    ./impermanence.nix
   ];
 
   # Modules
@@ -24,5 +25,5 @@
   # Other
   time.timeZone = "America/Louisville"; # based on location of the machine
   networking.hostName = "andromeda"; # network host name
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

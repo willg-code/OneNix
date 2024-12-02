@@ -43,5 +43,5 @@
   ];
 
   programs.home-manager.enable = true; # let HM control itself
-  home.stateVersion = "24.05"; # Required for backwards compat during updates
+  home.stateVersion = "24.11"; # Required for backwards compat during updates
 }
