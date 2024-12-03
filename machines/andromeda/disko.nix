@@ -38,7 +38,7 @@
         content = {
           type = "gpt";
           partitions = {
-            "home"= = {
+            "home"= {
               size = "100%";
               content = {
                 type = "filesystem";
