@@ -9,7 +9,7 @@
     disk = {
       "sdd" = {
         type = "disk";
-        device = "/dev/disk/by-id/wwn-0x5f8db4c141803e8c";
+        device = "/dev/disk/by-id/ata-PNY_CS900_240GB_SSD_PNY14182241350103E8C";
         content = {
           type = "gpt";
           partitions = {
@@ -36,7 +36,7 @@
       };
       "hdd" = {
         type = "disk";
-        device = "/dev/disk/by-id/wwn-0x50014ee20e131e19";
+        device = "/dev/disk/by-id/ata-WDC_WD10EZEX-60WN4A0_WD-WCC6Y0EYJS5Y";
         content = {
           type = "gpt";
           partitions = {
