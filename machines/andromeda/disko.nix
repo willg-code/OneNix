@@ -8,6 +8,7 @@
     };
     disk = {
       "sdd" = {
+        type = "disk";
         device = "/dev/disk/by-id/wwn-0x5f8db4c141803e8c";
         content = {
           type = "gpt";
@@ -34,6 +35,7 @@
         };
       };
       "hdd" = {
+        type = "disk";
         device = "/dev/disk/by-id/wwn-0x50014ee20e131e19";
         content = {
           type = "gpt";
