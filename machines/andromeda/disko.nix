@@ -26,9 +26,8 @@
             "persistent" = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "bcachefs";
-                mountpoint = "/persistent";
+                type = "zfs";
+                pool = "zroot";
               };
             };
           };
@@ -43,13 +42,64 @@
             "home"= {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "bcachefs";
-                mountpoint = "/persistent/home";
+                type = "zfs";
+                pool = "zhome";
               };
             };
           };
         };
+      };
+    };
+    zpool = {
+      zroot = {
+        type = "zpool";
+        rootFsOptions = {
+          acltype = "posixacl";
+          atime = "off";
+          compression = "zstd";
+          mountpoint = "none";
+          xattr = "sa";
+        };
+        options.ashift = "12";
+
+        dataset = {
+          "local" = {
+            type = "zfs_fs";
+            options.mountpoint = "none";
+          };
+          "local/nix" = {
+            type = "zfs_fs";
+            mountpoint = "/nix";
+            options."com.sun:auto-snapshot" = "false";
+          };
+          "local/persistent" = {
+            type = "zfs_fs";
+            mountpoint = "/persistent";
+            options."com.sun:auto-snapshot" = "false";
+          };
+        };
+      };
+      zhome = {
+        type = "zpool";
+        rootFsOptions = {
+          acltype = "posixacl";
+          atime = "off";
+          compression = "zstd";
+          mountpoint = "none";
+          xattr = "sa";
+        };
+        options.ashift = "12";
+        dataset = {
+          "local" = {
+            type = "zfs_fs";
+            options.mountpoint = "none";
+          };
+          "local/home" = {
+            type = "zfs_fs";
+            mountpoint = "/persistent/home";
+            options."com.sun:auto-snapshot" = "false";
+          };
+        }
       };
     };
   };
