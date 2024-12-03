@@ -4,6 +4,5 @@
   ];
 
   # Modules
-  modules.nixos.optimize-store.enable = true;
   nixpkgs.hostPlatform = "x86_64-linux";
 }
