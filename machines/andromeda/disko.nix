@@ -52,5 +52,5 @@
     };
   };
 
-  filesystems."/persistent".neededForBoot = true; # mark persistent volume as needed for boot
+  fileSystems."/persistent".neededForBoot = true; # mark persistent volume as needed for boot
 }
