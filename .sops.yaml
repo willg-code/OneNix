@@ -2,7 +2,7 @@ keys:
   - &users
     - &willg age10c02spktse006k0jgucc7refhe6jl4s8n9ukjqazv7mw6mdc6yas93cjjg
   - &hosts
-    - &andromeda age19h7rnvk8fdznlz66wcv6lpka4tjramsmsuwhsfs0a4fj3u2epd5q76gurj
+    - &andromeda age19ff59k2eqtvf2sx62uuxrag2npc70ua52qwv0h2r80wvprtdj99sggesmf
 creation_rules:
   - path_regex: secrets\/secrets\.yaml$
     key_groups:
