@@ -7,11 +7,11 @@
   sops = {
     defaultSopsFile = inputs.self.outputs.secrets."secrets.yaml";
     age = {
-      keyFile = "/var/lib/sops-nix/key"; # output age key here
+      keyFile = "/var/lib/sops-nix/key";
     };
   };
 
   environment.persistence."/persistent".files = [
-    "/var/lib/sops-nix/key" # keep the key after it's generated
+    "/var/lib/sops-nix/key"
   ];
 }
