@@ -1,5 +1,5 @@
 # Enable and configure SSH daemon
-# Required because SOPS uses the key
+# Required for nixos-anywhere install
 # DOCS: https://nixos.wiki/wiki/SSH
 {lib, ...}: {
   services.openssh = {
