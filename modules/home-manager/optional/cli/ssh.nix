@@ -18,6 +18,12 @@ in {
       enable = true; # ssh client
       addKeysToAgent = "1h"; # remember keys for 1 hour
       hashKnownHosts = true; # hash host IPs/names
+      matchBlocks = {
+        "default" = {
+          host = "*";
+          identityFile = config.sops.secrets."ssh_key".path;
+        };
+      }
     };
   };
 }
