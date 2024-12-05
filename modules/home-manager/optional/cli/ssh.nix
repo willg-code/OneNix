@@ -19,8 +19,9 @@ in {
       addKeysToAgent = "1h"; # remember keys for 1 hour
       hashKnownHosts = true; # hash host IPs/names
       matchBlocks = {
-        "*" = {
-          host = "*";
+        "github" = {
+          host = "github.com";
+          hostname = "github.com";
           identityFile = config.sops.secrets."ssh_key".path;
         };
       };
