@@ -23,7 +23,7 @@ in {
           host = "*";
           identityFile = config.sops.secrets."ssh_key".path;
         };
-      }
+      };
     };
   };
 }
