@@ -22,7 +22,7 @@ in {
         "github" = {
           host = "github.com";
           hostname = "github.com";
-          identityFile = "~/.ssh/willg";
+          identityFile = config.sops.secrets."ssh_key".path;
         };
       };
     };
