@@ -6,7 +6,7 @@
 
   sops = {
     defaultSopsFile = inputs.self.outputs.secrets."secrets.yaml";
-    age.keyFile = "/var/lib/sops-nix/keys.txt";
+    #age.keyFile = "/var/lib/sops-nix/keys.txt";
   };
 
   environment.persistence."/persistent".files = [
