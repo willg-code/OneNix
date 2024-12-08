@@ -18,10 +18,10 @@
   };
 
   # Swap for low-memory systems
-  swapDevices = [ 
+  swapDevices = [
     {
       device = "/var/tmp/swapfile";
-      size = 48*1024; # 48 GiB
-    } 
+      size = 48 * 1024; # 48 GiB
+    }
   ];
 }
