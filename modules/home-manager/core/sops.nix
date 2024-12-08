@@ -14,5 +14,5 @@
 
   home.persistence."/persistent/home/${config.home.username}".files = [
     ".config/sops/age/keys.txt"
-  ]
+  ];
 }
