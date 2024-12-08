@@ -12,7 +12,7 @@
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt"; # expect age key here
   };
 
-  # home.persistence."/persistent/home/${config.home.username}".files = [
-  #   ".config/sops/age/keys.txt"
-  # ];
+  home.persistence."/persistent/home/${config.home.username}".files = [
+    ".config/sops/age/keys.txt"
+  ];
 }
