@@ -7,7 +7,7 @@
       };
     };
     disk = {
-      "sdd" = {
+      "ssd" = {
         type = "disk";
         device = "/dev/disk/by-id/ata-PNY_CS900_240GB_SSD_PNY14182241350103E8C";
         content = {
