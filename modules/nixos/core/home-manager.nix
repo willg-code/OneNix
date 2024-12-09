@@ -15,4 +15,8 @@
     inputs.self.outputs.homeManagerModules.default # import modules
     {_module.args.hostName = config.networking.hostName;} # pass along hostName
   ];
+
+  environment.persistence."/persistent".directories = [
+    "/home"
+  ];
 }
