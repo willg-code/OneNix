@@ -44,6 +44,7 @@
     pkgs.unzip # software for unzipping zip archives
     pkgs.webcord # discord client with wl support
     pkgs.nixos-generators # iso generators
+    pkgs.protonup-qt # proton ge installer
   ];
 
   programs.home-manager.enable = true; # let HM control itself
