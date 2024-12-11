@@ -18,7 +18,7 @@ in {
     hardware = {
       graphics.enable = true; # enable hardeware graphics acceleration
       nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.production; # enable beta driver
+        package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
         modesetting.enable = true; # necessary for wayland
         open = true; # open kernel modules
       };
