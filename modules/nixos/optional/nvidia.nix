@@ -18,10 +18,9 @@ in {
     hardware = {
       graphics.enable = true; # enable hardeware graphics acceleration
       nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.beta; # enable beta driver
+        package = config.boot.kernelPackages.nvidiaPackages.production; # enable beta driver
         modesetting.enable = true; # necessary for wayland
         powerManagement.enable = true; # save entire vram to /tmp on suspend
-        open = true; # open kernel module
       };
     };
   };

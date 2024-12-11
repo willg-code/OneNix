@@ -13,7 +13,8 @@ home: {
       ["wheel"] # sudo user group
       ++ lib.optionals config.networking.networkmanager.enable ["networkmanager"] # non-sudo network manager permissions
       ++ lib.optionals config.virtualisation.docker.enable ["docker"]; # non-sudo docker permissions
-    hashedPasswordFile = config.sops.secrets."willg_password".path;
+    #hashedPasswordFile = config.sops.secrets."willg_password".path;
+    password = "tmp";
     openssh.authorizedKeys.keyFiles = [
       ./pubkeys/willg.pub # allow ssh from any other machine with this user account
     ];
