@@ -14,5 +14,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     networking.networkmanager.enable = true; # networkmanager
+    #networking.nameservers = ["1.1.1.1"]; # Cloudflare
+    networking.nameservers = ["137.112.18.100"]; # Cache DNS
   };
 }
