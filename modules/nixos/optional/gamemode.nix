@@ -12,6 +12,13 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    programs.gamemode.enable = true;
+    programs.gamemode = {
+      enable = true;
+      settings = {
+        general = {
+          renice = 10;
+        };
+      };
+    };
   };
 }
