@@ -16,12 +16,4 @@
       "/etc/machine-id" # nixos expects this to be persistent
     ];
   };
-
-  # Swap for low-memory systems
-  swapDevices = [
-    {
-      device = "/var/tmp/swapfile";
-      size = 32 * 1024; # 48 GiB
-    }
-  ];
 }
