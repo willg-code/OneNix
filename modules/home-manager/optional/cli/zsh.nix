@@ -19,9 +19,7 @@ in {
         enable = true; # plugin and theme manager
         plugins = ["colorize" "colored-man-pages" "ssh" "sudo"]; # enabled plugins
       };
-      shellAliases = {
-        cl = "function _cl(){ cd \"$1\" && ll; }; _cl"; # cd and ll into directory
-      };
+      initExtra = "cl() { cd $1 && ll; }"; # add cd/ll alias as cl
     };
 
     # Kitty integration
