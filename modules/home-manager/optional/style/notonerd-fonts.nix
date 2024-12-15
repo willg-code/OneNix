@@ -13,6 +13,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.nerd-fonts.symbols-only
+    ];
     stylix = {
       enable = true;
       fonts = {
