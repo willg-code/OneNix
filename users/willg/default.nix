@@ -13,8 +13,8 @@ home: {
       ["wheel"] # sudo user group
       ++ lib.optionals config.networking.networkmanager.enable ["networkmanager"] # non-sudo network manager permissions
       ++ lib.optionals config.virtualisation.docker.enable ["docker"] # non-sudo docker permissions
-      ++ lib.optionals config.programs.gamemode.enable ["gamemode"];
-    hashedPasswordFile = config.sops.secrets."willg_password".path;
+      ++ lib.optionals config.programs.gamemode.enable ["gamemode"]; # allow gamemode to change cpu priority
+    hashedPasswordFile = config.sops.secrets."willg_password".path; # password from sops
     openssh.authorizedKeys.keyFiles = [
       ./pubkeys/willg.pub # allow ssh from any other machine with this user account
     ];
