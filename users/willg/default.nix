@@ -15,7 +15,6 @@ home: {
       ++ lib.optionals config.virtualisation.docker.enable ["docker"] # non-sudo docker permissions
       ++ lib.optionals config.programs.gamemode.enable ["gamemode"];
     hashedPasswordFile = config.sops.secrets."willg_password".path;
-    #password = "tmp";
     openssh.authorizedKeys.keyFiles = [
       ./pubkeys/willg.pub # allow ssh from any other machine with this user account
     ];
