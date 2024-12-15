@@ -29,8 +29,8 @@ in {
           name = "Noto Sans Mono";
         };
         emoji = {
-          package = pkgs.noto-fonts-color-emoji;
-          name = "Noto Color Emoji";
+          package = pkgs.noto-fonts-monochrome-emoji;
+          name = "Noto Emoji";
         };
       };
     };
