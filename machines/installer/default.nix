@@ -1,6 +1,7 @@
 {
   modulesPath,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -10,4 +11,5 @@
   # Modules
   nixpkgs.hostPlatform = "x86_64-linux";
   services.openssh.settings.PermitRootLogin = lib.mkForce "no";
+  environment.systemPackages = [pkgs.disko];
 }
