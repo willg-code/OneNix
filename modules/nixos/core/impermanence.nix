@@ -7,7 +7,7 @@
     hideMounts = true; # don't make the bind mounts visible in the mount table
     directories = [
       "/var/log" # logs
-      "/var/lib/systemd/coredump" # coredumps
+      "/var/lib/systemd" # necessary cross-boot systemd info
       "/var/tmp" # tmp files persisted across reboots
       "/var/lib/nixos" # necessary nixos state
     ];
