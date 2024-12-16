@@ -8,8 +8,9 @@
     directories = [
       "/var/log" # logs
       "/var/lib/systemd" # necessary cross-boot systemd info
-      "/var/tmp" # tmp files persisted across reboots
       "/var/lib/nixos" # necessary nixos state
+      "/var/tmp" # tmp files persisted across reboots
+      "/var/db/sudo/lectured" # lectured state, stops lecture on first sudo
     ];
     files = [
       "/etc/adjtime" # hardware clock offset
