@@ -9,6 +9,10 @@
 
   sops = {
     defaultSopsFile = inputs.self.outputs.secrets."${config.home.username}.yaml";
-    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt"; # expect age key here
+    age.keyFile = "/persistent/home/${config.home.username}/.config/sops/age/key"; # expect age key in persistent storage
   };
+
+  home.persistence."/persistent/home/${config.home.username}".files = [
+    ".config/sops/age/key"
+  ];
 }
