@@ -1,7 +1,7 @@
 # Enable and configure SSH daemon
 # Required for nixos-anywhere install
 # DOCS: https://nixos.wiki/wiki/SSH
-{lib, ...}: {
+{...}: {
   services.openssh = {
     enable = true; # ssh daemon (sshd)
     settings = {
