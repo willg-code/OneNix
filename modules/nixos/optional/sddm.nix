@@ -30,5 +30,9 @@ in {
       theme = "catppuccin-mocha"; # enable the previously declared theme
       package = pkgs.kdePackages.sddm; # more up-to-date package to fix theme
     };
+
+    environment.persistence."/persistent".directories = [
+      "/var/lib/sddm"
+    ];
   };
 }
