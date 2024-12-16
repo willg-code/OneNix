@@ -13,8 +13,13 @@
   };
   services.fail2ban.enable = true; # basic SSH security
 
-  environment.persistence."/persistent".files = [
-    "/etc/ssh/ssh_host_rsa_key"
-    "/etc/ssh/ssh_host_ed25519_key"
-  ];
+  environment.persistence."/persistent" = {
+    directories = [
+      "/var/lib/fail2ban"
+    ];
+    files = [
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
+  };
 }
