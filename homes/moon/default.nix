@@ -39,14 +39,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-plateau.yaml";
   };
 
-  # Other
-  home.packages = [
-    pkgs.unzip # software for unzipping zip archives
-    pkgs.webcord # discord client with wl support
-    pkgs.nixos-generators # iso generators
-    pkgs.protonup-qt # proton ge installer
-  ];
-
   programs.home-manager.enable = true; # let HM control itself
   home.stateVersion = "24.11"; # Required for backwards compat during updates
 }
