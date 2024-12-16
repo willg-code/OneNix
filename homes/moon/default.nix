@@ -8,7 +8,6 @@
   modules.home-manager.protonup-qt.enable = true;
   modules.home-manager.ssh.enable = true;
   modules.home-manager.unzip.enable = true;
-  modules.home-manager.webcord.enable = true;
   modules.home-manager.zsh.enable = true;
 
   # Modules/GUI
@@ -27,6 +26,7 @@
   };
   modules.home-manager.vscode.enable = true;
   modules.home-manager.waybar.enable = true;
+  modules.home-manager.webcord.enable = true;
   modules.home-manager.zen-browser.enable = true;
 
   # Modules/Style
