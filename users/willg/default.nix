@@ -27,5 +27,8 @@ home: {
     _module.args.email = "greenlee04@gmail.com";
     home.username = "willg";
     home.homeDirectory = "/home/willg";
+    home.shellAliases = {
+      lfr = "sudo find / -xdev -type f";
+    };
   };
 }
