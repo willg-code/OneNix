@@ -4,7 +4,11 @@
   modules.home-manager.fastfetch.enable = true;
   modules.home-manager.git.enable = true;
   modules.home-manager.nh.enable = true;
+  modules.home-manager.nixos-generators.enable = true;
+  modules.home-manager.protonup-qt.enable = true;
   modules.home-manager.ssh.enable = true;
+  modules.home-manager.unzip.enable = true;
+  modules.home-manager.webcord.enable = true;
   modules.home-manager.zsh.enable = true;
 
   # Modules/GUI
