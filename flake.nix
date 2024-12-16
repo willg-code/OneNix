@@ -8,7 +8,7 @@
     impl = path: import path lib; # construct a function to import with lib
     mkSystems = lib.mkSystems {inherit inputs;}; # construct mkSystems function
 
-    overlays = [];
+    overlays = import ./overlays inputs;
     homes = impl ./homes; # import home specific configs
     machines = impl ./machines; # import machine specific configs
     modules = impl ./modules; # import modules
