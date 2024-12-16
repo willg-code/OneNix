@@ -31,7 +31,7 @@ in {
       package = pkgs.kdePackages.sddm; # more up-to-date package to fix theme
     };
 
-    environment.persistence."/persistent".files = [
+    environment.persistence."/persist".files = [
       "/var/lib/sddm/state.conf"
     ];
   };

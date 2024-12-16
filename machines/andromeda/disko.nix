@@ -3,7 +3,7 @@
     nodev = {
       "/" = {
         fsType = "tmpfs";
-        mountOptions = ["defaults" "size=25%" "mode=755"];
+        mountOptions = ["defaults" "size=50%" "mode=755"];
       };
     };
     disk = {
@@ -23,7 +23,7 @@
                 mountOptions = ["umask=0077"];
               };
             };
-            "persistent" = {
+            "persist" = {
               size = "100%";
               content = {
                 type = "btrfs";
@@ -32,8 +32,8 @@
                   "/nix" = {
                     mountpoint = "/nix";
                   };
-                  "/persistent" = {
-                    mountpoint = "/persistent";
+                  "/persist" = {
+                    mountpoint = "/persist";
                   };
                 };
               };
@@ -52,7 +52,7 @@
               content = {
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
-                mountpoint = "/home";
+                mountpoint = "/persist/home";
               };
             };
           };
@@ -61,5 +61,5 @@
     };
   };
 
-  fileSystems."/persistent".neededForBoot = true; # mark persistent volume as needed for boot
+  fileSystems."/persist".neededForBoot = true; # mark persist volume as needed for boot
 }

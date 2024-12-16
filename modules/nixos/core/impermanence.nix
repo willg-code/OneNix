@@ -3,7 +3,7 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  environment.persistence."/persistent" = {
+  environment.persistence."/persist" = {
     hideMounts = true; # don't make the bind mounts visible in the mount table
     directories = [
       "/var/log" # logs
@@ -13,7 +13,7 @@
     ];
     files = [
       "/etc/adjtime" # hardware clock offset
-      "/etc/machine-id" # nixos expects this to be persistent
+      "/etc/machine-id" # nixos expects this to be persist
     ];
   };
 }

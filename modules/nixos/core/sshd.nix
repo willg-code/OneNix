@@ -13,7 +13,7 @@
   };
   services.fail2ban.enable = true; # basic SSH security
 
-  environment.persistence."/persistent" = {
+  environment.persistence."/persist" = {
     directories = [
       "/var/lib/fail2ban"
     ];
