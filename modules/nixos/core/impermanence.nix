@@ -13,7 +13,7 @@
     ];
     files = [
       "/etc/adjtime" # hardware clock offset
-      "/etc/machine-id" # nixos expects this to be persist
+      "/etc/machine-id" # nixos expects this to be persisted
     ];
   };
 }
