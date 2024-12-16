@@ -1,11 +1,11 @@
-# Open source discord frontend
+# Proton install tool
 {
   config,
   lib,
   pkgs,
   ...
 }: let
-  moduleName = "webcord";
+  moduleName = "protonup-qt";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
@@ -14,10 +14,10 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.webcord # discord client with wl support
+      pkgs.protonup-qt # proton ge installer
     ];
     home.persistence."/persist/home/${config.home.username}".directories = [
-      ".config/WebCord"
+      ".config/pupgui"
     ];
   };
 }

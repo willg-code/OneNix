@@ -1,11 +1,11 @@
-# Proton install tool
+# Steam
 {
   config,
   lib,
   pkgs,
   ...
 }: let
-  moduleName = "protonup-qt";
+  moduleName = "steam";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
@@ -13,8 +13,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.protonup-qt # proton ge installer
+    home.persistence."/persist/home/${config.home.username}".directories = [
+      ".steam"
+      ".local/share/Steam"
     ];
   };
 }

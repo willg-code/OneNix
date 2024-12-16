@@ -15,6 +15,9 @@
       "Documents"
       "Videos"
       "git"
+      ".local/share/applications" # for .desktop entries
+      ".local/share/icons" # app icons
+      ".local/share/systemd" # user systemd stuff
     ];
   };
 }
