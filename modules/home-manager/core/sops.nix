@@ -13,6 +13,6 @@
   };
 
   home.persistence."/persist/home/${config.home.username}".files = [
-    ".config/sops/age/key"
+    ".config/sops/age/key" # mount key to file system so sops can see it
   ];
 }
