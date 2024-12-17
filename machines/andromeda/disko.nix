@@ -9,7 +9,6 @@
     disk = {
       "ssd" = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-PNY_CS900_240GB_SSD_PNY14182241350103E8C";
         content = {
           type = "gpt";
           partitions = {
@@ -43,7 +42,6 @@
       };
       "hdd" = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-WDC_WD10EZEX-60WN4A0_WD-WCC6Y0EYJS5Y";
         content = {
           type = "gpt";
           partitions = {
@@ -52,7 +50,7 @@
               content = {
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
-                mountpoint = "/persist/home";
+                mountpoint = "/home";
               };
             };
           };
@@ -62,7 +60,4 @@
   };
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
-  systemd.tmpfiles.rules = [
-    "d /persist/home 0777 root root -" # Make sure /persist/home exists with proper permissions
-  ];
 }
