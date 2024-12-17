@@ -50,7 +50,7 @@
               content = {
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
-                mountpoint = "/home";
+                mountpoint = "/persist/home";
               };
             };
           };

@@ -29,9 +29,5 @@ in {
         "nix.enableLanguageServer" = "true"; # enable nix ide lang server
       };
     };
-    home.persistence."/persist/home/${config.home.username}".directories = [
-      ".vscode"
-      ".config/Code"
-    ];
   };
 }

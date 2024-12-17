@@ -16,8 +16,5 @@ in {
     home.packages = [
       pkgs.webcord # discord client with wl support
     ];
-    home.persistence."/persist/home/${config.home.username}".directories = [
-      ".config/WebCord"
-    ];
   };
 }

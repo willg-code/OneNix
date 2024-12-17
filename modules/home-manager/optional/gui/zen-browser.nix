@@ -50,9 +50,5 @@ in {
 
     # NOTE: NOT CURRENTLY FULLY DECLARATIVELY CONFIGED
     # NIX PACKAGE STILL IN DEVELOPMENT
-
-    home.persistence."/persist/home/${config.home.username}".directories = [
-      ".zen"
-    ];
   };
 }

@@ -24,9 +24,5 @@ in {
 
     # Kitty integration
     programs.kitty.settings.shell = "zsh";
-
-    home.persistence."/persist/home/${config.home.username}".files = [
-      ".zsh_history" # nice to have shell history
-    ];
   };
 }

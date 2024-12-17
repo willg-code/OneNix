@@ -16,8 +16,5 @@ in {
     home.packages = [
       pkgs.protonup-qt # proton ge installer
     ];
-    home.persistence."/persist/home/${config.home.username}".directories = [
-      ".config/pupgui"
-    ];
   };
 }
