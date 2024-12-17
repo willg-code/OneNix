@@ -63,6 +63,6 @@
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
   systemd.tmpfiles.rules = [
-    "d /persist/home 0777 root root -"; # Make sure /persist/home exists with proper permissions
+    "d /persist/home 0777 root root -" # Make sure /persist/home exists with proper permissions
   ];
 }
