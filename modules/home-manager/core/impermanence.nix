@@ -8,7 +8,7 @@
   ];
 
   home.persistence."/persist/home/${config.home.username}" = {
-    allowOther = false; # don't allow other users into home
+    allowOther = true; # allow other users to access home
     directories = [
       "Downloads"
       "Music"
