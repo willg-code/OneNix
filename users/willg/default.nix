@@ -28,7 +28,7 @@ home: {
     home.username = "willg";
     home.homeDirectory = "/home/willg";
     home.shellAliases = {
-      lfr = "sudo find / -xdev -type f";
+      lfr = ''sudo find / -xdev -type f ! -path "*/.cache/*"'';
     };
   };
 }
