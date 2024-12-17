@@ -20,7 +20,6 @@
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.screenshot.enable = true;
-  modules.home-manager.steam.enable = true;
   modules.home-manager.swww = {
     enable = true;
     switcher = pkgs.writeShellScript "moon.sh" ''swww img "${./assets/moon.jpg}" --transition-type none'';

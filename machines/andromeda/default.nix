@@ -14,6 +14,7 @@
   modules.nixos.pipewire.enable = true;
   modules.nixos.printing.enable = true;
   modules.nixos.sddm.enable = true;
+  modules.nixos.steam.enable = true;
   modules.nixos.systemd-boot.enable = true;
 
   # Stylix
