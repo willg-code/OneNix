@@ -53,7 +53,7 @@
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
                 mountpoint = "/persist/home";
-                mountOptions = ["defaults" "mode=777"];
+                mountOptions = ["defaults" "mode=0777"];
               };
             };
           };
