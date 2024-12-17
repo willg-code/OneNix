@@ -53,7 +53,6 @@
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
                 mountpoint = "/persist/home";
-                mountOptions = ["defaults" "mode=0777"];
               };
             };
           };
@@ -63,4 +62,7 @@
   };
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
+  systemd.tmpfiles.rules = [
+    "d /persist/home 0777 root root"
+  ];
 }
