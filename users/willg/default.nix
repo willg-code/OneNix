@@ -21,7 +21,7 @@ home: {
     description = "Will G.";
   };
 
-  systemd.tmpfiles.rules = ["d /persist/willg 1700 willg willg"]; # persistent home dir
+  systemd.tmpfiles.rules = ["d /persist/home/willg 1700 willg willg"]; # persistent home dir
 
   # HM modules
   home-manager.users.willg = {
