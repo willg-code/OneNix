@@ -50,7 +50,7 @@
               content = {
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
-                mountpoint = "/persist/home";
+                mountpoint = "/home";
               };
             };
           };
@@ -60,5 +60,4 @@
   };
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
-  fileSystems."/persist/home".neededForBoot = true; # home is needed to boot properly
 }
