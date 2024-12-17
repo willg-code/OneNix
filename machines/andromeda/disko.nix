@@ -62,7 +62,15 @@
   };
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
-  systemd.tmpfiles.rules = [
-    "d /persist/home 0777 root root"
-  ];
+  boot.initrd.systemd.tmpfiles.settings = {
+    "impermanence-setup" = {
+      "/persist/home" = {
+        d = {
+          group = "root";
+          mode = "0777";
+          user = "root";
+        };
+      };
+    };
+  };
 }
