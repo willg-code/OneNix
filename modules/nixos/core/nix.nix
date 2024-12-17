@@ -11,6 +11,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       flake-registry = ""; # Disable global flake registry
+      download-buffer-size = 512 * 1024 * 1024; # 512MB download buffer
     };
   };
 }
