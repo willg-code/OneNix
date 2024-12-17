@@ -62,5 +62,4 @@
   };
 
   fileSystems."/persist".neededForBoot = true; # persistence is needed to boot properly
-  fileSystems."/persist/home".neededForBoot = true; # home is also needed to boot (keys)
 }
