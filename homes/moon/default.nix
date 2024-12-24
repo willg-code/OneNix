@@ -27,6 +27,7 @@
   modules.home-manager.vscode.enable = true;
   modules.home-manager.waybar.enable = true;
   modules.home-manager.webcord.enable = true;
+  modules.home-manager.zed-editor.enable = true;
   modules.home-manager.zen-browser.enable = true;
 
   # Modules/Style
