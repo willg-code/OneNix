@@ -15,7 +15,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      inputs.zen-browser.packages.${pkgs.system}.default
+      inputs.zen-browser.packages.${pkgs.system}
       pkgs.speechd # for speech synthesis
     ];
 
