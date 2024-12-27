@@ -17,6 +17,7 @@ in {
       # language servers
       pkgs.nixd
       pkgs.nil
+      # formatters
       pkgs.alejandra
     ];
     programs.zed-editor = {
