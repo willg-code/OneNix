@@ -3,6 +3,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   moduleName = "steam";
@@ -13,6 +14,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.gamescope
+    ];
     nixpkgs.config.allowUnfree = true; # steam is unfree
     programs.steam = {
       enable = true; # install steam
