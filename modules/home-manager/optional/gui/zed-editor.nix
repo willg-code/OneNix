@@ -16,7 +16,6 @@ in {
       enable = true;
       extensions = [
         "nix"
-        "xy-zed"
       ];
       userSettings = {
         vim_mode = true;
