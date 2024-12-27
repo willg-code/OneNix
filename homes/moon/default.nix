@@ -24,7 +24,6 @@
     enable = true;
     switcher = pkgs.writeShellScript "moon.sh" ''swww img "${./assets/moon.jpg}" --transition-type none'';
   };
-  modules.home-manager.vscode.enable = true;
   modules.home-manager.waybar.enable = true;
   modules.home-manager.webcord.enable = true;
   modules.home-manager.zed-editor.enable = true;
