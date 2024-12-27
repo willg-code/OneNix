@@ -13,8 +13,18 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.zed-editor # code editor
-    ];
+    programs.zed-editor = {
+      enable = true;
+      extensions = [
+        "nix"
+        "xy-zed"
+      ];
+      userSettings = {
+        vim_mode = true;
+        telemetry.metrics = false;
+        ui_font_size = 16;
+        buffer_font_size = 16;
+      };
+    };
   };
 }
