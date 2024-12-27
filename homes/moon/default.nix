@@ -19,6 +19,7 @@
   modules.home-manager.hyprpolkitagent.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
+  modules.home-manager.mpv.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.swww = {
     enable = true;
