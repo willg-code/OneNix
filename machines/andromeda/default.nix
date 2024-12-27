@@ -17,10 +17,11 @@
   modules.nixos.steam.enable = true;
   modules.nixos.systemd-boot.enable = true;
 
-  # Stylix
-  stylix.enable = true;
-  stylix.image = ./assets/theme-image.jpg;
-  stylix.polarity = "dark";
+  stylix = {
+    enable = true;
+    image = ./assets/theme-image.jpg;
+    polarity = "dark";
+  };
 
   # Other
   time.timeZone = "America/Louisville"; # based on location of the machine
