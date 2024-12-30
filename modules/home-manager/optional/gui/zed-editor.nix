@@ -23,6 +23,7 @@ in {
     programs.zed-editor = {
       enable = true;
       extensions = [
+        "html"
         "nix"
       ];
       userSettings = {
