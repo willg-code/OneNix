@@ -41,7 +41,7 @@
     image = ./assets/earth.jpg;
     opacity.terminal = 0.9;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/woodland.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
 
   programs.home-manager.enable = true; # let HM control itself
