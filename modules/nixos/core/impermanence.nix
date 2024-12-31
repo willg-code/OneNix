@@ -10,7 +10,7 @@
       "/var/lib/nixos" # necessary nixos state
       "/var/log" # logs
       "/var/tmp" # tmp files persisted across reboots
-      "/var/db/sudo/lectured" # lectured state, stops lecture on first sudo
+      "/var/db/sudo/lectured" # lectured state, lectures on first sudo
     ];
     files = [
       "/etc/adjtime" # hardware clock offset
