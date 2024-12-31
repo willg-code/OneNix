@@ -14,7 +14,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.nerd-fonts.symbols-only
+      pkgs.nerd-fonts.symbols-only # add symbols to fill in for missing noto
     ];
     stylix = {
       enable = true;
