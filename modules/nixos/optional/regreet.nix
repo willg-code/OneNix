@@ -13,10 +13,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.greetd = {
-      enable = true; # greeter service
-      settings.default_session.command = "${lib.getExe pkgs.cage} -s -m last -- ${lib.getExe config.programs.regreet.package}";
+    programs.regreet = {
+      enable = true; # greeter
+      cageArgs = ["-s" "-m" "last"]; # get cage to display properly
     };
-    programs.regreet.enable = true; # greeter
   };
 }
