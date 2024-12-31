@@ -12,10 +12,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.greetd = {
-      enable = true; # greeter service
-      settings.default_session.command = "cage -s -m last -- regreet";
-    };
+    services.greetd.enable = true; # greeter service
     programs.regreet.enable = true; # greeter
   };
 }
