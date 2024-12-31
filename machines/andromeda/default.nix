@@ -7,13 +7,13 @@
   # Modules
   modules.nixos.bluetooth.enable = true;
   modules.nixos.gamemode.enable = true;
+  modules.nixos.regreet.enable = true;
   modules.nixos.hyprland.enable = true;
   modules.nixos.networkmanager.enable = true;
   modules.nixos.nvidia.enable = true;
   modules.nixos.optimize-store.enable = true;
   modules.nixos.pipewire.enable = true;
   modules.nixos.printing.enable = true;
-  modules.nixos.sddm.enable = true;
   modules.nixos.steam.enable = true;
   modules.nixos.systemd-boot.enable = true;
 
