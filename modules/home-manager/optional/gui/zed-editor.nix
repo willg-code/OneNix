@@ -29,8 +29,6 @@ in {
       userSettings = {
         vim_mode = true;
         telemetry.metrics = false;
-        ui_font_size = 16;
-        buffer_font_size = 16;
         format_on_save = "on";
         lsp = {
           nil.settings.formatting.command = ["alejandra"];
