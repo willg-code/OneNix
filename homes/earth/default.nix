@@ -6,6 +6,7 @@
   modules.home-manager.nh.enable = true;
   modules.home-manager.nixos-generators.enable = true;
   modules.home-manager.ssh.enable = true;
+  modules.home-manager.starship.enable = true;
   modules.home-manager.unzip.enable = true;
   modules.home-manager.zsh.enable = true;
 
@@ -30,11 +31,6 @@
   modules.home-manager.zed-editor.enable = true;
   modules.home-manager.zen-browser.enable = true;
 
-  # Modules/Style
-  modules.home-manager.notonerd-fonts.enable = true;
-  modules.home-manager.phinger-cursor.enable = true;
-  modules.home-manager.starship.enable = true;
-
   # Stylix
   stylix = {
     enable = true;
@@ -42,6 +38,28 @@
     opacity.terminal = 0.9;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    fonts = {
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+      monospace = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans Mono";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-monochrome-emoji;
+        name = "Noto Emoji";
+      };
+    };
+    cursor = {
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-light";
+    };
   };
 
   programs.home-manager.enable = true; # let HM control itself
