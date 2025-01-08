@@ -16,10 +16,11 @@ in {
     home.packages = [
       pkgs.satty # screenshot annotator
       pkgs.wayshot # screenshot tool
+      pkgs.slurp # region selection tool
     ];
 
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, P, exec, uwsm app -- wayshot --stdout | satty -f -"
+      ''$mainMod, P, exec, uwsm app -- wayshot -s "$(slurp)" --stdout | satty -f -''
     ];
   };
 }
