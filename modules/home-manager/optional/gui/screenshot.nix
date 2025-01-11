@@ -16,11 +16,10 @@ in {
     home.packages = [
       pkgs.satty # screenshot annotator
       pkgs.wayshot # screenshot tool
-      pkgs.slurp # region selection tool
     ];
 
     wayland.windowManager.hyprland.settings.bind = [
-      ''$mainMod, P, exec, uwsm app -- wayshot -s "$(slurp)" --stdout | satty -f -''
+      ''$mainMod, P, exec, uwsm app -- wayshot -o "$(hyprctl monitors | grep -B 11 "focused: yes" | head -n 1 | awk '{print $2}')" --stdout | satty -f -''
     ];
   };
 }
