@@ -16,6 +16,7 @@
   modules.nixos.regreet.enable = true;
   modules.nixos.steam.enable = true;
   modules.nixos.systemd-boot.enable = true;
+  modules.nixos.systemd-networkd.enable = true;
   modules.nixos.wireless.enable = true;
 
   stylix = {
@@ -25,14 +26,13 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-sulphurpool.yaml";
   };
 
-  # NOTE: networking.useDHCP = true; will cause only one of these to be required to be routable for boot
   systemd.network = {
-    enable = true;
+    wait-online.anyInterface = true; # only one interface needs to be up
     networks = {
       "1-enp7s0" = {
         matchConfig.Name = "enp7s0";
         networkConfig = {
-          DHCP = "ipv4";
+          DHCP = "ipv4"; # only get IPv4 through DHCP
           IPv6AcceptRA = true; # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
         };
         linkConfig.RequiredForOnline = "routable";
@@ -41,7 +41,7 @@
       "2-wlp6s0" = {
         matchConfig.Name = "wlp6s0";
         networkConfig = {
-          DHCP = "ipv4";
+          DHCP = "ipv4"; # only get IPv4 through DHCP
           IPv6AcceptRA = true; # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
         };
         linkConfig.RequiredForOnline = "routable";
