@@ -50,21 +50,21 @@
         routes = [
           {
             Destination = "0.0.0.0/0";
-            Table = "2720686505";
+            Table = 2720686505;
           }
         ];
         routingPolicyRules = [
           {
-            SuppressPrefixLength = "0";
+            SuppressPrefixLength = 0;
             Family = "ipv6";
-            Priority = "32764";
+            Priority = 32764;
           }
           {
             FirewallMark = "0xa22a61a9";
-            InvertRule = "true";
-            Table = "2720686505";
+            InvertRule = true;
+            Table = 2720686505;
             Family = "ipv6";
-            Priority = "32765";
+            Priority = 32765;
           }
         ];
       };
