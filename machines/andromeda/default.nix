@@ -47,6 +47,13 @@
           "10.2.0.2/32"
         ];
         dns = ["10.2.0.1"];
+        domains = "~.";
+        # Route everything through tunnel
+        routes = [
+          {
+            Destination = "0.0.0.0/0";
+          }
+        ];
       };
       "2-enp7s0" = {
         matchConfig.Name = "enp7s0";
@@ -74,6 +81,7 @@
         };
         wireguardConfig = {
           PrivateKeyFile = config.sops.secrets."wg-key".path;
+          #FirewallMark = "0x8888";
         };
         wireguardPeers = [
           {
