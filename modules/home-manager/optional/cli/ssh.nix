@@ -23,7 +23,6 @@ in {
           host = "github.com";
           hostname = "github.com";
           identityFile = config.sops.secrets."ssh_key".path;
-          addressFamily = "inet"; # force ipv4 due to vpn
         };
       };
     };
