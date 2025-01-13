@@ -27,6 +27,7 @@
   # Secrets
   sops.secrets."wg-key" = {
     sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
+    mode = "0440"; # allow group to read
     group = config.users.users.systemd-network.group; # set readable by systemd-networkd
   };
 
