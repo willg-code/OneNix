@@ -22,6 +22,7 @@
   modules.home-manager.mako.enable = true;
   modules.home-manager.mpv.enable = true;
   modules.home-manager.protonup-qt.enable = true;
+  modules.home-manager.qbittorrent.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.swww = {
     enable = true;
