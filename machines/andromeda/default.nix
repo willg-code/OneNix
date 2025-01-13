@@ -25,7 +25,10 @@
   modules.nixos.wireless.enable = true;
 
   # Secrets
-  sops.secrets."wg-key".sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
+  sops.secrets."wg-key" = {
+    sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
+    owner = config.systemd.services.systemd-networkd.serviceConfig.User;
+  };
 
   stylix = {
     enable = true;
