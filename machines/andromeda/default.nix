@@ -34,18 +34,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-sulphurpool.yaml";
   };
 
-  networking.wg-quick.interfaces."wg0" = {
-    privateKeyFile = config.sops.secrets."wg-key".path;
-    address = ["10.2.0.2/32"];
-    dns = ["10.2.0.1"];
-    peers = [
-      {
-        publicKey = "Rtsl6k9WA9t04Vt+EDUD3TlSr9+YL6YcTFwiSB1qBwA=";
-        allowedIPs = ["0.0.0.0/0"];
-        endpoint = "146.70.84.2:51820";
-      }
-    ];
-  };
+  networking.wg-quick.interfaces."wg0".configFile = config.sops.secrets."proton-wg-conf".path;
 
   systemd.network = {
     wait-online.anyInterface = true; # only one interface needs to be up
