@@ -27,7 +27,7 @@
   # Secrets
   sops.secrets."wg-key" = {
     sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
-    owner = config.systemd.services.systemd-networkd.serviceConfig.User;
+    group = config.users.users.systemd-network.group; # set readable by systemd-networkd
   };
 
   stylix = {
