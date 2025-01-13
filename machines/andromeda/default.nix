@@ -34,7 +34,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-sulphurpool.yaml";
   };
 
-  boot.extraModulePackages = [config.boot.kernelPackages.wireguard]; # necessary for wireguard netdev
   systemd.network = {
     wait-online.anyInterface = true; # only one interface needs to be up
     networks = {
