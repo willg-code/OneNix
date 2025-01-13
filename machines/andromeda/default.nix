@@ -25,11 +25,7 @@
   modules.nixos.wireless.enable = true;
 
   # Secrets
-  sops.secrets."wg-key" = {
-    sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
-    mode = "0440"; # allow group to read
-    group = config.users.users.systemd-network.group; # set readable by systemd-networkd
-  };
+  sops.secrets."wg-key".sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
 
   stylix = {
     enable = true;
@@ -38,37 +34,23 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-sulphurpool.yaml";
   };
 
+  networking.wg-quick.interfaces."wg0" = {
+    privateKeyFile = config.sops.secrets."wg-key".path;
+    address = ["10.2.0.2/32"];
+    dns = ["10.2.0.1"];
+    peers = [
+      {
+        publicKey = "Rtsl6k9WA9t04Vt+EDUD3TlSr9+YL6YcTFwiSB1qBwA=";
+        allowedIPs = ["0.0.0.0/0"];
+        endpoint = "146.70.84.2:51820";
+      }
+    ];
+  };
+
   systemd.network = {
     wait-online.anyInterface = true; # only one interface needs to be up
     networks = {
-      "1-wg0" = {
-        matchConfig.Name = "wg0";
-        address = ["10.2.0.2/32"];
-        dns = ["10.2.0.1"];
-        domains = ["~."];
-        # Route everything through tunnel
-        routes = [
-          {
-            Destination = "0.0.0.0/0";
-            Table = 2720686505;
-          }
-        ];
-        routingPolicyRules = [
-          {
-            SuppressPrefixLength = 0;
-            Family = "ipv6";
-            Priority = 32764;
-          }
-          {
-            FirewallMark = 2720686505;
-            InvertRule = true;
-            Table = 2720686505;
-            Family = "ipv6";
-            Priority = 32765;
-          }
-        ];
-      };
-      "2-enp7s0" = {
+      "1-enp7s0" = {
         matchConfig.Name = "enp7s0";
         networkConfig = {
           DHCP = "ipv4"; # only get IPv4 through DHCP
@@ -77,32 +59,13 @@
         linkConfig.RequiredForOnline = "routable";
       };
       # further configured with WPA_Supplicant in wireless module
-      "3-wlp6s0" = {
+      "2-wlp6s0" = {
         matchConfig.Name = "wlp6s0";
         networkConfig = {
           DHCP = "ipv4"; # only get IPv4 through DHCP
           IPv6AcceptRA = true; # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
         };
         linkConfig.RequiredForOnline = "routable";
-      };
-    };
-    netdevs = {
-      "1-wg0" = {
-        netdevConfig = {
-          Kind = "wireguard";
-          Name = "wg0";
-        };
-        wireguardConfig = {
-          PrivateKeyFile = config.sops.secrets."wg-key".path;
-          FirewallMark = 2720686505;
-        };
-        wireguardPeers = [
-          {
-            PublicKey = "Rtsl6k9WA9t04Vt+EDUD3TlSr9+YL6YcTFwiSB1qBwA=";
-            AllowedIPs = ["0.0.0.0/0"];
-            Endpoint = "146.70.84.2:51820";
-          }
-        ];
       };
     };
   };
