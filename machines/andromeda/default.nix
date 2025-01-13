@@ -6,7 +6,7 @@
 
   # Modules
   modules.nixos.bluetooth.enable = true;
-  modules.nixos.dnscrypt-proxy.enable = true;
+  modules.nixos.encrypted-dns.enable = true;
   modules.nixos.gamemode.enable = true;
   modules.nixos.hyprland.enable = true;
   modules.nixos.nvidia.enable = true;
