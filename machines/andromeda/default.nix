@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware.nix
     ./disko.nix
@@ -19,6 +24,9 @@
   modules.nixos.systemd-networkd.enable = true;
   modules.nixos.wireless.enable = true;
 
+  # Secrets
+  sops.secrets."wg-key".sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
+
   stylix = {
     enable = true;
     image = ./assets/andromeda.jpg;
@@ -29,7 +37,14 @@
   systemd.network = {
     wait-online.anyInterface = true; # only one interface needs to be up
     networks = {
-      "1-enp7s0" = {
+      "1-wg0" = {
+        matchConfig.Name = "wg0";
+        address = [
+          "10.2.0.2/32"
+        ];
+        dns = ["10.2.0.1"];
+      };
+      "2-enp7s0" = {
         matchConfig.Name = "enp7s0";
         networkConfig = {
           DHCP = "ipv4"; # only get IPv4 through DHCP
@@ -38,13 +53,31 @@
         linkConfig.RequiredForOnline = "routable";
       };
       # further configured with WPA_Supplicant in wireless module
-      "2-wlp6s0" = {
+      "3-wlp6s0" = {
         matchConfig.Name = "wlp6s0";
         networkConfig = {
           DHCP = "ipv4"; # only get IPv4 through DHCP
           IPv6AcceptRA = true; # accept Router Advertisements for Stateless IPv6 Autoconfiguraton (SLAAC)
         };
         linkConfig.RequiredForOnline = "routable";
+      };
+    };
+    netdevs = {
+      "1-wg0" = {
+        netdevConfig = {
+          Kind = "wireguard";
+          Name = "wg0";
+        };
+        wireguardConfig = {
+          PrivateKeyFile = config.sops.secrets."wg-key".path;
+        };
+        wireguardPeers = [
+          {
+            PublicKey = "Rtsl6k9WA9t04Vt+EDUD3TlSr9+YL6YcTFwiSB1qBwA=";
+            AllowedIPs = ["0.0.0.0/0"];
+            Endpoint = "146.70.84.2:51820";
+          }
+        ];
       };
     };
   };
