@@ -60,7 +60,7 @@
             Priority = 32764;
           }
           {
-            FirewallMark = "0xa22a61a9";
+            FirewallMark = 2720686505;
             InvertRule = true;
             Table = 2720686505;
             Family = "ipv6";
@@ -94,7 +94,7 @@
         };
         wireguardConfig = {
           PrivateKeyFile = config.sops.secrets."wg-key".path;
-          FirewallMark = "0xa22a61a9";
+          FirewallMark = 2720686505;
         };
         wireguardPeers = [
           {
