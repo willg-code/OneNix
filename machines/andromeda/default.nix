@@ -43,15 +43,28 @@
     networks = {
       "1-wg0" = {
         matchConfig.Name = "wg0";
-        address = [
-          "10.2.0.2/32"
-        ];
+        address = ["10.2.0.2/32"];
         dns = ["10.2.0.1"];
         domains = ["~."];
         # Route everything through tunnel
         routes = [
           {
             Destination = "0.0.0.0/0";
+            Table = "2720686505";
+          }
+        ];
+        routingPolicyRules = [
+          {
+            SuppressPrefixLength = "0";
+            Family = "ipv6";
+            Priority = "32764";
+          }
+          {
+            FirewallMark = "0xa22a61a9";
+            InvertRule = "true";
+            Table = "2720686505";
+            Family = "ipv6";
+            Priority = "32765";
           }
         ];
       };
@@ -81,7 +94,7 @@
         };
         wireguardConfig = {
           PrivateKeyFile = config.sops.secrets."wg-key".path;
-          #FirewallMark = "0x8888";
+          FirewallMark = "0xa22a61a9";
         };
         wireguardPeers = [
           {
