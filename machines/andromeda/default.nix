@@ -25,7 +25,7 @@
   modules.nixos.wireless.enable = true;
 
   # Secrets
-  sops.secrets."wg-key".sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
+  sops.secrets."proton-wg-conf".sopsFile = inputs.self.outputs.secrets."andromeda.yaml";
 
   stylix = {
     enable = true;
