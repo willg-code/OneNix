@@ -9,6 +9,11 @@ creation_rules:
       - age:
           - *willg
           - *andromeda
+  - path_regex: secrets\/andromeda\.yaml$
+    key_groups:
+      - age:
+          - *willg
+          - *andromeda
   - path_regex: secrets\/willg\.yaml$
     key_groups:
       - age:
