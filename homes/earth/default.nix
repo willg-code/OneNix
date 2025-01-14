@@ -8,6 +8,7 @@
   modules.home-manager.ssh.enable = true;
   modules.home-manager.starship.enable = true;
   modules.home-manager.unzip.enable = true;
+  modules.home-manager.wine.enable = true;
   modules.home-manager.yazi.enable = true;
   modules.home-manager.zsh.enable = true;
 
