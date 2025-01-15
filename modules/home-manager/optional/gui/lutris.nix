@@ -1,11 +1,11 @@
-# Windows compatability layer
+# Gaming platform for linux
 {
   config,
   lib,
   pkgs,
   ...
 }: let
-  moduleName = "wine";
+  moduleName = "lutris";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
@@ -14,7 +14,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.wineWowPackages.waylandFull
+      pkgs.lutris
     ];
   };
 }

@@ -1,4 +1,4 @@
-# Unarchiving tool
+# Terminal file explorer
 {
   config,
   lib,

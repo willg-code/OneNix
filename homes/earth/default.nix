@@ -8,7 +8,6 @@
   modules.home-manager.ssh.enable = true;
   modules.home-manager.starship.enable = true;
   modules.home-manager.unzip.enable = true;
-  modules.home-manager.wine.enable = true;
   modules.home-manager.yazi.enable = true;
   modules.home-manager.zsh.enable = true;
 
@@ -19,6 +18,7 @@
   modules.home-manager.hypridle.enable = true;
   modules.home-manager.hyprpicker.enable = true;
   modules.home-manager.hyprpolkitagent.enable = true;
+  modules.home-manager.lutris.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
   modules.home-manager.mpv.enable = true;
