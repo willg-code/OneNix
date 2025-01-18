@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  moduleName = "unzip";
+  moduleName = "unar";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
@@ -14,7 +14,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.unzip # software for unzipping zip archives
+      pkgs.unar # software for unarchiving
     ];
   };
 }
