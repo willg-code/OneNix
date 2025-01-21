@@ -19,6 +19,7 @@ in {
     ./misc.nix
     ./monitors.nix
     ./windowrules.nix
+    ./workspaces.nix
     ./xwayland.nix
   ];
 
