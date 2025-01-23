@@ -12,6 +12,7 @@
   modules.home-manager.zsh.enable = true;
 
   # Modules/GUI
+  modules.home-manager.brave.enable = true;
   modules.home-manager.hyprland.enable = true;
   modules.home-manager.hyprlock.enable = true;
   modules.home-manager.fuzzel.enable = true;
