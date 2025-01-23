@@ -5,7 +5,7 @@
 }: {
   wayland.windowManager.hyprland.settings.monitor =
     [
-      ",preferred,auto,auto" # fallback monitor config that generally works
+      "FALLBACK,1920x1080@60,auto,1" # fallback monitor config that generally works
     ]
     ++ lib.optionals (hostName == "andromeda") [
       "DP-4, 2560x1440@180, 0x0, 1, bitdepth, 10, vrr, 1"
