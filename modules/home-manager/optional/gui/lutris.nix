@@ -15,7 +15,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.lutris
-      pkgs.wineWowPackages.waylandFull
+      pkgs.wineWowPackages.unstableFull
       pkgs.gamescope
     ];
   };
