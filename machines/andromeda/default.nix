@@ -13,6 +13,7 @@
   modules.nixos.bluetooth.enable = true;
   modules.nixos.encrypted-dns.enable = true;
   modules.nixos.gamemode.enable = true;
+  modules.nixos.gamescope.enable = true;
   modules.nixos.hyprland.enable = true;
   modules.nixos.nvidia.enable = true;
   modules.nixos.optimize-store.enable = true;

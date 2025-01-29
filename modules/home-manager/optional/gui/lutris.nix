@@ -16,7 +16,7 @@ in {
     home.packages = [
       pkgs.lutris
       pkgs.wineWowPackages.unstableFull
-      pkgs.gamescope
+      pkgs.pcsx2
     ];
   };
 }
