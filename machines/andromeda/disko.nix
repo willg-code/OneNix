@@ -51,6 +51,7 @@
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition
                 mountpoint = "/home";
+                mountOptions = ["compress=zstd"];
               };
             };
           };
