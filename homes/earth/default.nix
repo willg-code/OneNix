@@ -22,10 +22,10 @@
   modules.home-manager.lutris.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
-  modules.home-manager.minecraft.enable = true;
   modules.home-manager.mpv.enable = true;
   modules.home-manager.obsidian.enable = true;
   modules.home-manager.openshot.enable = true;
+  modules.home-manager.prism-launcher.enable = true;
   modules.home-manager.protonup-qt.enable = true;
   modules.home-manager.qbittorrent.enable = true;
   modules.home-manager.screenshot.enable = true;

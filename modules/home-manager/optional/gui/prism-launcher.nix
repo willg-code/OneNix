@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  moduleName = "minecraft";
+  moduleName = "prism-launcher";
   cfg = config.modules.home-manager.${moduleName};
 in {
   options.modules.home-manager.${moduleName} = {
@@ -14,7 +14,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.minecraft
+      pkgs.prismlauncher
     ];
   };
 }
