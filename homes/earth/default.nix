@@ -12,7 +12,6 @@
   modules.home-manager.zsh.enable = true;
 
   # Modules/GUI
-  modules.home-manager.atlauncher.enable = true;
   modules.home-manager.brave.enable = true;
   modules.home-manager.hyprland.enable = true;
   modules.home-manager.hyprlock.enable = true;
@@ -23,6 +22,7 @@
   modules.home-manager.lutris.enable = true;
   modules.home-manager.kitty.enable = true;
   modules.home-manager.mako.enable = true;
+  modules.home-manager.minecraft.enable = true;
   modules.home-manager.mpv.enable = true;
   modules.home-manager.obsidian.enable = true;
   modules.home-manager.openshot.enable = true;
