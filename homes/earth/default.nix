@@ -28,6 +28,7 @@
   modules.home-manager.prism-launcher.enable = true;
   modules.home-manager.protonup-qt.enable = true;
   modules.home-manager.qbittorrent.enable = true;
+  modules.home-manager.rpcs3.enable = true;
   modules.home-manager.screenshot.enable = true;
   modules.home-manager.swww = {
     enable = true;
